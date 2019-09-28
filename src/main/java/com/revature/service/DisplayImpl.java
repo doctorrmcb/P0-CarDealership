@@ -1,16 +1,13 @@
 package com.revature.service;
 
+import com.revature.pojos.io.Menu;
+
 public class DisplayImpl implements Display {
 
 	@Override
 	public void initializeDisplay() {
 		// TODO Auto-generated method stub
-		System.out.println("Welcome to the Revature car dealership!");
-		System.out.println("");
-		System.out.println("Please enter a number to choose from the options below:");
-		System.out.println("1: Login");
-		System.out.println("2: Register");
-		System.out.println("3: Exit");
+		
 	}
 
 	@Override
@@ -47,6 +44,14 @@ public class DisplayImpl implements Display {
 		// TODO Auto-generated method stub
 		System.out.println("");
 		System.out.println("I don't understand that command. Please try again.");
+	}
+
+	@Override
+	public void displayMenu(Menu menu) {
+		// TODO Auto-generated method stub
+		for (String s:menu.outputLines) {
+			System.out.println(s);
+		}
 	}
 
 	
