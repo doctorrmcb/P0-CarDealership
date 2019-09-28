@@ -1,5 +1,7 @@
 package com.revature.pojos.io;
 
-public class Menu {
+import java.util.ArrayList;
 
+public class Menu {
+	public ArrayList<Option> options;
 }

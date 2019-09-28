@@ -1,5 +1,7 @@
 package com.revature.pojos.user;
 
-public class User {
+import com.revature.pojos.authentication.Account;
 
+public class User {
+	public Account account;
 }
