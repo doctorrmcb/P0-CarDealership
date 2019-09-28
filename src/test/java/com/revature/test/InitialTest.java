@@ -47,5 +47,5 @@ public class InitialTest {
 	// If customer enters the appropriate data into the make offer function it returns a correctly created offer object to the system.
 	// If an offer object is entered to the system it adds it to the list of offers the employee can see.
 	// If an employee chooses the read offers in the menu, it calls the readOfffers method and displays all the offers.
-
+	// If an employee accepts an offer, it gets communicated to the user
 }
