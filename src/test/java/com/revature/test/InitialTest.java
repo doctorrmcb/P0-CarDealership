@@ -31,9 +31,13 @@ public class InitialTest {
 		fail("Not yet implemented");
 	}
 	
+	// When program starts, display initial menu.
+	
 	// User/employee login with correct password and username.
-	// User/employee can't login with correct username and password.
+	// User/employee can't login with correct username and incorrect password.
 	// Exception is raised when user/employee tries to login with username that doesn't exist.
+	// If exception is raised for logging in with nonexistant username, then system asks if user wants to create a new account.
+	
 	
 	// Employee can create car object if passing in correct info.
 	// User can't create car object if passing in correct info.
