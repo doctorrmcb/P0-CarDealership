@@ -7,8 +7,12 @@ import com.revature.service.DisplayImpl;
 public class Driver {
 	public static void main (String[] args) {
 		DisplayImpl display = new DisplayImpl();
-		display.initializeDisplay();
 		Scanner scanner = new Scanner(System.in);
+		getCommand(scanner, display);
+	}
+	
+	public static void getCommand (Scanner scanner, DisplayImpl display) {
+		display.initializeDisplay();
 		String input = scanner.nextLine();
 		if (input.equals("1")) {
 			display.displayLoginMenu();
@@ -19,8 +23,11 @@ public class Driver {
 			display.displayPasswordLine();
 			input = scanner.nextLine();
 			String password = input;
+		} else if (input.equals("3")) {
+			System.exit(0);
+		} else {
+			display.displayPleaseRepeatCommand();
+			getCommand(scanner, display);
 		}
 	}
-	
-	
 }

@@ -42,5 +42,12 @@ public class DisplayImpl implements Display {
 		System.out.println("Please enter your desired password.");
 	}
 
+	@Override
+	public void displayPleaseRepeatCommand() {
+		// TODO Auto-generated method stub
+		System.out.println("");
+		System.out.println("I don't understand that command. Please try again.");
+	}
+
 	
 }

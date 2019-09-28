@@ -6,4 +6,5 @@ public interface Display {
 	public void displayUsernameLine();
 	public void displayPasswordLine();
 	public void clearDisplay();
+	public void displayPleaseRepeatCommand();
 }
