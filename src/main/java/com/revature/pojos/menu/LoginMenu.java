@@ -1,11 +1,16 @@
 package com.revature.pojos.menu;
 
-public class LoginMenu {
-	public static final String[] displayArray = {
-			"Please enter your username and password in the form [Username] [Password]",
-			"For example, \"Admin\" \"Password"\"
-	};
-	public static final String[] inputArray = {
-			// Read each username and password line from the 
-	};
+import com.revature.pojos.io.Menu;
+
+public class LoginMenu extends Menu {
+	
+	{
+		outputLines.add("\n\"Please enter your username and password in the form [Username] [Password]\"\n");
+		outputLines.add("For example, \"Admin\" \"Password\"");
+	}
+	
+	{
+		// for each line in the accounts file...
+		// Add each line to the possibleInputs list.
+	}
 }

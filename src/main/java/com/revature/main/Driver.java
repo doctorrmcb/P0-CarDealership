@@ -3,48 +3,31 @@ package com.revature.main;
 import java.util.Scanner;
 
 import com.revature.pojos.io.Menu;
+import com.revature.pojos.menu.ExitMenu;
 import com.revature.pojos.menu.InitialMenu;
 import com.revature.service.DisplayImpl;
+import com.revature.service.CarSystemImpl;
 
 public class Driver {
 	public static void main (String[] args) {
+		// Declaring system objects.
 		DisplayImpl display = new DisplayImpl();
 		Scanner scanner = new Scanner(System.in);
-		Menu menu = new Menu(InitialMenu.inputArray, InitialMenu.displayArray);
-		
-		display.displayMenu(menu);
-		getCommand(scanner, menu, display);
-	}
-
-	private static void getCommand(Scanner scanner, Menu menu, DisplayImpl display) {
-		// TODO Auto-generated method stub
-		String input = scanner.nextLine();
-		if (menu.possibleInputs.contains(input)) {
-			// Open the next menu.
-		} else {
-			System.out.println("\nI don't understand that command, please try again.");
-			display.displayMenu(menu);
-			getCommand(scanner, menu, display);
-		}
-	}
-	
-	/*public static void getCommand (Scanner scanner, String[] possibleInputs) {
-		display.initializeDisplay();
-		String input = scanner.nextLine();
-		if (input.equals("1")) {
-			display.displayLoginMenu();
-		} else if (input.equals("2")) {
-			display.displayUsernameLine();
-			input = scanner.nextLine();
-			String username = input;
-			display.displayPasswordLine();
-			input = scanner.nextLine();
-			String password = input;
-		} else if (input.equals("3")) {
+		CarSystemImpl carSystem = new CarSystemImpl();
+		// Declaring initial menu object.
+		InitialMenu initialMenu = new InitialMenu();
+		// Display the initial menu.
+		display.displayMenu(initialMenu);
+		// Get the user's input.
+		String input;
+		input = carSystem.getCommand(scanner, initialMenu, display);
+		Menu nextMenu = carSystem.getNextMenu(input, initialMenu);
+		if (nextMenu instanceof ExitMenu) {
+			System.out.println("\nThank you for visiting the Revature car dealership!\n");
 			System.exit(0);
 		} else {
-			display.displayPleaseRepeatCommand();
-			getCommand(scanner, display);
+			display.displayMenu(nextMenu);
+			input = carSystem.getCommand(scanner, nextMenu, display);
 		}
-	}*/
+	}
 }

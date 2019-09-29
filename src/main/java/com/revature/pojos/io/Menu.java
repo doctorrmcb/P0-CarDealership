@@ -6,6 +6,7 @@ import java.util.Arrays;
 public class Menu {
 	public ArrayList<String> possibleInputs = new ArrayList<String>();
 	public ArrayList<String> outputLines = new ArrayList<String>();
+	public ArrayList<Menu> possibleMenus = new ArrayList<Menu>();
 	public Menu() {
 		super();
 	}

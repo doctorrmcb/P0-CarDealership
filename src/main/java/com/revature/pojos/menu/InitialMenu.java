@@ -1,16 +1,31 @@
 package com.revature.pojos.menu;
 
-public class InitialMenu {
-	public static final String[] displayArray = {
-			"\nWelcome to the Revature car dealership!\n",
-			"Please enter a number to choose from the options below:",
-			"1: Login",
-			"2: Register",
-			"3: Exit"
-	};
-	public static final String[] inputArray = {
-			"1",
-			"2",
-			"3"
-	};
+import java.util.HashMap;
+
+import com.revature.pojos.io.Menu;
+import com.revature.pojos.io.Menu.*;
+
+public class InitialMenu extends Menu {
+	{
+		outputLines.add("\nWelcome to the Revature car dealership!\n");
+		outputLines.add("Please enter a number to choose from the options below:");
+		outputLines.add("1: Login");
+		outputLines.add("2: Register");
+		outputLines.add("3: Exit");
+	}
+	
+	{
+		possibleInputs.add("1");
+		possibleInputs.add("2");
+		possibleInputs.add("3");
+	}	
+	
+	{
+		Menu loginMenu = new LoginMenu();
+		Menu registerMenu = new RegisterMenu();
+		Menu exit = new ExitMenu();
+		possibleMenus.add(loginMenu);
+		possibleMenus.add(registerMenu);
+		possibleMenus.add(exit);
+	}
 }
