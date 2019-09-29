@@ -1,11 +1,16 @@
 package com.revature.dao;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.nio.file.Files;
+import java.nio.file.LinkOption;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import com.revature.pojos.authentication.Account;
 
 public class AccountDAOSerialization implements AccountDAO {
@@ -14,8 +19,13 @@ public class AccountDAOSerialization implements AccountDAO {
 		String fileName;
 		FileOutputStream fos = null;
 		ObjectOutputStream oos = null;
+		String directoryName = ".//src//main//resources//accounts//";
+		Path accountPath = Paths.get(directoryName);
+		if (Files.notExists(accountPath, LinkOption.NOFOLLOW_LINKS)) {
+			new File(directoryName).mkdir();
+		}
 		if (account.getUsername() != null) {
-			fileName = account.getUsername() + ".dat";
+			fileName = ".//src//main//resources//accounts//" + account.getUsername() + ".dat";
 		} else {
 			return false;
 			//fileName = null;
@@ -59,7 +69,7 @@ public class AccountDAOSerialization implements AccountDAO {
 		Account account = null;
 		
 		//try with resources
-		try (FileInputStream fis = new FileInputStream(username + ".dat");
+		try (FileInputStream fis = new FileInputStream(".//src//main//resources//accounts" + username + ".dat");
 				ObjectInputStream ois = new ObjectInputStream(fis);) {
 			account = (Account) ois.readObject();
 		} catch (IOException e) {
