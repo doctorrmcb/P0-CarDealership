@@ -50,5 +50,23 @@ public class Menu {
 			return false;
 		return true;
 	}
+	public ArrayList<String> getPossibleInputs() {
+		return possibleInputs;
+	}
+	public void setPossibleInputs(ArrayList<String> possibleInputs) {
+		this.possibleInputs = possibleInputs;
+	}
+	public ArrayList<String> getOutputLines() {
+		return outputLines;
+	}
+	public void setOutputLines(ArrayList<String> outputLines) {
+		this.outputLines = outputLines;
+	}
+	public ArrayList<Menu> getPossibleMenus() {
+		return possibleMenus;
+	}
+	public void setPossibleMenus(ArrayList<Menu> possibleMenus) {
+		this.possibleMenus = possibleMenus;
+	}
 }
 
