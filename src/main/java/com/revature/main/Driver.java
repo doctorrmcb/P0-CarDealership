@@ -28,6 +28,12 @@ public class Driver {
 		} else {
 			display.displayMenu(nextMenu);
 			input = carSystem.getCommand(scanner, nextMenu, display);
+			nextMenu = carSystem.getNextMenu(input, nextMenu);
+			while(true) {
+				display.displayMenu(nextMenu);
+				input = carSystem.getCommand(scanner, nextMenu, display);
+				nextMenu = carSystem.getNextMenu(input, nextMenu);
+			}
 		}
 	}
 }

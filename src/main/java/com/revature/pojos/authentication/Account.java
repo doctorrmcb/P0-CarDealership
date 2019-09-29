@@ -1,8 +1,14 @@
 package com.revature.pojos.authentication;
 
+import java.io.Serializable;
+
 import com.revature.pojos.user.User;
 
-public class Account {
+public class Account implements Serializable {
+	@Override
+	public String toString() {
+		return "Account [username=" + username + ", password=" + password + ", accountStatus=" + accountStatus + "]";
+	}
 	public String username;
 	public String password;
 	//public User user;

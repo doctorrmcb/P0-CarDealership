@@ -10,14 +10,15 @@ import com.revature.pojos.authentication.Account;
 
 public class AccountDAOSerialization implements AccountDAO {
 	@Override
-	public void createAccount(Account account) {
+	public boolean createAccount(Account account) {
 		String fileName;
 		FileOutputStream fos = null;
 		ObjectOutputStream oos = null;
-		if (account.getAccountStatus().equals("Employee")) {
+		if (account.getUsername() != null) {
 			fileName = account.getUsername() + ".dat";
 		} else {
-			fileName = account.getUsername() + ".dat";
+			return false;
+			//fileName = null;
 		}
 
 		try {
@@ -26,8 +27,10 @@ public class AccountDAOSerialization implements AccountDAO {
 			oos.writeObject(account);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
+			return false;
 		} catch (IOException e) {
 			e.printStackTrace();
+			return false;
 		} finally {
 			if (oos != null) {
 				try {
@@ -47,7 +50,7 @@ public class AccountDAOSerialization implements AccountDAO {
 			}
 			
 		}
-
+		return true;
 	}
 
 	@Override

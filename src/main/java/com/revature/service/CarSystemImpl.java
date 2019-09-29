@@ -19,7 +19,7 @@ public class CarSystemImpl implements CarSystem {
 			return input;
 		} else if (menu.possibleInputs.get(0).equals("*")) {
 			// A special process must be run that is menu dependent.
-			return "*";
+			return input;
 		} else {
 			System.out.println("\nI don't understand that command, please try again.");
 			display.displayMenu(menu);
@@ -40,14 +40,14 @@ public class CarSystemImpl implements CarSystem {
 				String username = inputArray[0];
 				String password = inputArray[1];
 				LoginAttempt login = new LoginAttempt(username, password);
-				String[] result = login(login);
+				String[] result = tryLogin(login);
 				if(result[0].equals("true") && result[1].equals("Employee")) {
 					return new EmployeeMenu();
 				} else if (result[0].equals("true") && result[1].equals("Customer")) {
 					return new CustomerMenu();
 				} else {
 					System.out.println("Login attempt failed, please try again.");
-					//Redo login menu.
+					//TODO Redo login menu.
 				}
 				// Display success or failure of attempt and from that decide which menu to run.
 			} else if (currentMenu instanceof RegisterMenu) {
@@ -56,6 +56,14 @@ public class CarSystemImpl implements CarSystem {
 				String username = inputArray[0];
 				String password = inputArray[1];
 				String accountStatus = inputArray[2];
+				Account account = new Account(username, password, accountStatus);
+				boolean result = tryRegister(account);
+				if (result == false) {
+					System.out.println("Registration failed, please try again.");
+					//TODO redo registration menu.
+				} else {
+					System.out.println("Registration success.");
+				}
 				// Display success or failure of attempt and decide what to display based on that.
 			}
 		} else {
@@ -69,7 +77,7 @@ public class CarSystemImpl implements CarSystem {
 		return null;
 	}
 	
-	public String[] login(LoginAttempt loginAttempt) {
+	public String[] tryLogin(LoginAttempt loginAttempt) {
 		AccountDAOSerialization accountDAO = new AccountDAOSerialization();
 		Account account = accountDAO.readAccount(loginAttempt.username);
 		if (account != null) {
@@ -79,5 +87,11 @@ public class CarSystemImpl implements CarSystem {
 			String[] result = {"false", account.getAccountStatus()};
 			return result;
 		}
+	}
+	
+	public boolean tryRegister(Account account) {
+		AccountDAOSerialization accountDAO = new AccountDAOSerialization();
+		boolean result = accountDAO.createAccount(account);
+		return result;
 	}
 }
