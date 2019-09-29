@@ -3,8 +3,8 @@ package com.revature.main;
 import java.util.Scanner;
 
 import com.revature.pojos.io.Menu;
-import com.revature.pojos.menu.ExitMenu;
-import com.revature.pojos.menu.InitialMenu;
+import com.revature.pojos.io.menu.ExitMenu;
+import com.revature.pojos.io.menu.InitialMenu;
 import com.revature.service.DisplayImpl;
 import com.revature.service.CarSystemImpl;
 

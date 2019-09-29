@@ -8,7 +8,9 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class CarSystemTest {
+import com.revature.pojos.io.Menu;
+
+public class CarSystemImplTest {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -27,8 +29,13 @@ public class CarSystemTest {
 	}
 
 	@Test
-	public void test() {
-		assertEquals.
+	public void getNextMenuEmptyMenuTest() {
+		Menu menu = new Menu();
+		assertEquals("Test test please ignore.", menu, new Menu());
 	}
 
+	@Test
+	public void getNextMenuRealMenuTest() {
+		
+	}
 }

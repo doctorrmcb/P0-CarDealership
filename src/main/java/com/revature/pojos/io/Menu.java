@@ -10,9 +10,45 @@ public class Menu {
 	public Menu() {
 		super();
 	}
-	public Menu(String[] possibleInputsIn, String[] outputLinesIn) {
+	public Menu(String[] possibleInputsIn, String[] outputLinesIn, Menu[] possibleMenusIn) {
 		possibleInputs = new ArrayList<String>(Arrays.asList(possibleInputsIn));
 		outputLines = new ArrayList<String>(Arrays.asList(outputLinesIn));
+		possibleMenus = new ArrayList<Menu>(Arrays.asList(possibleMenusIn));
+	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((outputLines == null) ? 0 : outputLines.hashCode());
+		result = prime * result + ((possibleInputs == null) ? 0 : possibleInputs.hashCode());
+		result = prime * result + ((possibleMenus == null) ? 0 : possibleMenus.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Menu other = (Menu) obj;
+		if (outputLines == null) {
+			if (other.outputLines != null)
+				return false;
+		} else if (!outputLines.equals(other.outputLines))
+			return false;
+		if (possibleInputs == null) {
+			if (other.possibleInputs != null)
+				return false;
+		} else if (!possibleInputs.equals(other.possibleInputs))
+			return false;
+		if (possibleMenus == null) {
+			if (other.possibleMenus != null)
+				return false;
+		} else if (!possibleMenus.equals(other.possibleMenus))
+			return false;
+		return true;
 	}
 }
 

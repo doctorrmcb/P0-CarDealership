@@ -3,8 +3,8 @@ package com.revature.service;
 import java.util.Scanner;
 
 import com.revature.pojos.io.Menu;
-import com.revature.pojos.menu.LoginMenu;
-import com.revature.pojos.menu.RegisterMenu;
+import com.revature.pojos.io.menu.LoginMenu;
+import com.revature.pojos.io.menu.RegisterMenu;
 
 public class CarSystemImpl implements CarSystem {
 	public String getCommand(Scanner scanner, Menu menu, DisplayImpl display) {

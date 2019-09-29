@@ -1,9 +1,6 @@
-package com.revature.pojos.menu;
-
-import java.util.HashMap;
+package com.revature.pojos.io.menu;
 
 import com.revature.pojos.io.Menu;
-import com.revature.pojos.io.Menu.*;
 
 public class InitialMenu extends Menu {
 	{

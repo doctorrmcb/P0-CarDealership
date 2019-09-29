@@ -1,4 +1,4 @@
-package com.revature.pojos.menu;
+package com.revature.pojos.io.menu;
 
 import com.revature.pojos.io.Menu;
 
