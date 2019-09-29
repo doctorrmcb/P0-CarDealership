@@ -24,7 +24,7 @@ public class CarSystemImpl implements CarSystem {
 			System.out.println("\nI don't understand that command, please try again.");
 			display.displayMenu(menu);
 			getCommand(scanner, menu, display);
-			return null;
+			return input;
 		}
 	}
 	

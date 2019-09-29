@@ -3,8 +3,7 @@ package com.revature.pojos.io.menu;
 import com.revature.pojos.io.Menu;
 
 public class InitialMenu extends Menu {
-	{
-		
+	{	
 		outputLines.add("\nWelcome to the Revature car dealership!\n");
 		outputLines.add("Please enter a number to choose from the options below:");
 		outputLines.add("1: Login");
