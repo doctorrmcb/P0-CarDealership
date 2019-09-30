@@ -10,25 +10,25 @@ public class ManageCarsMenu extends Menu {
 		outputLines.add("1: Add Car");
 		outputLines.add("2: Remove Car");
 		outputLines.add("3: View Car Payments");
-		outputLines.add("4: Previous Menu");
+		//outputLines.add("4: Previous Menu");
 	}
 	
 	{
 		possibleInputs.add("1");
 		possibleInputs.add("2");
 		possibleInputs.add("3");
-		possibleInputs.add("4");
+		//possibleInputs.add("4");
 	}
 	
 	{
 		Menu addCarMenu = new AddCarMenu();
 		Menu removeCarMenu = new RemoveCarMenu();
 		Menu viewPaymentsMenu = new ViewPaymentsMenu();
-		Menu employeeMenu = new EmployeeMenu();
+		//Menu employeeMenu = new EmployeeMenu();
 		possibleMenus.add(addCarMenu);
 		possibleMenus.add(removeCarMenu);
 		possibleMenus.add(viewPaymentsMenu);
-		possibleMenus.add(employeeMenu);
+		//possibleMenus.add(employeeMenu);
 	}
 	// Add Car
 	// Remove Car

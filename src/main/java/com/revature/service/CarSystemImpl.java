@@ -31,9 +31,13 @@ public class CarSystemImpl implements CarSystem {
 	public Menu getNextMenu(String input, Menu currentMenu) {
 		// Clean up the user input.
 		input = input.trim();
+		if (currentMenu.possibleInputs.isEmpty()) {
+			return null;
+		}
 		// If the possibleUserInputs is "*"
 		if (currentMenu.possibleInputs.get(0).equals("*")) {
-			// A special process must be run that is menu dependent.
+			return getSpecialMenu(input, currentMenu);
+			/*// A special process must be run that is menu dependent.
 			if (currentMenu instanceof LoginMenu) {
 				// Build an instance of LoginAttempt from input and try to log in.
 				String[] inputArray = input.split(" ");
@@ -65,7 +69,7 @@ public class CarSystemImpl implements CarSystem {
 					System.out.println("Registration success.");
 				}
 				// Display success or failure of attempt and decide what to display based on that.
-			}
+			}*/
 		} else {
 			for (int i = 0; i < currentMenu.possibleInputs.size(); i++) {
 				if (input.equals(currentMenu.possibleInputs.get(i))) {
@@ -93,5 +97,50 @@ public class CarSystemImpl implements CarSystem {
 		AccountDAOSerialization accountDAO = new AccountDAOSerialization();
 		boolean result = accountDAO.createAccount(account);
 		return result;
+	}
+	
+	public Menu getSpecialMenu(String input, Menu currentMenu) {
+		// A special process must be run that is menu dependent.
+		if (currentMenu instanceof LoginMenu) {
+			// Build an instance of LoginAttempt from input and try to log in.
+			String[] inputArray = input.split(" ");
+			String username = inputArray[0];
+			String password = inputArray[1];
+			LoginAttempt login = new LoginAttempt(username, password);
+			String[] result = tryLogin(login);
+			if(result[0].equals("true") && result[1].equals("Employee")) {
+				return new EmployeeMenu();
+			} else if (result[0].equals("true") && result[1].equals("Customer")) {
+				return new CustomerMenu();
+			} else {
+				System.out.println("Login attempt failed, please try again.");
+				//TODO Redo login menu.
+				return new LoginMenu();
+			}
+			// Display success or failure of attempt and from that decide which menu to run.
+		} else if (currentMenu instanceof RegisterMenu) {
+			// Build an instance of Account from input and try to register the account.
+			String[] inputArray = input.split(" ");
+			String username = inputArray[0];
+			String password = inputArray[1];
+			String accountStatus = inputArray[2];
+			Account account = new Account(username, password, accountStatus);
+			boolean result = tryRegister(account);
+			if (result == false) {
+				System.out.println("Registration failed, please try again.");
+				//TODO redo registration menu.
+				return new RegisterMenu();
+			} else {
+				System.out.println("Registration success.");
+				if (accountStatus.equals("Employee")) {
+					return new EmployeeMenu();
+				} else {
+					return new CustomerMenu();
+				}
+			}
+			// Display success or failure of attempt and decide what to display based on that.
+		} else {
+			return null;
+		}
 	}
 }

@@ -10,7 +10,6 @@ public class RemoveCarMenu extends Menu {
 		outputLines.add("\nAvailable cars:\n");
 		outputLines.add("!!! LIST OF CARS GOES HERE !!!");
 		// TODO Uses CarDAO.viewAllCars to get a list then loops through list and adds each element to outputLines.
-	
 	}
 	
 	{

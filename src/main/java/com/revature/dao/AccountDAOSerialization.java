@@ -69,15 +69,20 @@ public class AccountDAOSerialization implements AccountDAO {
 		Account account = null;
 		
 		//try with resources
-		try (FileInputStream fis = new FileInputStream(".//src//main//resources//accounts" + username + ".dat");
+		try (FileInputStream fis = new FileInputStream(".//src//main//resources//accounts//" + username + ".dat");
 				ObjectInputStream ois = new ObjectInputStream(fis);) {
 			account = (Account) ois.readObject();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+			return account;
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			return account;
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			return account;
 		}
 		
 		return account;

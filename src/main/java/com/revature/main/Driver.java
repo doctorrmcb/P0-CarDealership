@@ -26,11 +26,8 @@ public class Driver {
 			System.out.println("\nThank you for visiting the Revature car dealership!\n");
 			System.exit(0);
 		} else {
-			display.displayMenu(nextMenu);
-			input = carSystem.getCommand(scanner, nextMenu, display);
-			nextMenu = carSystem.getNextMenu(input, nextMenu);
 			while(true) {
-
+				display.displayMenu(nextMenu);
 				input = carSystem.getCommand(scanner, nextMenu, display);
 				nextMenu = carSystem.getNextMenu(input, nextMenu);
 			}

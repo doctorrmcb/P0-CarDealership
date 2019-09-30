@@ -3,10 +3,24 @@ package com.revature.pojos.io;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import com.revature.pojos.io.menu.AddCarMenu;
+import com.revature.pojos.io.menu.EmployeeMenu;
+import com.revature.pojos.io.menu.ExitMenu;
+import com.revature.pojos.io.menu.InitialMenu;
+import com.revature.pojos.io.menu.LoginMenu;
+import com.revature.pojos.io.menu.ManageCarsMenu;
+import com.revature.pojos.io.menu.ManageOffersMenu;
+import com.revature.pojos.io.menu.RegisterMenu;
+import com.revature.pojos.io.menu.RemoveCarMenu;
+import com.revature.pojos.io.menu.ViewMyCarsMenu;
+import com.revature.pojos.io.menu.ViewNewCarsMenu;
+import com.revature.pojos.io.menu.ViewPaymentsMenu;
+
 public class Menu {
 	public ArrayList<String> possibleInputs = new ArrayList<String>();
 	public ArrayList<String> outputLines = new ArrayList<String>();
 	public ArrayList<Menu> possibleMenus = new ArrayList<Menu>();
+	
 	public Menu() {
 		super();
 	}

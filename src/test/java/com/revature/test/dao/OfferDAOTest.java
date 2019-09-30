@@ -1,4 +1,4 @@
-package com.revature.test;
+package com.revature.test.dao;
 
 import static org.junit.Assert.*;
 
@@ -8,9 +8,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.revature.pojos.io.Menu;
-
-public class CarSystemImplTest {
+public class OfferDAOTest {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -29,13 +27,8 @@ public class CarSystemImplTest {
 	}
 
 	@Test
-	public void getNextMenuEmptyMenuTest() {
-		Menu menu = new Menu();
-		assertEquals("Test test please ignore.", menu, new Menu());
+	public void test() {
+		fail("Not yet implemented");
 	}
 
-	@Test
-	public void getNextMenuRealMenuTest() {
-		
-	}
 }
