@@ -1,13 +1,28 @@
 package com.revature.pojos.finance;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
-import com.revature.pojos.Car;
-import com.revature.pojos.user.User;
-
-public class Payment {
+public class Payment implements Serializable {
 	public double amount;
-	public User user;
+	public String owner;
 	public LocalDateTime paymentDate;
-	public Car car;
+	public String vin;
+	public String paymentId;
+	public Payment(double amount, String owner, String vin) {
+		super();
+		this.amount = amount;
+		this.owner = owner;
+		this.paymentDate = LocalDateTime.now();
+		this.vin = vin;
+		this.paymentId = vin + paymentDate.toString();
+	}
+	
+	public Payment() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+	
 }

@@ -16,6 +16,7 @@ import com.revature.pojos.Car;
 import com.revature.pojos.authentication.Account;
 
 public class CarDAOSerialization implements CarDAO {
+	@Override
 	public boolean createCar(Car car) {
 		String fileName;
 		FileOutputStream fos = null;
@@ -63,6 +64,7 @@ public class CarDAOSerialization implements CarDAO {
 		return true;
 
 	}
+	
 	@Override
 	public Car readCar(String vin) {
 			
@@ -88,6 +90,7 @@ public class CarDAOSerialization implements CarDAO {
 		return car;
 	}
 
+	@Override
 	public boolean updateCar(String vinToUpdate, Car outputCar) {
 		String fileName;
 		String fileDeleteName;
@@ -146,6 +149,8 @@ public class CarDAOSerialization implements CarDAO {
 		return true;
 
 	}
+	
+	@Override
 	public boolean deleteCar(String vin) {
 		File fileDelete = null;
 		String fileDeleteName;

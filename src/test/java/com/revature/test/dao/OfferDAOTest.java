@@ -11,7 +11,6 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import com.revature.dao.OfferDAOSerialization;
-import com.revature.pojos.Car;
 import com.revature.pojos.finance.Offer;
 
 public class OfferDAOTest {
@@ -37,7 +36,7 @@ public class OfferDAOTest {
 	@Test
 	public void testCreateOfferFileSuccess() {
 		// Check if file that is supposed to exist after method runs actually exists.
-		File testFile = new File(".//src//main//resources//offers//TestOffer.dat");
+		File testFile = new File(".//src//main//resources//offers//TestUserTestVin.dat");
 		Offer offer = new Offer("TestUser", 30000.00, "TestVin", 36);
 		dao.createOffer(offer);
 		Boolean fileExists = testFile.exists();
@@ -57,8 +56,8 @@ public class OfferDAOTest {
 	@Test
 	public void testReadFile() {
 		// Check if contents of test file makes correct account object.
-		Offer offer = new Offer("TestUser", 30000.00, "TestVin", 36);
-		Offer offerTest = dao.readOffer("TestUserTestVin");
+		Offer offer = new Offer("TestReadUser", 30000.00, "TestReadVin", 36);
+		Offer offerTest = dao.readOffer("TestReadUserTestReadVin");
 		assertEquals(offer, offerTest);
 	}
 	
@@ -77,17 +76,30 @@ public class OfferDAOTest {
 
 	@Test
 	public void testUpdate() {
+		// Changing from initial constructor declaration.
 		Offer updatedOffer = new Offer("TestUser", 30000.00, "TestVin", 36);
 		updatedOffer.setStatus("Accepted");
+		// Reading the file to get the initial state.
+		Offer testOffer2 = dao.readOffer("TestUserTestVin");
 		String offerIdUpdate = new String("TestUserTestVin");
-		boolean result = dao.updateOffer(offerIdUpdate, updatedOffer);
+		boolean result1 = dao.updateOffer(offerIdUpdate, updatedOffer);
+		Offer testOffer = dao.readOffer("TestUserTestVin");
+		boolean result2 = testOffer.equals(updatedOffer);
+		boolean result;
+		if (result1 == true && result2 == true && !testOffer2.equals(testOffer)) {
+			result = true;
+		} else {
+			result = false;
+		}
+		updatedOffer.setStatus("Pending");
+		dao.updateOffer(offerIdUpdate, updatedOffer);
 		assertEquals(true, result);
 	}
 	
 	@Test
 	public void testDelete() {
 		String offerIdDelete = new String("TestUserTestVin");
-		String fileDeleteTest = ".//src//main//resources//cars//TestUserTestVin.dat";
+		String fileDeleteTest = ".//src//main//resources//offers//TestUserTestVin.dat";
 		File fileDelete = new File(fileDeleteTest);
 		boolean result2 = dao.deleteOffer(offerIdDelete);
 		boolean result1 = !fileDelete.exists();
