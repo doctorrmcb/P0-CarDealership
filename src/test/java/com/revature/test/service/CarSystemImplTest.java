@@ -87,11 +87,6 @@ public class CarSystemImplTest {
 	}
 	
 	@Test 
-	public void getSpecialMenuTest() {
-		
-	}
-	
-	@Test 
 	public void getCommandContainsInput() {
 		
 	}
@@ -123,6 +118,11 @@ public class CarSystemImplTest {
 	
 	@Test
 	public void tryRegisterBadAccount() {
+		
+	}
+	
+	@Test 
+	public void getSpecialMenuTest() {
 		
 	}
 }

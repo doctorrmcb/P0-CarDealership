@@ -68,27 +68,17 @@ public class CarSystemImpl implements CarSystem {
 	
 	public Menu getSpecialMenu(String input, Menu currentMenu) {
 		// A special process must be run that is menu dependent.
-		String[] inputArray = input.split(" ");
-		String username = inputArray[0];
-		String password = inputArray[1];
-		String accountStatus = inputArray[2];
 		if (currentMenu instanceof LoginMenu) {
-			// Build an instance of LoginAttempt from input and try to log in.
-			LoginAttempt login = new LoginAttempt(username, password);
-			String[] result = tryLogin(login);
-			if(result[0].equals("true") && result[1].equals("Employee")) {
-				return new EmployeeMenu();
-			} else if (result[0].equals("true") && result[1].equals("Customer")) {
-				return new CustomerMenu();
-			} else {
-				System.out.println("Login attempt failed, please try again.");
-				return new LoginMenu();
-			}
-			// Display success or failure of attempt and from that decide which menu to run.
+			return getNextMenuLogin(input);
 		} else if (currentMenu instanceof RegisterMenu) {
 			// Build an instance of Account from input and try to register the account.
+			String[] inputArray = input.split(" ");
+			String username = inputArray[0];
+			String password = inputArray[1];
+			String accountStatus = inputArray[2];
 			Account account = new Account(username, password, accountStatus);
 			boolean result = tryRegister(account);
+			// Display success or failure of attempt and decide what to display based on that.
 			if (result == false) {
 				System.out.println("Registration failed, please try again.");
 				return new RegisterMenu();
@@ -100,9 +90,58 @@ public class CarSystemImpl implements CarSystem {
 					return new CustomerMenu();
 				}
 			}
-			// Display success or failure of attempt and decide what to display based on that.
 		} else {
 			return null;
 		}
+	}
+	
+	public Menu getNextMenuRegister(String input) {
+		return null;
+	}
+	
+	public Menu getNextMenuLogin(String input) {
+		// Build an instance of LoginAttempt from input and try to log in.
+		String[] inputArray = input.split(" ");
+		String username = inputArray[0];
+		String password = inputArray[1];
+		LoginAttempt login = new LoginAttempt(username, password);
+		String[] result = tryLogin(login);
+		// Display success or failure of attempt and from that decide which menu to run.
+		if(result[0].equals("true") && result[1].equals("Employee")) {
+			return new EmployeeMenu();
+		} else if (result[0].equals("true") && result[1].equals("Customer")) {
+			return new CustomerMenu();
+		} else {
+			System.out.println("Login attempt failed, please try again.");
+			return new LoginMenu();
+		}
+	}
+	
+	public Menu getNextMenuAddCar(String input) {
+		return null;
+	}
+	
+	public Menu getNextMenuMakeOffer(String input) {
+		return null;
+	}
+	
+	public Menu getNextMenuManageOffers(String input) {
+		return null;
+	}
+	
+	public Menu getNextMenuRemoveCar(String input) {
+		return null;
+	}
+	
+	public Menu getNextMenuMyCars(String input) {
+		return null;
+	}
+	
+	public Menu getNextMenuNewCars(String input) {
+		return null;
+	}
+	
+	public Menu getNextMenuAllPayments(String input) {
+		return null;
 	}
 }
