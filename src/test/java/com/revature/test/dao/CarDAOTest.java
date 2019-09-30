@@ -12,7 +12,6 @@ import org.junit.Test;
 
 import com.revature.dao.CarDAOSerialization;
 import com.revature.pojos.Car;
-import com.revature.pojos.authentication.Account;
 
 public class CarDAOTest {
 
