@@ -12,8 +12,16 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
+import com.revature.dao.AccountDAOSerialization;
+import com.revature.dao.CarDAOSerialization;
+import com.revature.dao.OfferDAOSerialization;
+import com.revature.dao.PaymentDAOSerialization;
+import com.revature.pojos.Car;
+import com.revature.pojos.authentication.Account;
 import com.revature.pojos.io.Menu;
+import com.revature.pojos.io.menu.AddCarMenu;
 import com.revature.pojos.io.menu.EmployeeMenu;
+import com.revature.pojos.io.menu.ManageCarsMenu;
 import com.revature.pojos.io.menu.RegisterMenu;
 import com.revature.service.CarSystemImpl;
 
@@ -23,7 +31,16 @@ public class CarSystemImplTest {
 	CarSystemImpl impl = new CarSystemImpl();
 	
 	@Mock
-	CarSystemImpl mockImpl;
+	CarDAOSerialization carDAO;
+	
+	@Mock
+	AccountDAOSerialization accountDAO;
+	
+	@Mock
+	OfferDAOSerialization offerDAO;
+	
+	@Mock
+	PaymentDAOSerialization paymentDAO;
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -113,16 +130,51 @@ public class CarSystemImplTest {
 	
 	@Test
 	public void tryRegisterGoodAccount() {
-		
+		Account account = new Account("TestUser", "TestPass", "testStatus");
+		boolean testBool = true;
+		impl.setAccountDAO(accountDAO);
+		when(accountDAO.createAccount(account)).thenReturn(true);
+		boolean result = impl.tryRegister(account);
+		assertEquals(testBool, result);
 	}
 	
 	@Test
 	public void tryRegisterBadAccount() {
-		
+		Account account = null;
+		boolean testBool = false;
+		impl.setAccountDAO(accountDAO);
+		when(accountDAO.createAccount(account)).thenReturn(false);
+		boolean result = impl.tryRegister(account);
+		assertEquals(testBool, result);
 	}
 	
 	@Test 
 	public void getSpecialMenuTest() {
 		
 	}
+	
+	@Test
+	public void getNextMenuAddCarSuccessTest() {
+		String input = "TestVIN TestOwner";
+		ManageCarsMenu testMenu = new ManageCarsMenu();
+		String vin = "TestVIN";
+		String owner = "TestOwner";
+		Car car = new Car(vin, owner);
+		when(carDAO.createCar(car)).thenReturn(true);
+		impl.setCarDAO(carDAO);
+		Menu retMenu = impl.getNextMenuAddCar(input);
+		assertEquals(testMenu, retMenu);
+	}
+	
+	@Test
+	public void getNextMenuAddCarFailTest() {
+		String input = "TestVIN TestOwner";
+		AddCarMenu testMenu = new AddCarMenu();
+		Car car = new Car();
+		when(carDAO.createCar(car)).thenReturn(false);
+		impl.setCarDAO(carDAO);
+		Menu retMenu = impl.getNextMenuAddCar(input);
+		assertEquals(testMenu, retMenu);
+	}
+
 }

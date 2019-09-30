@@ -3,6 +3,9 @@ package com.revature.service;
 import java.util.Scanner;
 
 import com.revature.dao.AccountDAOSerialization;
+import com.revature.dao.CarDAOSerialization;
+import com.revature.dao.OfferDAOSerialization;
+import com.revature.dao.PaymentDAOSerialization;
 import com.revature.pojos.Car;
 import com.revature.pojos.authentication.Account;
 import com.revature.pojos.authentication.LoginAttempt;
@@ -12,6 +15,7 @@ import com.revature.pojos.io.menu.CustomerMenu;
 import com.revature.pojos.io.menu.EmployeeMenu;
 import com.revature.pojos.io.menu.LoginMenu;
 import com.revature.pojos.io.menu.MakeAnOfferMenu;
+import com.revature.pojos.io.menu.ManageCarsMenu;
 import com.revature.pojos.io.menu.ManageOffersMenu;
 import com.revature.pojos.io.menu.RegisterMenu;
 import com.revature.pojos.io.menu.RemoveCarMenu;
@@ -21,6 +25,28 @@ import com.revature.pojos.io.menu.ViewNewCarsMenu;
 import com.revature.pojos.io.menu.ViewPaymentsMenu;
 
 public class CarSystemImpl implements CarSystem {
+	
+	private AccountDAOSerialization accountDAO = new AccountDAOSerialization();
+	private CarDAOSerialization carDAO = new CarDAOSerialization();
+	private OfferDAOSerialization offerDAO = new OfferDAOSerialization();
+	private PaymentDAOSerialization paymentDAO = new PaymentDAOSerialization();
+	
+	public void setOfferDAO(OfferDAOSerialization offerDAO) {
+		this.offerDAO = offerDAO;
+	}
+
+	public void setPaymentDAO(PaymentDAOSerialization paymentDAO) {
+		this.paymentDAO = paymentDAO;
+	}
+
+	public void setCarDAO(CarDAOSerialization carDAO) {
+		this.carDAO = carDAO;
+	}
+
+	public void setAccountDAO(AccountDAOSerialization accountDAO) {
+		this.accountDAO = accountDAO;
+	}
+	
 	public String getCommand(Scanner scanner, Menu menu, DisplayImpl display) {
 		// TODO Auto-generated method stub
 		String input = scanner.nextLine();
@@ -58,7 +84,6 @@ public class CarSystemImpl implements CarSystem {
 	}
 	
 	public String[] tryLogin(LoginAttempt loginAttempt) {
-		AccountDAOSerialization accountDAO = new AccountDAOSerialization();
 		Account account = accountDAO.readAccount(loginAttempt.username);
 		if (account != null) {
 			String[] result = {"true", account.getAccountStatus()};
@@ -70,7 +95,7 @@ public class CarSystemImpl implements CarSystem {
 	}
 	
 	public boolean tryRegister(Account account) {
-		AccountDAOSerialization accountDAO = new AccountDAOSerialization();
+		//AccountDAOSerialization accountDAO = new AccountDAOSerialization();
 		boolean result = accountDAO.createAccount(account);
 		return result;
 	}
@@ -146,7 +171,15 @@ public class CarSystemImpl implements CarSystem {
 		String vin = inputArray[0];
 		String owner = inputArray[1];
 		Car car = new Car(vin, owner);
-		return null;
+		//CarDAOSerialization carDAO = new CarDAOSerialization();
+		boolean daoBool = carDAO.createCar(car);
+		if (daoBool == true) {
+			System.out.println("Successfully added car.");
+			return new ManageCarsMenu();
+		} else {
+			return new AddCarMenu();
+		}
+		
 	}
 	
 	public Menu getNextMenuMakeOffer(String input) {

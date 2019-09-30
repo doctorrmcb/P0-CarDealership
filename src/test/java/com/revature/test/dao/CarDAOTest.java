@@ -27,7 +27,8 @@ public class CarDAOTest {
 	}
 
 	@Test
-	public void test() {
+	public void testCreateCar() {
+		// Test if car file was made in appropriate location.
 		fail("Not yet implemented");
 	}
 
