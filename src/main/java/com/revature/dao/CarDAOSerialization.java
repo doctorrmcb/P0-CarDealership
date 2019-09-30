@@ -1,9 +1,11 @@
 package com.revature.dao;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.nio.file.Files;
 import java.nio.file.LinkOption;
@@ -11,6 +13,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 import com.revature.pojos.Car;
+import com.revature.pojos.authentication.Account;
 
 public class CarDAOSerialization implements CarDAO {
 	public boolean createCar(Car car) {
@@ -60,9 +63,31 @@ public class CarDAOSerialization implements CarDAO {
 		return true;
 
 	}
+	@Override
 	public Car readCar(String vin) {
-		return null;
+			
+		Car car = null;
+		
+		//try with resources
+		try (FileInputStream fis = new FileInputStream(".//src//main//resources//cars//" + vin + ".dat");
+				ObjectInputStream ois = new ObjectInputStream(fis);) {
+			car = (Car) ois.readObject();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+			return car;
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return car;
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return car;
+		}
+			
+		return car;
 	}
+
 	public boolean updateCar(Car car) {
 		return false;
 	}

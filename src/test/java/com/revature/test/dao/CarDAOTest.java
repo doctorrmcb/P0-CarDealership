@@ -2,14 +2,22 @@ package com.revature.test.dao;
 
 import static org.junit.Assert.*;
 
+import java.io.File;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import com.revature.dao.CarDAOSerialization;
+import com.revature.pojos.Car;
+import com.revature.pojos.authentication.Account;
+
 public class CarDAOTest {
 
+	CarDAOSerialization dao = new CarDAOSerialization();
+	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 	}
@@ -27,9 +35,13 @@ public class CarDAOTest {
 	}
 
 	@Test
-	public void testCreateCar() {
-		// Test if car file was made in appropriate location.
-		fail("Not yet implemented");
+	public void testCreateCarSuccess() {
+		// Check if file that is supposed to exist after method runs actually exists.
+		File testFile = new File(".//src//main//resources//cars//TestVin.dat");
+		Car car = new Car("TestVin", "TestOwner");
+		dao.createCar(car);
+		Boolean fileExists = testFile.exists();
+		assertTrue(fileExists);
 	}
 
 }
