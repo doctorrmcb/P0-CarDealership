@@ -71,32 +71,32 @@ public class CarSystemImpl implements CarSystem {
 		if (currentMenu instanceof LoginMenu) {
 			return getNextMenuLogin(input);
 		} else if (currentMenu instanceof RegisterMenu) {
-			// Build an instance of Account from input and try to register the account.
-			String[] inputArray = input.split(" ");
-			String username = inputArray[0];
-			String password = inputArray[1];
-			String accountStatus = inputArray[2];
-			Account account = new Account(username, password, accountStatus);
-			boolean result = tryRegister(account);
-			// Display success or failure of attempt and decide what to display based on that.
-			if (result == false) {
-				System.out.println("Registration failed, please try again.");
-				return new RegisterMenu();
-			} else {
-				System.out.println("Registration success.");
-				if (accountStatus.equals("Employee")) {
-					return new EmployeeMenu();
-				} else {
-					return new CustomerMenu();
-				}
-			}
+			return getNextMenuRegister(input);
 		} else {
 			return null;
 		}
 	}
 	
 	public Menu getNextMenuRegister(String input) {
-		return null;
+		// Build an instance of Account from input and try to register the account.
+		String[] inputArray = input.split(" ");
+		String username = inputArray[0];
+		String password = inputArray[1];
+		String accountStatus = inputArray[2];
+		Account account = new Account(username, password, accountStatus);
+		boolean result = tryRegister(account);
+		// Display success or failure of attempt and decide what to display based on that.
+		if (result == false) {
+			System.out.println("Registration failed, please try again.");
+			return new RegisterMenu();
+		} else {
+			System.out.println("Registration success.");
+			if (accountStatus.equals("Employee")) {
+				return new EmployeeMenu();
+			} else {
+				return new CustomerMenu();
+			}
+		}
 	}
 	
 	public Menu getNextMenuLogin(String input) {
