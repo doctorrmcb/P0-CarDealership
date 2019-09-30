@@ -9,4 +9,9 @@ public class Offer {
 	public int durationMonths;
 	// Accepted, rejected, or pending.
 	public String status;
+	public String offerId;
+	public Object getOfferId() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
