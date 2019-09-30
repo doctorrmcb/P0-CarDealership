@@ -88,10 +88,74 @@ public class CarDAOSerialization implements CarDAO {
 		return car;
 	}
 
-	public boolean updateCar(Car car) {
-		return false;
+	public boolean updateCar(String vinToUpdate, Car outputCar) {
+		String fileName;
+		String fileDeleteName;
+		FileOutputStream fos = null;
+		ObjectOutputStream oos = null;
+		File fileDelete = null;
+		File file = null;
+		String directoryName = ".//src//main//resources//cars//";
+		Path carPath = Paths.get(directoryName);
+		
+		if (vinToUpdate != null) {
+			fileDeleteName = ".//src//main//resources//cars//" + vinToUpdate + ".dat";
+			fileDelete = new File(fileDeleteName);
+		} else {
+			return false;
+		}
+
+		fileDelete.delete();
+		
+		if (outputCar != null) {
+			fileName = ".//src//main//resources//cars//" + outputCar.getVin() + ".dat";
+			file = new File(fileName);
+		} else {
+			return false;
+		}
+		
+		try {
+			fos = new FileOutputStream(file);
+			oos = new ObjectOutputStream(fos);
+			oos.writeObject(outputCar);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+			return false;
+		} catch (IOException e) {
+			e.printStackTrace();
+			return false;
+		} finally {
+			if (oos != null) {
+				try {
+					oos.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+			
+			if (fos != null) {
+				try {
+					fos.close();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			
+		}
+		return true;
+
 	}
 	public boolean deleteCar(String vin) {
-		return false;
+		File fileDelete = null;
+		String fileDeleteName;
+		if (vin != null) {
+			fileDeleteName = ".//src//main//resources//cars//" + vin + ".dat";
+			fileDelete = new File(fileDeleteName);
+			fileDelete.delete();
+		} else {
+			return false;
+		}
+		return true;
 	}
 }
