@@ -6,10 +6,18 @@ import com.revature.dao.AccountDAOSerialization;
 import com.revature.pojos.authentication.Account;
 import com.revature.pojos.authentication.LoginAttempt;
 import com.revature.pojos.io.Menu;
+import com.revature.pojos.io.menu.AddCarMenu;
 import com.revature.pojos.io.menu.CustomerMenu;
 import com.revature.pojos.io.menu.EmployeeMenu;
 import com.revature.pojos.io.menu.LoginMenu;
+import com.revature.pojos.io.menu.MakeAnOfferMenu;
+import com.revature.pojos.io.menu.ManageOffersMenu;
 import com.revature.pojos.io.menu.RegisterMenu;
+import com.revature.pojos.io.menu.RemoveCarMenu;
+import com.revature.pojos.io.menu.ViewMyCarsMenu;
+import com.revature.pojos.io.menu.ViewMyRemainingPaymentsMenu;
+import com.revature.pojos.io.menu.ViewNewCarsMenu;
+import com.revature.pojos.io.menu.ViewPaymentsMenu;
 
 public class CarSystemImpl implements CarSystem {
 	public String getCommand(Scanner scanner, Menu menu, DisplayImpl display) {
@@ -68,10 +76,25 @@ public class CarSystemImpl implements CarSystem {
 	
 	public Menu getSpecialMenu(String input, Menu currentMenu) {
 		// A special process must be run that is menu dependent.
+		// Run the special process that returns the next menu that should be displayed.
 		if (currentMenu instanceof LoginMenu) {
 			return getNextMenuLogin(input);
 		} else if (currentMenu instanceof RegisterMenu) {
 			return getNextMenuRegister(input);
+		} else if (currentMenu instanceof AddCarMenu) {
+			return getNextMenuAddCar(input);
+		} else if (currentMenu instanceof MakeAnOfferMenu) {
+			return getNextMenuMakeOffer(input);
+		} else if (currentMenu instanceof ManageOffersMenu) {
+			return getNextMenuManageOffers(input);
+		} else if (currentMenu instanceof RemoveCarMenu) {
+			return getNextMenuRemoveCar(input);
+		} else if (currentMenu instanceof ViewMyCarsMenu) {
+			return getNextMenuMyCars(input);
+		} else if (currentMenu instanceof ViewNewCarsMenu) {
+			return getNextMenuNewCars(input);
+		} else if (currentMenu instanceof ViewPaymentsMenu) {
+			return getNextMenuAllPayments(input);
 		} else {
 			return null;
 		}
