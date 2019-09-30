@@ -3,6 +3,7 @@ package com.revature.service;
 import java.util.Scanner;
 
 import com.revature.dao.AccountDAOSerialization;
+import com.revature.pojos.Car;
 import com.revature.pojos.authentication.Account;
 import com.revature.pojos.authentication.LoginAttempt;
 import com.revature.pojos.io.Menu;
@@ -141,6 +142,10 @@ public class CarSystemImpl implements CarSystem {
 	}
 	
 	public Menu getNextMenuAddCar(String input) {
+		String[] inputArray = input.split(" ");
+		String vin = inputArray[0];
+		String owner = inputArray[1];
+		Car car = new Car(vin, owner);
 		return null;
 	}
 	

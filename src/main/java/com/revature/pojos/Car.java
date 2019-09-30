@@ -18,4 +18,15 @@ public class Car {
 	public PaymentList payments;
 	public OfferList offers;
 	public Loan loan;
+	
+	public Car(String vin, String owner) {
+		super();
+		this.vin = vin;
+		this.owner = owner;
+	}
+
+	public Car() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 }
