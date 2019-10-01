@@ -21,6 +21,7 @@ public class Menu {
 	public ArrayList<String> outputLines = new ArrayList<String>();
 	public ArrayList<Menu> possibleMenus = new ArrayList<Menu>();
 	public ArrayList<String> prevInfo = new ArrayList<String>();
+	public static String userName = "";
 	
 	public Menu() {
 		super();

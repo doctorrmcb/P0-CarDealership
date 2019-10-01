@@ -155,6 +155,7 @@ public class CarSystemImpl implements CarSystem {
 		String password = inputArray[1];
 		LoginAttempt login = new LoginAttempt(username, password);
 		String[] result = tryLogin(login);
+		Menu.userName = username;
 		// Display success or failure of attempt and from that decide which menu to run.
 		if(result[0].equals("true") && result[1].equals("Employee")) {
 			return new EmployeeMenu();
@@ -174,9 +175,10 @@ public class CarSystemImpl implements CarSystem {
 		//CarDAOSerialization carDAO = new CarDAOSerialization();
 		boolean daoBool = carDAO.createCar(car);
 		if (daoBool == true) {
-			System.out.println("Successfully added car.");
+			System.out.println("\nSuccessfully added car.");
 			return new ManageCarsMenu();
 		} else {
+			System.out.println("\nFailed to add car, please try again.");
 			return new AddCarMenu();
 		}
 		
@@ -191,10 +193,22 @@ public class CarSystemImpl implements CarSystem {
 	}
 	
 	public Menu getNextMenuRemoveCar(String input) {
-		return null;
+		String vin = input;
+		if (input.contentEquals("Back")) {
+			return new ManageCarsMenu();
+		}
+		boolean daoBool = carDAO.deleteCar(vin);
+		if (daoBool == true) {
+			System.out.println("Successfully deleted car.");
+			return new ManageCarsMenu();
+		} else {
+			System.out.println("Failed to delete car, please try again.");
+			return new RemoveCarMenu();
+		}
 	}
 	
 	public Menu getNextMenuMyCars(String input) {
+		String username = Menu.userName;
 		return null;
 	}
 	

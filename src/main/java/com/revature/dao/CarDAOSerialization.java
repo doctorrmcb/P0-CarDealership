@@ -11,6 +11,10 @@ import java.nio.file.Files;
 import java.nio.file.LinkOption;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import com.revature.pojos.Car;
 import com.revature.pojos.authentication.Account;
@@ -162,5 +166,41 @@ public class CarDAOSerialization implements CarDAO {
 			return false;
 		}
 		return true;
+	}
+	
+	@Override
+	public ArrayList<String> getAllCars() {
+		String directoryName = ".//src//main//resources//cars//";
+		//String carPath = Paths.get(directoryName);
+		ArrayList<String> testArray = new ArrayList<>();
+		/*try (List<Path> pathList = Files.walk(carPath)) {
+			pathList.collect(Collectors.toList());	
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}*/
+		
+		File file = new File(directoryName);
+		File[] testReturn = file.listFiles();
+		StringBuilder sb = new StringBuilder();
+		for (File f : testReturn) {
+			sb.append(f.getName());
+			sb.delete(sb.length() - 4, sb.length());
+			Car car = readCar(sb.toString());
+			sb.delete(0, sb.length());
+			if (car.vin.length() < 8) {
+				sb.append(car.vin + "\t\t" + car.owner);
+			} else {
+				sb.append(car.vin + "\t" + car.owner);
+			}
+			
+			testArray.add(sb.toString());
+			sb.delete(0, sb.length());
+		}
+		
+		for (String s : testArray) {
+			
+		}
+		return testArray;
 	}
 }
