@@ -8,6 +8,7 @@ public class ViewMyRemainingPaymentsMenu extends Menu {
 		outputLines.add("If you would like to go back to the previous screen, type \"Back\"");
 		
 		outputLines.add("\nYour car:\n");
+		
 		outputLines.add("!!! CAR GOES HERE !!!");
 		// TODO Uses CarDAO.viewAllCars to get a list then loops through list and adds each element to outputLines.
 		

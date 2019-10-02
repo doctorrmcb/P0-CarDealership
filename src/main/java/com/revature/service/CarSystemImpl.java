@@ -1,7 +1,6 @@
 package com.revature.service;
 
 import java.util.Scanner;
-
 import com.revature.dao.AccountDAOSerialization;
 import com.revature.dao.CarDAOSerialization;
 import com.revature.dao.OfferDAOSerialization;
@@ -9,12 +8,14 @@ import com.revature.dao.PaymentDAOSerialization;
 import com.revature.pojos.Car;
 import com.revature.pojos.authentication.Account;
 import com.revature.pojos.authentication.LoginAttempt;
+import com.revature.pojos.finance.Offer;
 import com.revature.pojos.io.Menu;
 import com.revature.pojos.io.menu.AddCarMenu;
 import com.revature.pojos.io.menu.CustomerMenu;
 import com.revature.pojos.io.menu.EmployeeMenu;
 import com.revature.pojos.io.menu.LoginMenu;
 import com.revature.pojos.io.menu.MakeAnOfferMenu;
+import com.revature.pojos.io.menu.MakePaymentMenu;
 import com.revature.pojos.io.menu.ManageCarsMenu;
 import com.revature.pojos.io.menu.ManageOffersMenu;
 import com.revature.pojos.io.menu.RegisterMenu;
@@ -58,7 +59,7 @@ public class CarSystemImpl implements CarSystem {
 		} else {
 			System.out.println("\nI don't understand that command, please try again.");
 			display.displayMenu(menu);
-			getCommand(scanner, menu, display);
+			input = getCommand(scanner, menu, display);
 			return input;
 		}
 	}
@@ -121,6 +122,8 @@ public class CarSystemImpl implements CarSystem {
 			return getNextMenuNewCars(input);
 		} else if (currentMenu instanceof ViewPaymentsMenu) {
 			return getNextMenuAllPayments(input);
+		} else if (currentMenu instanceof MakePaymentMenu) {
+			return getNextMenuMakePayment(input);
 		} else {
 			return null;
 		}
@@ -185,10 +188,37 @@ public class CarSystemImpl implements CarSystem {
 	}
 	
 	public Menu getNextMenuMakeOffer(String input) {
-		return null;
+		// Should return view new cars after making an offer object.
+		if (input.contentEquals("Back")) {
+			return new ViewNewCarsMenu();
+		}
+		
+		try {
+			String username = Menu.userName;
+			String vin = Menu.prevInput;
+			String[] arrInput = input.split(" ");
+			String price = arrInput[0];
+			Double dblPrice = Double.parseDouble(price);
+			String duration = arrInput[1];
+			int intDuration = Integer.parseInt(duration);
+			Offer offer = new Offer(username, dblPrice, vin, intDuration);
+			OfferDAOSerialization offerDAO = new OfferDAOSerialization();
+			boolean result = offerDAO.createOffer(offer);
+			if (result) {
+				System.out.println("Succeeded in making offer.");
+				return new ViewNewCarsMenu();
+			} else {
+				System.out.println("Failed to make offer, please try again.");
+				return new MakeAnOfferMenu();
+			}
+		} catch (Exception e) {
+			System.out.println("Failed to make offer, please try again.");
+			return new MakeAnOfferMenu();
+		}
 	}
 	
 	public Menu getNextMenuManageOffers(String input) {
+		// Should do some stuff before returning manage offers or employee menu.
 		return null;
 	}
 	
@@ -208,15 +238,57 @@ public class CarSystemImpl implements CarSystem {
 	}
 	
 	public Menu getNextMenuMyCars(String input) {
+		// View remaining payments is forward or customer menu is back. Entering the vin takes to specific car.
 		String username = Menu.userName;
-		return null;
+		if (input.contentEquals("Back")) {
+			return new CustomerMenu();
+		} else {
+			CarDAOSerialization carDAO = new CarDAOSerialization();
+			Car car = carDAO.readCar(input);
+			if (car != null) {
+				Menu menu = new Menu();
+				menu.outputLines.add("\nViewing your remaining payments.\n");
+				menu.outputLines.add("If you would like to go back to the previous screen, type \"Back\"");
+				menu.outputLines.add("\nYour car:");
+				StringBuilder sb = new StringBuilder();
+				sb.append(car.vin + " " + car.owner);
+				menu.outputLines.add(sb.toString());
+				menu.outputLines.add("\nRemaining payments:\n");
+				// Put total remaining;
+				// Put monthly payment;
+				return menu;
+			} else {
+				System.out.println("Incorrect vin, please try again.");
+				return new ViewMyCarsMenu();
+			}
+		}
 	}
 	
 	public Menu getNextMenuNewCars(String input) {
-		return null;
+		// Make an offer menu is forward customer menu is back.
+		if (input.contentEquals("Back")) {
+			return new CustomerMenu();
+		} else {
+			CarDAOSerialization carDAO = new CarDAOSerialization();
+			Car car = carDAO.readCar(input);
+			if (car != null) {
+				Menu.prevInput = input;
+				return new MakeAnOfferMenu();
+			} else {
+				System.out.println("Incorrect vin, please try again.");
+				return new ViewNewCarsMenu();
+			}
+		}
 	}
 	
 	public Menu getNextMenuAllPayments(String input) {
+		// Go back to manage cars menu.
 		return null;
 	}
+	
+	public Menu getNextMenuMakePayment(String input) {
+		// Go back to customer menu.
+		return null;
+	}
+	
 }

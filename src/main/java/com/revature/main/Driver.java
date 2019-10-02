@@ -27,9 +27,14 @@ public class Driver {
 			System.exit(0);
 		} else {
 			while(true) {
+				if (nextMenu instanceof ExitMenu) {
+					System.out.println("\nThank you for visiting the Revature car dealership!\n");
+					System.exit(0);
+				}
 				display.displayMenu(nextMenu);
 				input = carSystem.getCommand(scanner, nextMenu, display);
 				nextMenu = carSystem.getNextMenu(input, nextMenu);
+				
 			}
 		}
 	}

@@ -11,8 +11,8 @@ import java.nio.file.Files;
 import java.nio.file.LinkOption;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 
-import com.revature.pojos.Car;
 import com.revature.pojos.finance.Payment;
 
 public class PaymentDAOSerialization implements PaymentDAO {
@@ -155,5 +155,41 @@ public class PaymentDAOSerialization implements PaymentDAO {
 			return false;
 		}
 		return true;
+	}
+	
+	@Override
+	public ArrayList<String> getAllPayments() {
+		String directoryName = ".//src//main//resources//payments//";
+		//String paymentPath = Paths.get(directoryName);
+		ArrayList<String> testArray = new ArrayList<>();
+		/*try (List<Path> pathList = Files.walk(paymentPath)) {
+			pathList.collect(Collectors.toList());	
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}*/
+		
+		File file = new File(directoryName);
+		File[] testReturn = file.listFiles();
+		StringBuilder sb = new StringBuilder();
+		for (File f : testReturn) {
+			sb.append(f.getName());
+			sb.delete(sb.length() - 4, sb.length());
+			Payment payment = readPayment(sb.toString());
+			sb.delete(0, sb.length());
+			if (payment.vin.length() < 8) {
+				sb.append(payment.vin + "\t\t" + payment.owner);
+			} else {
+				sb.append(payment.vin + "\t" + payment.owner);
+			}
+			
+			testArray.add(sb.toString());
+			sb.delete(0, sb.length());
+		}
+		
+		for (String s : testArray) {
+			
+		}
+		return testArray;
 	}
 }

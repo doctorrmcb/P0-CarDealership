@@ -10,21 +10,25 @@ public class CustomerMenu extends Menu {
 		outputLines.add("Please enter a number to choose from the options below:");
 		outputLines.add("1: View My Cars");
 		outputLines.add("2: View New Cars");
-		outputLines.add("3: Exit");
+		outputLines.add("3: Make a Payment");
+		outputLines.add("4: Exit");
 	}
 	
 	{
 		possibleInputs.add("1");
 		possibleInputs.add("2");
 		possibleInputs.add("3");
+		possibleInputs.add("4");
 	}
 	
 	{
 		Menu viewMyCarsMenu = new ViewMyCarsMenu();
 		Menu viewNewCarsMenu = new ViewNewCarsMenu();
+		Menu makePaymentMenu = new MakePaymentMenu();
 		Menu exit = new ExitMenu();
 		possibleMenus.add(viewMyCarsMenu);
 		possibleMenus.add(viewNewCarsMenu);
+		possibleMenus.add(makePaymentMenu);
 		possibleMenus.add(exit);
 	}
 }
