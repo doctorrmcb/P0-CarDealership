@@ -11,8 +11,7 @@ import java.nio.file.Files;
 import java.nio.file.LinkOption;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-
-import com.revature.pojos.Car;
+import java.util.ArrayList;
 import com.revature.pojos.finance.Offer;
 
 public class OfferDAOSerialization implements OfferDAO {
@@ -154,12 +153,44 @@ public class OfferDAOSerialization implements OfferDAO {
 		File fileDelete = null;
 		String fileDeleteName;
 		if (offerId != null) {
-			fileDeleteName = ".//src//main//resources//cars//" + offerId + ".dat";
+			fileDeleteName = ".//src//main//resources//offers//" + offerId + ".dat";
 			fileDelete = new File(fileDeleteName);
 			fileDelete.delete();
 		} else {
 			return false;
 		}
 		return true;
+	}
+	
+	@Override
+	public ArrayList<String> getAllOffers() {
+		String directoryName = ".//src//main//resources//offers//";
+		//String offerPath = Paths.get(directoryName);
+		ArrayList<String> testArray = new ArrayList<>();
+		/*try (List<Path> pathList = Files.walk(offerPath)) {
+			pathList.collect(Collectors.toList());	
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}*/
+		
+		File file = new File(directoryName);
+		File[] testReturn = file.listFiles();
+		StringBuilder sb = new StringBuilder();
+		for (File f : testReturn) {
+			sb.append(f.getName());
+			sb.delete(sb.length() - 4, sb.length());
+			testArray.add(sb.toString());
+			Offer offer = readOffer(sb.toString());
+			if (offer.offerId.length() < 16) {
+				sb.append(offer.offerId + "\t\t\t" + offer.status);
+			} else if (offer.offerId.length() < 8) {
+				sb.append(offer.offerId + "\t\t" + offer.status);
+			} else {
+				sb.append(offer.offerId + "\t" + offer.status);
+			}
+			sb.delete(0, sb.length());
+		}
+		return testArray;
 	}
 }

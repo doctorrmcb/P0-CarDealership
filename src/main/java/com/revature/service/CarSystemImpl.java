@@ -1,5 +1,7 @@
 package com.revature.service;
 
+import java.io.File;
+import java.util.ArrayList;
 import java.util.Scanner;
 import com.revature.dao.AccountDAOSerialization;
 import com.revature.dao.CarDAOSerialization;
@@ -219,7 +221,44 @@ public class CarSystemImpl implements CarSystem {
 	
 	public Menu getNextMenuManageOffers(String input) {
 		// Should do some stuff before returning manage offers or employee menu.
-		return null;
+		if (input.contentEquals("Back")) {
+			return new EmployeeMenu();
+		} else {
+			try {
+				String[] arrInput = input.split(" ");
+				OfferDAOSerialization offerDAO = new OfferDAOSerialization();
+				Offer outputOffer = offerDAO.readOffer(arrInput[0]);
+				if (arrInput[1].contentEquals("Accept")) {
+					outputOffer.setStatus("Accepted");
+					boolean result2 = rejectAllOtherOffers(outputOffer.vin, offerDAO);
+					if (result2) {
+						System.out.println("Rejected all other offers.");
+						boolean result = offerDAO.createOffer(outputOffer);
+						if (result) {
+							System.out.println("Offer update succeeded.");
+							return new EmployeeMenu();
+						} else {
+							System.out.println("Failed to update offer, please try again");
+							return new ManageOffersMenu();
+						}
+					} else {
+						System.out.println("Failed to reject other offers. Contact the administrator.");
+						return new ManageOffersMenu();
+					}
+				} else if (arrInput[1].contentEquals("Reject")) {
+					outputOffer.setStatus("Rejected");
+					offerDAO.updateOffer(outputOffer.offerId, outputOffer);
+					System.out.println("Offer update succeeded.");
+					return new EmployeeMenu();
+				} else {
+					System.out.println("Failed to update offer, please try again.");
+					return new ManageOffersMenu();
+				}
+			} catch (Exception e) {
+				System.out.println("Failed to update offer, please try again");
+				return new ManageOffersMenu();
+			}
+		}
 	}
 	
 	public Menu getNextMenuRemoveCar(String input) {
@@ -289,6 +328,22 @@ public class CarSystemImpl implements CarSystem {
 	public Menu getNextMenuMakePayment(String input) {
 		// Go back to customer menu.
 		return null;
+	}
+	
+	public boolean rejectAllOtherOffers(String vin, OfferDAOSerialization offerDAO) {
+		try {
+			ArrayList<String> listOffer = offerDAO.getAllOffers();
+			for (String s : listOffer) {
+				if (s.contains(vin)) {
+					String fileDeleteName = ".//src//main//resources//offers//" + s + ".dat";
+					File fileDelete = new File(fileDeleteName);
+					fileDelete.delete();
+				}
+			}
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
 	}
 	
 }
