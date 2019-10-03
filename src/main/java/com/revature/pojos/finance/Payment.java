@@ -2,7 +2,6 @@ package com.revature.pojos.finance;
 
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 public class Payment implements Serializable {
 	public double amount;
@@ -10,6 +9,7 @@ public class Payment implements Serializable {
 	public LocalDate paymentDate;
 	public String vin;
 	public String paymentId;
+	
 	public Payment(double amount, String owner, String vin) {
 		super();
 		this.amount = amount;

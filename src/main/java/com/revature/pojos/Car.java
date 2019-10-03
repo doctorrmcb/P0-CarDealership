@@ -1,9 +1,6 @@
 package com.revature.pojos;
 
-import com.revature.pojos.finance.Loan;
 import java.io.Serializable;
-import com.revature.pojos.storage.systemlist.OfferList;
-import com.revature.pojos.storage.systemlist.PaymentList;
 
 public class Car implements Serializable {
 	public String vin;

@@ -2,8 +2,6 @@ package com.revature.pojos.authentication;
 
 import java.io.Serializable;
 
-import com.revature.pojos.user.User;
-
 public class Account implements Serializable {
 	@Override
 	public String toString() {

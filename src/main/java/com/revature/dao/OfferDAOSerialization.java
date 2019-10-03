@@ -97,9 +97,6 @@ public class OfferDAOSerialization implements OfferDAO {
 		ObjectOutputStream oos = null;
 		File fileDelete = null;
 		File file = null;
-		String directoryName = ".//src//main//resources//offers//";
-		Path offerPath = Paths.get(directoryName);
-		
 		if (offerToUpdate != null) {
 			fileDeleteName = ".//src//main//resources//offers//" + offerToUpdate + ".dat";
 			fileDelete = new File(fileDeleteName);

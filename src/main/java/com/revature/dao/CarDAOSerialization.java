@@ -12,12 +12,7 @@ import java.nio.file.LinkOption;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
 import com.revature.pojos.Car;
-import com.revature.pojos.authentication.Account;
 
 public class CarDAOSerialization implements CarDAO {
 	@Override
@@ -102,9 +97,6 @@ public class CarDAOSerialization implements CarDAO {
 		ObjectOutputStream oos = null;
 		File fileDelete = null;
 		File file = null;
-		String directoryName = ".//src//main//resources//cars//";
-		Path carPath = Paths.get(directoryName);
-		
 		if (vinToUpdate != null) {
 			fileDeleteName = ".//src//main//resources//cars//" + vinToUpdate + ".dat";
 			fileDelete = new File(fileDeleteName);
@@ -151,7 +143,6 @@ public class CarDAOSerialization implements CarDAO {
 			
 		}
 		return true;
-
 	}
 	
 	@Override
@@ -196,10 +187,6 @@ public class CarDAOSerialization implements CarDAO {
 			
 			testArray.add(sb.toString());
 			sb.delete(0, sb.length());
-		}
-		
-		for (String s : testArray) {
-			
 		}
 		return testArray;
 	}

@@ -1,6 +1,7 @@
 package com.revature.service;
 
 import java.io.File;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Scanner;
 import com.revature.dao.AccountDAOSerialization;
@@ -11,6 +12,7 @@ import com.revature.pojos.Car;
 import com.revature.pojos.authentication.Account;
 import com.revature.pojos.authentication.LoginAttempt;
 import com.revature.pojos.finance.Offer;
+import com.revature.pojos.finance.Payment;
 import com.revature.pojos.io.Menu;
 import com.revature.pojos.io.menu.AddCarMenu;
 import com.revature.pojos.io.menu.CustomerMenu;
@@ -51,7 +53,6 @@ public class CarSystemImpl implements CarSystem {
 	}
 	
 	public String getCommand(Scanner scanner, Menu menu, DisplayImpl display) {
-		// TODO Auto-generated method stub
 		String input = scanner.nextLine();
 		if (menu.possibleInputs.contains(input)) {
 			return input;
@@ -92,7 +93,7 @@ public class CarSystemImpl implements CarSystem {
 			String[] result = {"true", account.getAccountStatus()};
 			return result;
 		} else {
-			String[] result = {"false", account.getAccountStatus()};
+			String[] result = {"false", null};
 			return result;
 		}
 	}
@@ -155,18 +156,23 @@ public class CarSystemImpl implements CarSystem {
 	
 	public Menu getNextMenuLogin(String input) {
 		// Build an instance of LoginAttempt from input and try to log in.
-		String[] inputArray = input.split(" ");
-		String username = inputArray[0];
-		String password = inputArray[1];
-		LoginAttempt login = new LoginAttempt(username, password);
-		String[] result = tryLogin(login);
-		Menu.userName = username;
-		// Display success or failure of attempt and from that decide which menu to run.
-		if(result[0].equals("true") && result[1].equals("Employee")) {
-			return new EmployeeMenu();
-		} else if (result[0].equals("true") && result[1].equals("Customer")) {
-			return new CustomerMenu();
-		} else {
+		try {
+			String[] inputArray = input.split(" ");
+			String username = inputArray[0];
+			String password = inputArray[1];
+			LoginAttempt login = new LoginAttempt(username, password);
+			String[] result = tryLogin(login);
+			Menu.userName = username;
+			// Display success or failure of attempt and from that decide which menu to run.
+			if(result[0].equals("true") && result[1].equals("Employee")) {
+				return new EmployeeMenu();
+			} else if (result[0].equals("true") && result[1].equals("Customer")) {
+				return new CustomerMenu();
+			} else {
+				System.out.println("Login attempt failed, please try again.");
+				return new LoginMenu();
+			}
+		} catch (Exception e) {
 			System.out.println("Login attempt failed, please try again.");
 			return new LoginMenu();
 		}
@@ -236,7 +242,16 @@ public class CarSystemImpl implements CarSystem {
 						boolean result = offerDAO.createOffer(outputOffer);
 						if (result) {
 							System.out.println("Offer update succeeded.");
-							return new EmployeeMenu();
+							Car car = carDAO.readCar(outputOffer.vin);
+							car.owner = outputOffer.username;
+							boolean result3 = carDAO.updateCar(car.vin, car);
+							if (result3) {
+								System.out.println("Car update succeeded.");
+								return new EmployeeMenu();
+							} else {
+								System.out.println("Failed to update offer, please try again");
+								return new ManageOffersMenu();
+							}
 						} else {
 							System.out.println("Failed to update offer, please try again");
 							return new ManageOffersMenu();
@@ -278,7 +293,6 @@ public class CarSystemImpl implements CarSystem {
 	
 	public Menu getNextMenuMyCars(String input) {
 		// View remaining payments is forward or customer menu is back. Entering the vin takes to specific car.
-		String username = Menu.userName;
 		if (input.contentEquals("Back")) {
 			return new CustomerMenu();
 		} else {
@@ -292,9 +306,23 @@ public class CarSystemImpl implements CarSystem {
 				StringBuilder sb = new StringBuilder();
 				sb.append(car.vin + " " + car.owner);
 				menu.outputLines.add(sb.toString());
-				menu.outputLines.add("\nRemaining payments:\n");
-				// Put total remaining;
-				// Put monthly payment;
+				sb.delete(0, sb.length());
+				sb.append(Menu.userName);
+				sb.append(input);
+				String offerId = sb.toString();
+				menu.outputLines.add("\nRemaining payments:");
+				menu.outputLines.add("======================================================================");
+				Offer offer = offerDAO.readOffer(offerId);
+				NumberFormat formatter = NumberFormat.getCurrencyInstance();
+				String formattedOffer = formatter.format(offer.price);
+				menu.outputLines.add("Original Price:\t\t\t\t" + formattedOffer);
+				Double monthlyPayment = offer.price / offer.durationMonths;
+				formattedOffer = formatter.format(monthlyPayment);
+				menu.outputLines.add("Original Number of Payments:\t\t" + Integer.toString(offer.durationMonths));
+				menu.outputLines.add("Monthly Payment:\t\t\t" + formattedOffer);
+				// TODO Put total remaining;
+				// Total remaining is offer.amount - (sum of get all payments on vin)
+				// Total payments left is total remaining / monthly payment
 				return menu;
 			} else {
 				System.out.println("Incorrect vin, please try again.");
@@ -322,12 +350,53 @@ public class CarSystemImpl implements CarSystem {
 	
 	public Menu getNextMenuAllPayments(String input) {
 		// Go back to manage cars menu.
-		return null;
+		// User input is in the form "[VIN]"
+		// Read all the payments where the title contains vin.
+		if (input.contentEquals("Back")) {
+			return new ManageCarsMenu();
+		} else {
+			ArrayList<String> paymentArray = new ArrayList<>();
+			paymentArray = paymentDAO.getAllPayments();
+			Menu menu = new Menu();
+			menu.outputLines.add("\nViewing payments.\n");
+			menu.outputLines.add("If you would like to go back to the previous screen, type \"Back\"");
+			menu.outputLines.add("\nPayments on " + input + ":");
+			menu.outputLines.add("\nPayment Date\tAmount Paid\tUser");
+			menu.outputLines.add("======================================================================");
+			menu.possibleInputs.add("*");
+			for (String s: paymentArray) {
+				if (!s.contains(input)) {
+					menu.outputLines.add(s);				
+				}
+			}
+			return menu;
+		}
 	}
 	
 	public Menu getNextMenuMakePayment(String input) {
 		// Go back to customer menu.
-		return null;
+		// User input is a string in the form "[Payment Amount] [Vin]"
+		if (input.contentEquals("Back")) {
+			return new CustomerMenu();
+		}
+		try {
+			String[] arrInput = input.split(" ");
+			Double amount = Double.parseDouble(arrInput[0]);
+			String owner = Menu.userName;
+			String vin = arrInput[1];
+			Payment payment = new Payment(amount, owner, vin);
+			boolean result = paymentDAO.createPayment(payment);
+			if (result) {
+				System.out.println("Succeeded in making a payment.");
+				return new CustomerMenu();
+			} else {
+				System.out.println("Failed to make a payment, please try again.");
+				return new MakePaymentMenu();
+			}
+		} catch (Exception e) {
+			System.out.println("Failed to make a payment, please try again.");
+			return new MakePaymentMenu();
+		}
 	}
 	
 	public boolean rejectAllOtherOffers(String vin, OfferDAOSerialization offerDAO) {
@@ -345,5 +414,4 @@ public class CarSystemImpl implements CarSystem {
 			return false;
 		}
 	}
-	
 }

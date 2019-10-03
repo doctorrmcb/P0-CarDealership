@@ -1,5 +1,8 @@
 package com.revature.pojos.io.menu;
 
+import java.util.ArrayList;
+
+import com.revature.dao.CarDAOSerialization;
 import com.revature.pojos.io.Menu;
 
 public class ManageCarsMenu extends Menu {
@@ -11,6 +14,15 @@ public class ManageCarsMenu extends Menu {
 		outputLines.add("2: Remove Car");
 		outputLines.add("3: View Car Payments");
 		//outputLines.add("4: Previous Menu");
+		outputLines.add("\nAvailable cars:\n");
+		outputLines.add("Vin\t\tOwner");
+		outputLines.add("======================================================================");
+		CarDAOSerialization carDAO = new CarDAOSerialization();
+		ArrayList<String> listCars = new ArrayList<>();
+		listCars = carDAO.getAllCars();
+		for (String s : listCars) {
+			outputLines.add(s);
+		}
 	}
 	
 	{
