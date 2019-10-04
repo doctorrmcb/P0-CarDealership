@@ -1,0 +1,7 @@
+2019-10-03 22:08:54 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.InitialMenu@10ca3ca1
+2019-10-03 22:09:04 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: 1
+2019-10-03 22:09:04 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.LoginMenu@382e632b
+2019-10-03 22:14:24 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.InitialMenu@10ca3ca1
+2019-10-03 22:14:27 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: 1
+2019-10-03 22:14:27 TRACE root:30 - Returning next menu. Current Menu: com.revature.pojos.io.menu.InitialMenu@10ca3ca1 Next Menu: com.revature.pojos.io.menu.LoginMenu@382e632b
+2019-10-03 22:14:27 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.LoginMenu@382e632b

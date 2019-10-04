@@ -14,11 +14,13 @@ public class Menu {
 	public Menu() {
 		super();
 	}
+	
 	public Menu(String[] possibleInputsIn, String[] outputLinesIn, Menu[] possibleMenusIn) {
 		possibleInputs = new ArrayList<String>(Arrays.asList(possibleInputsIn));
 		outputLines = new ArrayList<String>(Arrays.asList(outputLinesIn));
 		possibleMenus = new ArrayList<Menu>(Arrays.asList(possibleMenusIn));
 	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -28,6 +30,7 @@ public class Menu {
 		result = prime * result + ((possibleMenus == null) ? 0 : possibleMenus.hashCode());
 		return result;
 	}
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)

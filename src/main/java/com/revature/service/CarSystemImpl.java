@@ -28,6 +28,7 @@ import com.revature.pojos.io.menu.ViewMyCarsMenu;
 import com.revature.pojos.io.menu.ViewMyRemainingPaymentsMenu;
 import com.revature.pojos.io.menu.ViewNewCarsMenu;
 import com.revature.pojos.io.menu.ViewPaymentsMenu;
+import static com.revature.util.LoggerUtil.*;
 
 public class CarSystemImpl implements CarSystem {
 	
@@ -55,14 +56,17 @@ public class CarSystemImpl implements CarSystem {
 	public String getCommand(Scanner scanner, Menu menu, DisplayImpl display) {
 		String input = scanner.nextLine();
 		if (menu.possibleInputs.contains(input)) {
+			trace("Got user input, user input was contained within possible inputs. User input: " + input);
 			return input;
 		} else if (menu.possibleInputs.get(0).equals("*")) {
 			// A special process must be run that is menu dependent.
+			trace("Got user input, user input could be any value. User input: " + input);
 			return input;
 		} else {
 			System.out.println("\nI don't understand that command, please try again.");
 			display.displayMenu(menu);
 			input = getCommand(scanner, menu, display);
+			debug("Got user input, user input was invalid. User input: " + input + " Menu: " + menu);
 			return input;
 		}
 	}
@@ -71,35 +75,43 @@ public class CarSystemImpl implements CarSystem {
 		// Clean up the user input.
 		input = input.trim();
 		if (currentMenu.possibleInputs.isEmpty()) {
+			debug("Possible inputs was empty. Menu: " + currentMenu);
 			return null;
 		}
 		// If the possibleUserInputs is "*"
 		if (currentMenu.possibleInputs.get(0).equals("*")) {
+			trace("Calling special menu getter. Menu: " + currentMenu);
 			return getSpecialMenu(input, currentMenu);
 		} else {
 			for (int i = 0; i < currentMenu.possibleInputs.size(); i++) {
 				if (input.equals(currentMenu.possibleInputs.get(i))) {
+					trace("Returning next menu. Current Menu: " + currentMenu + " Next Menu: " + currentMenu.possibleMenus.get(i));
 					return currentMenu.possibleMenus.get(i);
 				}
 			}
 		}
 		// The program should never get to this point, because the user's input was validated during the getCommand function.
+		debug("Program should never have reached this point. Current Menu: " + currentMenu + " Input: " + input);
 		return null;
 	}
 	
 	public String[] tryLogin(LoginAttempt loginAttempt) {
+		trace("Reading the account using loginAttempt. LoginAttempt: " + loginAttempt);
 		Account account = accountDAO.readAccount(loginAttempt.username);
 		if (account != null) {
 			String[] result = {"true", account.getAccountStatus()};
+			trace("Login succeeded. Account Status: " + account.getAccountStatus());
 			return result;
 		} else {
 			String[] result = {"false", null};
+			debug("Login failed. LoginAttempt: " + loginAttempt);
 			return result;
 		}
 	}
 	
 	public boolean tryRegister(Account account) {
 		//AccountDAOSerialization accountDAO = new AccountDAOSerialization();
+		trace("Trying to register user. Account: " + account);
 		boolean result = accountDAO.createAccount(account);
 		return result;
 	}
@@ -108,26 +120,37 @@ public class CarSystemImpl implements CarSystem {
 		// A special process must be run that is menu dependent.
 		// Run the special process that returns the next menu that should be displayed.
 		if (currentMenu instanceof LoginMenu) {
+			trace("Getting next menu after LoginMenu.");
 			return getNextMenuLogin(input);
 		} else if (currentMenu instanceof RegisterMenu) {
+			trace("Getting next menu after RegisterMenu.");
 			return getNextMenuRegister(input);
 		} else if (currentMenu instanceof AddCarMenu) {
+			trace("Getting next menu after AddCarMenu.");
 			return getNextMenuAddCar(input);
 		} else if (currentMenu instanceof MakeAnOfferMenu) {
+			trace("Getting next menu after MakeOfferMenu.");
 			return getNextMenuMakeOffer(input);
 		} else if (currentMenu instanceof ManageOffersMenu) {
+			trace("Getting next menu after ManageOfferMenu.");
 			return getNextMenuManageOffers(input);
 		} else if (currentMenu instanceof RemoveCarMenu) {
+			trace("Getting next menu after RemoveCarMenu.");
 			return getNextMenuRemoveCar(input);
 		} else if (currentMenu instanceof ViewMyCarsMenu) {
+			trace("Getting next menu after MyCarMenu.");
 			return getNextMenuMyCars(input);
 		} else if (currentMenu instanceof ViewNewCarsMenu) {
+			trace("Getting next menu after NewCarsMenu.");
 			return getNextMenuNewCars(input);
 		} else if (currentMenu instanceof ViewPaymentsMenu) {
+			trace("Getting next menu after ViewAllPaymentsMenu.");
 			return getNextMenuAllPayments(input);
 		} else if (currentMenu instanceof MakePaymentMenu) {
+			trace("Getting next menu after MakePaymentMenu.");
 			return getNextMenuMakePayment(input);
 		} else {
+			warn("GetSpecialInstance failed. Current Menu: " + currentMenu + " Input: " + input);
 			return null;
 		}
 	}
@@ -143,6 +166,7 @@ public class CarSystemImpl implements CarSystem {
 		// Display success or failure of attempt and decide what to display based on that.
 		if (result == false) {
 			System.out.println("Registration failed, please try again.");
+			debug("The registration failed. Input: " + input);
 			return new RegisterMenu();
 		} else {
 			System.out.println("Registration success.");

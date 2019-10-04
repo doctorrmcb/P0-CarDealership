@@ -1,6 +1,7 @@
 package com.revature.service;
 
 import com.revature.pojos.io.Menu;
+import static com.revature.util.LoggerUtil.*;
 
 public class DisplayImpl implements Display {
 
@@ -52,6 +53,7 @@ public class DisplayImpl implements Display {
 		for (String s:menu.outputLines) {
 			System.out.println(s);
 		}
+		trace("Displaying menu " + menu);
 	}
 
 	
