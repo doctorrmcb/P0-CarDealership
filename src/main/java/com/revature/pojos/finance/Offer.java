@@ -24,7 +24,7 @@ public class Offer implements Serializable {
 		this.price = price;
 		this.vin = vin;
 		this.durationMonths = durationMonths;
-		this.offerId = username + vin;
+		this.offerId = username + "_" + vin;
 		this.status = "Pending";
 	}
 	public String getUsername() {

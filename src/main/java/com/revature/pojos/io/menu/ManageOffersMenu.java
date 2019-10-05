@@ -2,12 +2,12 @@ package com.revature.pojos.io.menu;
 
 import java.util.ArrayList;
 
-import com.revature.dao.OfferDAOSerialization;
+import com.revature.dao.OfferDAOPostgres;
 import com.revature.pojos.io.Menu;
 
 public class ManageOffersMenu extends Menu {
 	{	
-		OfferDAOSerialization offerDAO = new OfferDAOSerialization();
+		OfferDAOPostgres offerDAO = new OfferDAOPostgres();
 		outputLines.add("\nManaging offers.\n");
 		outputLines.add("Please reject or accept an offer by entering a command in the form [OfferID] [Decision]");
 		outputLines.add("For example, \"1 Accept\"");
@@ -18,7 +18,7 @@ public class ManageOffersMenu extends Menu {
 		ArrayList<String> listCars = new ArrayList<>();
 		listCars = offerDAO.getAllOffers();
 		for (String s : listCars) {
-			outputLines.add(s + "\t" + offerDAO.readOffer(s).status);
+			outputLines.add(s);
 		}
 	}
 	

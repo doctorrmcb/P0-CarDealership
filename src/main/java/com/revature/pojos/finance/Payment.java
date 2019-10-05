@@ -1,12 +1,12 @@
 package com.revature.pojos.finance;
 
 import java.io.Serializable;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class Payment implements Serializable {
 	public double amount;
 	public String owner;
-	public LocalDate paymentDate;
+	public LocalDateTime paymentDate;
 	public String vin;
 	public String paymentId;
 	
@@ -14,9 +14,9 @@ public class Payment implements Serializable {
 		super();
 		this.amount = amount;
 		this.owner = owner;
-		this.paymentDate = LocalDate.now();
+		this.paymentDate = LocalDateTime.now();
 		this.vin = vin;
-		this.paymentId = vin + paymentDate.toString();
+		this.paymentId = vin + "_" + paymentDate.toString();
 	}
 	
 	public Payment() {
@@ -40,11 +40,11 @@ public class Payment implements Serializable {
 		this.owner = owner;
 	}
 
-	public LocalDate getPaymentDate() {
+	public LocalDateTime getPaymentDate() {
 		return paymentDate;
 	}
 
-	public void setPaymentDate(LocalDate paymentDate) {
+	public void setPaymentDate(LocalDateTime paymentDate) {
 		this.paymentDate = paymentDate;
 	}
 

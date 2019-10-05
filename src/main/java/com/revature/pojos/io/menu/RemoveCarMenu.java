@@ -2,13 +2,13 @@ package com.revature.pojos.io.menu;
 
 import java.util.ArrayList;
 
-import com.revature.dao.CarDAOSerialization;
+import com.revature.dao.CarDAOPostgres;
 import com.revature.pojos.io.Menu;
 
 public class RemoveCarMenu extends Menu {
 	
 	{	
-		CarDAOSerialization carDAO = new CarDAOSerialization();
+		CarDAOPostgres carDAO = new CarDAOPostgres();
 		outputLines.add("\nPlease remove a car.\n");
 		outputLines.add("Please enter a car you would like to remove in the form [VIN]");
 		outputLines.add("If you would like to go back to the previous screen, type \"Back\"");

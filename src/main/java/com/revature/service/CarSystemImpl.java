@@ -4,10 +4,10 @@ import java.io.File;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Scanner;
-import com.revature.dao.AccountDAOSerialization;
-import com.revature.dao.CarDAOSerialization;
-import com.revature.dao.OfferDAOSerialization;
-import com.revature.dao.PaymentDAOSerialization;
+import com.revature.dao.AccountDAOPostgres;
+import com.revature.dao.CarDAOPostgres;
+import com.revature.dao.OfferDAOPostgres;
+import com.revature.dao.PaymentDAOPostgres;
 import com.revature.pojos.Car;
 import com.revature.pojos.authentication.Account;
 import com.revature.pojos.authentication.LoginAttempt;
@@ -32,24 +32,24 @@ import static com.revature.util.LoggerUtil.*;
 
 public class CarSystemImpl implements CarSystem {
 	
-	private AccountDAOSerialization accountDAO = new AccountDAOSerialization();
-	private CarDAOSerialization carDAO = new CarDAOSerialization();
-	private OfferDAOSerialization offerDAO = new OfferDAOSerialization();
-	private PaymentDAOSerialization paymentDAO = new PaymentDAOSerialization();
+	private AccountDAOPostgres accountDAO = new AccountDAOPostgres();
+	private CarDAOPostgres carDAO = new CarDAOPostgres();
+	private OfferDAOPostgres offerDAO = new OfferDAOPostgres();
+	private PaymentDAOPostgres paymentDAO = new PaymentDAOPostgres();
 	
-	public void setOfferDAO(OfferDAOSerialization offerDAO) {
+	public void setOfferDAO(OfferDAOPostgres offerDAO) {
 		this.offerDAO = offerDAO;
 	}
 
-	public void setPaymentDAO(PaymentDAOSerialization paymentDAO) {
+	public void setPaymentDAO(PaymentDAOPostgres paymentDAO) {
 		this.paymentDAO = paymentDAO;
 	}
 
-	public void setCarDAO(CarDAOSerialization carDAO) {
+	public void setCarDAO(CarDAOPostgres carDAO) {
 		this.carDAO = carDAO;
 	}
 
-	public void setAccountDAO(AccountDAOSerialization accountDAO) {
+	public void setAccountDAO(AccountDAOPostgres accountDAO) {
 		this.accountDAO = accountDAO;
 	}
 	
@@ -63,10 +63,10 @@ public class CarSystemImpl implements CarSystem {
 			trace("Got user input, user input could be any value. User input: " + input);
 			return input;
 		} else {
+			debug("Got user input, user input was invalid. User input: " + input + " Menu: " + menu);
 			System.out.println("\nI don't understand that command, please try again.");
 			display.displayMenu(menu);
 			input = getCommand(scanner, menu, display);
-			debug("Got user input, user input was invalid. User input: " + input + " Menu: " + menu);
 			return input;
 		}
 	}
@@ -110,7 +110,6 @@ public class CarSystemImpl implements CarSystem {
 	}
 	
 	public boolean tryRegister(Account account) {
-		//AccountDAOSerialization accountDAO = new AccountDAOSerialization();
 		trace("Trying to register user. Account: " + account);
 		boolean result = accountDAO.createAccount(account);
 		return result;
@@ -171,8 +170,10 @@ public class CarSystemImpl implements CarSystem {
 		} else {
 			System.out.println("Registration success.");
 			if (accountStatus.equals("Employee")) {
+				trace("Registration succeeded. Employee added. Input: " + input);
 				return new EmployeeMenu();
 			} else {
+				trace("Registration succeeded. Customer added. Input: " + input);
 				return new CustomerMenu();
 			}
 		}
@@ -189,31 +190,39 @@ public class CarSystemImpl implements CarSystem {
 			Menu.userName = username;
 			// Display success or failure of attempt and from that decide which menu to run.
 			if(result[0].equals("true") && result[1].equals("Employee")) {
+				trace("Login succeeded. Logging in as Employee. Input: " + input);
 				return new EmployeeMenu();
 			} else if (result[0].equals("true") && result[1].equals("Customer")) {
+				trace("Login succeeded. Logging in as Customer. Input: " + input);
 				return new CustomerMenu();
 			} else {
 				System.out.println("Login attempt failed, please try again.");
+				debug("Login failed during tryLogin. Input: " + input);
 				return new LoginMenu();
 			}
 		} catch (Exception e) {
 			System.out.println("Login attempt failed, please try again.");
+			debug("Login failed during getNextMenuLogin. Input: " + input);
 			return new LoginMenu();
 		}
 	}
 	
 	public Menu getNextMenuAddCar(String input) {
+		if ("Back".contentEquals(input)) {
+			return new ManageCarsMenu();
+		}
 		String[] inputArray = input.split(" ");
 		String vin = inputArray[0];
 		String owner = inputArray[1];
 		Car car = new Car(vin, owner);
-		//CarDAOSerialization carDAO = new CarDAOSerialization();
 		boolean daoBool = carDAO.createCar(car);
 		if (daoBool == true) {
 			System.out.println("\nSuccessfully added car.");
+			trace("Succeeded adding car. Input: " + input);
 			return new ManageCarsMenu();
 		} else {
 			System.out.println("\nFailed to add car, please try again.");
+			debug("Failed to add car. Failed in the createCar function. Input: " + input);
 			return new AddCarMenu();
 		}
 		
@@ -222,6 +231,7 @@ public class CarSystemImpl implements CarSystem {
 	public Menu getNextMenuMakeOffer(String input) {
 		// Should return view new cars after making an offer object.
 		if (input.contentEquals("Back")) {
+			trace("Going back to ViewNewCarsMenu. Input: " + input);
 			return new ViewNewCarsMenu();
 		}
 		
@@ -234,17 +244,19 @@ public class CarSystemImpl implements CarSystem {
 			String duration = arrInput[1];
 			int intDuration = Integer.parseInt(duration);
 			Offer offer = new Offer(username, dblPrice, vin, intDuration);
-			OfferDAOSerialization offerDAO = new OfferDAOSerialization();
 			boolean result = offerDAO.createOffer(offer);
 			if (result) {
 				System.out.println("Succeeded in making offer.");
+				trace("Succeeded in making an offer. Input: " + input);
 				return new ViewNewCarsMenu();
 			} else {
 				System.out.println("Failed to make offer, please try again.");
+				debug("Failed to make offer. Failed in the createOffer function. Input: " + input);
 				return new MakeAnOfferMenu();
 			}
 		} catch (Exception e) {
 			System.out.println("Failed to make offer, please try again.");
+			debug("Failed to make offer. Failed in the getNextMenuMakeOffer function. Input: " + input);
 			return new MakeAnOfferMenu();
 		}
 	}
@@ -252,49 +264,59 @@ public class CarSystemImpl implements CarSystem {
 	public Menu getNextMenuManageOffers(String input) {
 		// Should do some stuff before returning manage offers or employee menu.
 		if (input.contentEquals("Back")) {
+			trace("Going back to EmployeeMenu. Input: " + input);
 			return new EmployeeMenu();
 		} else {
 			try {
 				String[] arrInput = input.split(" ");
-				OfferDAOSerialization offerDAO = new OfferDAOSerialization();
 				Offer outputOffer = offerDAO.readOffer(arrInput[0]);
 				if (arrInput[1].contentEquals("Accept")) {
 					outputOffer.setStatus("Accepted");
-					boolean result2 = rejectAllOtherOffers(outputOffer.vin, offerDAO);
+					trace("outputOffer set to \"Accepted\" successfully. Decision: " + arrInput[1]);
+					boolean result2 = rejectAllOtherOffers(outputOffer.vin, outputOffer.username);
 					if (result2) {
 						System.out.println("Rejected all other offers.");
-						boolean result = offerDAO.createOffer(outputOffer);
+						trace("Rejected offers successfully. Vin: " + outputOffer.vin + " Result2: " + result2);
+						boolean result = offerDAO.updateOffer(outputOffer.offerId, outputOffer);
 						if (result) {
 							System.out.println("Offer update succeeded.");
 							Car car = carDAO.readCar(outputOffer.vin);
 							car.owner = outputOffer.username;
+							trace("Offer updated successfully. Offer: " + outputOffer.toString());
 							boolean result3 = carDAO.updateCar(car.vin, car);
 							if (result3) {
 								System.out.println("Car update succeeded.");
+								trace("Car updated successfully. Vin: " + car.vin + " Car: " + car);
 								return new EmployeeMenu();
 							} else {
 								System.out.println("Failed to update offer, please try again");
+								debug("Failed to update offer. Failed in updateCar. Result3: " + result3);
 								return new ManageOffersMenu();
 							}
 						} else {
 							System.out.println("Failed to update offer, please try again");
+							debug("Failed to update offer. Failed in createOffer. Result: " + result);
 							return new ManageOffersMenu();
 						}
 					} else {
 						System.out.println("Failed to reject other offers. Contact the administrator.");
+						debug("Failed to update offer. Failed in rejectAllOtherOffers. Result2: " + result2);
 						return new ManageOffersMenu();
 					}
 				} else if (arrInput[1].contentEquals("Reject")) {
 					outputOffer.setStatus("Rejected");
 					offerDAO.updateOffer(outputOffer.offerId, outputOffer);
 					System.out.println("Offer update succeeded.");
+					trace("Offer rejected successfully. Input[1]: " + arrInput[1]);
 					return new EmployeeMenu();
 				} else {
 					System.out.println("Failed to update offer, please try again.");
+					debug("Failed to reject offer. Failed in input. Input: " + input);
 					return new ManageOffersMenu();
 				}
 			} catch (Exception e) {
 				System.out.println("Failed to update offer, please try again");
+				debug("Failed to update offer. Failed in try/catch. Input: " + input);
 				return new ManageOffersMenu();
 			}
 		}
@@ -303,14 +325,17 @@ public class CarSystemImpl implements CarSystem {
 	public Menu getNextMenuRemoveCar(String input) {
 		String vin = input;
 		if (input.contentEquals("Back")) {
+			trace("Going back to ManageCarsMenu. Input: " + input);
 			return new ManageCarsMenu();
 		}
 		boolean daoBool = carDAO.deleteCar(vin);
 		if (daoBool == true) {
 			System.out.println("Successfully deleted car.");
+			trace("Successfully deleted car. Vin: " + vin);
 			return new ManageCarsMenu();
 		} else {
 			System.out.println("Failed to delete car, please try again.");
+			debug("Failed to delete the car. Failed in deleteCar. Vin: " + vin);
 			return new RemoveCarMenu();
 		}
 	}
@@ -318,11 +343,13 @@ public class CarSystemImpl implements CarSystem {
 	public Menu getNextMenuMyCars(String input) {
 		// View remaining payments is forward or customer menu is back. Entering the vin takes to specific car.
 		if (input.contentEquals("Back")) {
+			trace("Going back to CustomerMenu. Input: " + input) ;
 			return new CustomerMenu();
 		} else {
-			CarDAOSerialization carDAO = new CarDAOSerialization();
 			Car car = carDAO.readCar(input);
 			if (car != null) {
+				// TODO: Make this a real menu.
+				trace("Building menu on the fly.");
 				Menu menu = new Menu();
 				menu.outputLines.add("\nViewing your remaining payments.\n");
 				menu.outputLines.add("If you would like to go back to the previous screen, type \"Back\"");
@@ -332,6 +359,7 @@ public class CarSystemImpl implements CarSystem {
 				menu.outputLines.add(sb.toString());
 				sb.delete(0, sb.length());
 				sb.append(Menu.userName);
+				sb.append("_");
 				sb.append(input);
 				String offerId = sb.toString();
 				menu.outputLines.add("\nRemaining payments:");
@@ -347,9 +375,11 @@ public class CarSystemImpl implements CarSystem {
 				// TODO Put total remaining;
 				// Total remaining is offer.amount - (sum of get all payments on vin)
 				// Total payments left is total remaining / monthly payment
+				trace("Successfully built menu on the fly after reading the car. Menu: " + menu);
 				return menu;
 			} else {
 				System.out.println("Incorrect vin, please try again.");
+				debug("Failed to readCar. Car: " + car);
 				return new ViewMyCarsMenu();
 			}
 		}
@@ -358,15 +388,17 @@ public class CarSystemImpl implements CarSystem {
 	public Menu getNextMenuNewCars(String input) {
 		// Make an offer menu is forward customer menu is back.
 		if (input.contentEquals("Back")) {
+			trace("Going back to CustomerMenu. Input: " + input);
 			return new CustomerMenu();
 		} else {
-			CarDAOSerialization carDAO = new CarDAOSerialization();
 			Car car = carDAO.readCar(input);
 			if (car != null) {
 				Menu.prevInput = input;
+				trace("Moving on to making an offer. Input: " + input);
 				return new MakeAnOfferMenu();
 			} else {
 				System.out.println("Incorrect vin, please try again.");
+				debug("Fauled to readCar. Input: " + input);
 				return new ViewNewCarsMenu();
 			}
 		}
@@ -377,10 +409,13 @@ public class CarSystemImpl implements CarSystem {
 		// User input is in the form "[VIN]"
 		// Read all the payments where the title contains vin.
 		if (input.contentEquals("Back")) {
+			trace("Going back to ManageCarsMenu. Input: " + input);
 			return new ManageCarsMenu();
 		} else {
+			trace("Building menu on the fly.");
 			ArrayList<String> paymentArray = new ArrayList<>();
 			paymentArray = paymentDAO.getAllPayments();
+			// TODO: Make this a real menu.
 			Menu menu = new Menu();
 			menu.outputLines.add("\nViewing payments.\n");
 			menu.outputLines.add("If you would like to go back to the previous screen, type \"Back\"");
@@ -393,6 +428,7 @@ public class CarSystemImpl implements CarSystem {
 					menu.outputLines.add(s);				
 				}
 			}
+			trace("Successfully built menu on the fly.");
 			return menu;
 		}
 	}
@@ -401,6 +437,7 @@ public class CarSystemImpl implements CarSystem {
 		// Go back to customer menu.
 		// User input is a string in the form "[Payment Amount] [Vin]"
 		if (input.contentEquals("Back")) {
+			trace("Returning to CustomerMenu. Input: " + input);
 			return new CustomerMenu();
 		}
 		try {
@@ -412,29 +449,27 @@ public class CarSystemImpl implements CarSystem {
 			boolean result = paymentDAO.createPayment(payment);
 			if (result) {
 				System.out.println("Succeeded in making a payment.");
+				trace("Succeeded in making payment. Payment: " + payment);
 				return new CustomerMenu();
 			} else {
 				System.out.println("Failed to make a payment, please try again.");
+				debug("Failed to make payment. Failed during createPayment. Input: " + input);
 				return new MakePaymentMenu();
 			}
 		} catch (Exception e) {
 			System.out.println("Failed to make a payment, please try again.");
+			debug("Failed to make payment. Failed in try/catch. Input: " + input);
 			return new MakePaymentMenu();
 		}
 	}
 	
-	public boolean rejectAllOtherOffers(String vin, OfferDAOSerialization offerDAO) {
+	public boolean rejectAllOtherOffers(String vin, String username) {
 		try {
-			ArrayList<String> listOffer = offerDAO.getAllOffers();
-			for (String s : listOffer) {
-				if (s.contains(vin)) {
-					String fileDeleteName = ".//src//main//resources//offers//" + s + ".dat";
-					File fileDelete = new File(fileDeleteName);
-					fileDelete.delete();
-				}
-			}
-			return true;
+			boolean result = offerDAO.rejectOffers(vin, username);
+			trace("Succeeded in deleting other offers. Vin: " + vin + " Username: " + username);
+			return result;
 		} catch (Exception e) {
+			debug("Failed to delete other offers. Failed in getAllOffers. Vin: " + vin + " Username: " + username);
 			return false;
 		}
 	}
