@@ -1,6 +1,7 @@
 package com.revature.dao;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import com.revature.pojos.authentication.Account;
@@ -19,10 +20,15 @@ public class AccountDAOPostgres implements AccountDAO {
 		//String sql = "insert into cookie (flavor, delciousness) values('" + cookie.getFlavor() + "', " + cookie.getDeliciousness() + ")";
 		
 		// To change which accounts table this statement is put into, change test.accounts into *.accounts where * is the location.
-		String sql = "insert into test.accounts (accountsusername, password, accountstatus) values ('" + account.getUsername() + "', '" + account.getPassword() + "', '" + account.getAccountStatus() + "')";
+		String sql = "insert into test.accounts (accountusername, password, accountstatus) values (?, ?, ?)";
+		PreparedStatement stmt;
 		
 		try {
-			connection.createStatement().executeUpdate(sql);
+			stmt = connection.prepareStatement(sql);
+			stmt.setString(1, account.getUsername());
+			stmt.setString(2, account.getPassword());
+			stmt.setString(3, account.getAccountStatus());
+			stmt.executeUpdate();
 			return true;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
