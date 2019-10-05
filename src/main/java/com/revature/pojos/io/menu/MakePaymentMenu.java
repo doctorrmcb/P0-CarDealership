@@ -2,7 +2,7 @@ package com.revature.pojos.io.menu;
 
 import java.util.ArrayList;
 
-import com.revature.dao.CarDAOSerialization;
+import com.revature.dao.CarDAOPostgres;
 import com.revature.pojos.io.Menu;
 
 public class MakePaymentMenu extends Menu {
@@ -14,7 +14,7 @@ public class MakePaymentMenu extends Menu {
 		outputLines.add("Vin\t\tOwner");
 		outputLines.add("======================================================================");
 		ArrayList<String> listCars = new ArrayList<>();
-		CarDAOSerialization carDAO = new CarDAOSerialization();
+		CarDAOPostgres carDAO = new CarDAOPostgres();
 		listCars = carDAO.getAllCars();
 		ArrayList<String> duplicateListCars = new ArrayList<>();
 		for (String s : listCars) {

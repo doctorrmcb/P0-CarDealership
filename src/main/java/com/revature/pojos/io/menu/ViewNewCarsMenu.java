@@ -2,12 +2,12 @@ package com.revature.pojos.io.menu;
 
 import java.util.ArrayList;
 
-import com.revature.dao.CarDAOSerialization;
+import com.revature.dao.CarDAOPostgres;
 import com.revature.pojos.io.Menu;
 
 public class ViewNewCarsMenu extends Menu {
 	{	
-		CarDAOSerialization carDAO = new CarDAOSerialization();
+		CarDAOPostgres carDAO = new CarDAOPostgres();
 		outputLines.add("\nViewing new cars.\n");
 		outputLines.add("If you would like to make an offer on a car please enter the VIN");
 		outputLines.add("If you would like to go back to the previous screen, type \"Back\"");

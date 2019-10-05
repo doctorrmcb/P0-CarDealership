@@ -2,6 +2,7 @@ package com.revature.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.revature.pojos.authentication.Account;
@@ -17,10 +18,8 @@ public class AccountDAOPostgres implements AccountDAO {
 	
 	@Override
 	public boolean createAccount(Account account) {
-		//String sql = "insert into cookie (flavor, delciousness) values('" + cookie.getFlavor() + "', " + cookie.getDeliciousness() + ")";
-		
 		// To change which accounts table this statement is put into, change test.accounts into *.accounts where * is the location.
-		String sql = "insert into test.accounts (accountusername, password, accountstatus) values (?, ?, ?)";
+		String sql = "insert into test.accounts (accountusername, password, accountstatus) values (?, ?, ?);";
 		PreparedStatement stmt;
 		
 		try {
@@ -31,7 +30,7 @@ public class AccountDAOPostgres implements AccountDAO {
 			stmt.executeUpdate();
 			return true;
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			// TODO Put logging here.
 			e.printStackTrace();
 			return false;
 		}
@@ -39,7 +38,23 @@ public class AccountDAOPostgres implements AccountDAO {
 	
 	@Override
 	public Account readAccount(String username) {
-		return null;
+		// To change which accounts table this statement is put into, change test.accounts into *.accounts where * is the location.
+		//String sql = "insert into test.accounts (accountusername, password, accountstatus) values (?, ?, ?)";
+		String sql = "select * from test.accounts where accountusername = ?;";
+		PreparedStatement stmt;
+		
+		try {
+			stmt = connection.prepareStatement(sql);
+			stmt.setString(1, username);
+			ResultSet rs = stmt.executeQuery();
+			rs.next();
+			Account account = new Account(rs.getString(1), rs.getString(2), rs.getString(3));
+			return account;
+		} catch (SQLException e) {
+			// TODO Implement logging.
+			e.printStackTrace();
+			return null;
+		}
 	}
 	
 }

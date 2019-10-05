@@ -233,3 +233,392 @@
 2019-10-05 13:42:40 TRACE root:30 - Trying to register user. Account: Account [username=Robert');, password=drop, accountStatus=table]
 2019-10-05 13:42:40 TRACE root:30 - Registration succeeded. Customer added. Input: Robert'); drop table accounts;--
 2019-10-05 13:42:40 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.CustomerMenu@c48c6ec4
+2019-10-05 14:16:24 TRACE root:30 - Performing initial setup for main method.
+2019-10-05 14:16:25 TRACE root:30 - Displaying initialMenu.
+2019-10-05 14:16:25 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.InitialMenu@10ca3ca1
+2019-10-05 14:16:25 TRACE root:30 - Getting initial input.
+2019-10-05 14:16:29 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: 1
+2019-10-05 14:16:29 TRACE root:30 - Getting 2nd menu.
+2019-10-05 14:16:29 TRACE root:30 - Returning next menu. Current Menu: com.revature.pojos.io.menu.InitialMenu@10ca3ca1 Next Menu: com.revature.pojos.io.menu.LoginMenu@382e632b
+2019-10-05 14:16:29 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.LoginMenu@382e632b
+2019-10-05 14:16:32 TRACE root:30 - Got user input, user input could be any value. User input: user1 pass1
+2019-10-05 14:16:32 TRACE root:30 - Calling special menu getter. Menu: com.revature.pojos.io.menu.LoginMenu@382e632b
+2019-10-05 14:16:32 TRACE root:30 - Getting next menu after LoginMenu.
+2019-10-05 14:16:32 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@6e0e048a
+2019-10-05 14:16:33 DEBUG root:22 - Login failed. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@6e0e048a
+2019-10-05 14:16:33 DEBUG root:22 - Login failed during tryLogin. Input: user1 pass1
+2019-10-05 14:16:33 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.LoginMenu@382e632b
+2019-10-05 14:17:45 TRACE root:30 - Performing initial setup for main method.
+2019-10-05 14:17:46 TRACE root:30 - Displaying initialMenu.
+2019-10-05 14:17:46 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.InitialMenu@10ca3ca1
+2019-10-05 14:17:46 TRACE root:30 - Getting initial input.
+2019-10-05 14:17:50 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: 1
+2019-10-05 14:17:50 TRACE root:30 - Getting 2nd menu.
+2019-10-05 14:17:50 TRACE root:30 - Returning next menu. Current Menu: com.revature.pojos.io.menu.InitialMenu@10ca3ca1 Next Menu: com.revature.pojos.io.menu.LoginMenu@382e632b
+2019-10-05 14:17:50 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.LoginMenu@382e632b
+2019-10-05 14:17:52 TRACE root:30 - Got user input, user input could be any value. User input: emp1 pass1
+2019-10-05 14:17:52 TRACE root:30 - Calling special menu getter. Menu: com.revature.pojos.io.menu.LoginMenu@382e632b
+2019-10-05 14:17:52 TRACE root:30 - Getting next menu after LoginMenu.
+2019-10-05 14:17:52 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@6e0e048a
+2019-10-05 14:17:52 TRACE root:30 - Login succeeded. Account Status: Employee
+2019-10-05 14:17:52 TRACE root:30 - Login succeeded. Logging in as Employee. Input: emp1 pass1
+2019-10-05 14:17:52 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.EmployeeMenu@b24db062
+2019-10-05 14:38:51 TRACE root:30 - Performing initial setup for main method.
+2019-10-05 14:38:53 TRACE root:30 - Displaying initialMenu.
+2019-10-05 14:38:53 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.InitialMenu@10ca3ca1
+2019-10-05 14:38:53 TRACE root:30 - Getting initial input.
+2019-10-05 14:38:56 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: 1
+2019-10-05 14:38:56 TRACE root:30 - Getting 2nd menu.
+2019-10-05 14:38:56 TRACE root:30 - Returning next menu. Current Menu: com.revature.pojos.io.menu.InitialMenu@10ca3ca1 Next Menu: com.revature.pojos.io.menu.LoginMenu@382e632b
+2019-10-05 14:38:56 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.LoginMenu@382e632b
+2019-10-05 14:38:59 TRACE root:30 - Got user input, user input could be any value. User input: emp1 pass1
+2019-10-05 14:38:59 TRACE root:30 - Calling special menu getter. Menu: com.revature.pojos.io.menu.LoginMenu@382e632b
+2019-10-05 14:38:59 TRACE root:30 - Getting next menu after LoginMenu.
+2019-10-05 14:38:59 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@6e0e048a
+2019-10-05 14:38:59 TRACE root:30 - Login succeeded. Account Status: Employee
+2019-10-05 14:38:59 TRACE root:30 - Login succeeded. Logging in as Employee. Input: emp1 pass1
+2019-10-05 14:38:59 DEBUG root:22 - Login failed during getNextMenuLogin. Input: emp1 pass1
+2019-10-05 14:38:59 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.LoginMenu@382e632b
+2019-10-05 14:41:06 TRACE root:30 - Performing initial setup for main method.
+2019-10-05 14:41:07 TRACE root:30 - Displaying initialMenu.
+2019-10-05 14:41:07 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.InitialMenu@10ca3ca1
+2019-10-05 14:41:07 TRACE root:30 - Getting initial input.
+2019-10-05 14:41:09 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: 1
+2019-10-05 14:41:09 TRACE root:30 - Getting 2nd menu.
+2019-10-05 14:41:09 TRACE root:30 - Returning next menu. Current Menu: com.revature.pojos.io.menu.InitialMenu@10ca3ca1 Next Menu: com.revature.pojos.io.menu.LoginMenu@382e632b
+2019-10-05 14:41:09 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.LoginMenu@382e632b
+2019-10-05 14:41:14 TRACE root:30 - Got user input, user input could be any value. User input: emp1 pass1
+2019-10-05 14:41:14 TRACE root:30 - Calling special menu getter. Menu: com.revature.pojos.io.menu.LoginMenu@382e632b
+2019-10-05 14:41:14 TRACE root:30 - Getting next menu after LoginMenu.
+2019-10-05 14:41:14 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@6e0e048a
+2019-10-05 14:41:14 TRACE root:30 - Login succeeded. Account Status: Employee
+2019-10-05 14:41:14 TRACE root:30 - Login succeeded. Logging in as Employee. Input: emp1 pass1
+2019-10-05 14:41:14 DEBUG root:22 - Login failed during getNextMenuLogin. Input: emp1 pass1
+2019-10-05 14:41:14 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.LoginMenu@382e632b
+2019-10-05 14:41:20 TRACE root:30 - Performing initial setup for main method.
+2019-10-05 14:41:22 TRACE root:30 - Displaying initialMenu.
+2019-10-05 14:41:22 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.InitialMenu@10ca3ca1
+2019-10-05 14:41:22 TRACE root:30 - Getting initial input.
+2019-10-05 14:41:24 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: 1
+2019-10-05 14:41:24 TRACE root:30 - Getting 2nd menu.
+2019-10-05 14:41:24 TRACE root:30 - Returning next menu. Current Menu: com.revature.pojos.io.menu.InitialMenu@10ca3ca1 Next Menu: com.revature.pojos.io.menu.LoginMenu@382e632b
+2019-10-05 14:41:24 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.LoginMenu@382e632b
+2019-10-05 14:41:27 TRACE root:30 - Got user input, user input could be any value. User input: emp1 pass1
+2019-10-05 14:41:27 TRACE root:30 - Calling special menu getter. Menu: com.revature.pojos.io.menu.LoginMenu@382e632b
+2019-10-05 14:41:27 TRACE root:30 - Getting next menu after LoginMenu.
+2019-10-05 14:44:52 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@61386958
+2019-10-05 14:49:16 TRACE root:30 - Login succeeded. Account Status: Employee
+2019-10-05 14:50:33 TRACE root:30 - Login succeeded. Logging in as Employee. Input: emp1 pass1
+2019-10-05 14:50:42 DEBUG root:22 - Login failed during getNextMenuLogin. Input: emp1 pass1
+2019-10-05 14:50:42 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.LoginMenu@382e632b
+2019-10-05 14:52:05 TRACE root:30 - Performing initial setup for main method.
+2019-10-05 14:52:07 TRACE root:30 - Displaying initialMenu.
+2019-10-05 14:52:07 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.InitialMenu@10ca3ca1
+2019-10-05 14:52:07 TRACE root:30 - Getting initial input.
+2019-10-05 14:52:09 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: 1
+2019-10-05 14:52:09 TRACE root:30 - Getting 2nd menu.
+2019-10-05 14:52:09 TRACE root:30 - Returning next menu. Current Menu: com.revature.pojos.io.menu.InitialMenu@10ca3ca1 Next Menu: com.revature.pojos.io.menu.LoginMenu@382e632b
+2019-10-05 14:52:09 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.LoginMenu@382e632b
+2019-10-05 14:52:12 TRACE root:30 - Got user input, user input could be any value. User input: emp1 pass1
+2019-10-05 14:52:12 TRACE root:30 - Calling special menu getter. Menu: com.revature.pojos.io.menu.LoginMenu@382e632b
+2019-10-05 14:52:12 TRACE root:30 - Getting next menu after LoginMenu.
+2019-10-05 14:52:12 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@61386958
+2019-10-05 14:52:12 TRACE root:30 - Login succeeded. Account Status: Employee
+2019-10-05 14:52:12 TRACE root:30 - Login succeeded. Logging in as Employee. Input: emp1 pass1
+2019-10-05 16:12:02 TRACE root:30 - Performing initial setup for main method.
+2019-10-05 16:12:04 TRACE root:30 - Displaying initialMenu.
+2019-10-05 16:12:04 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.InitialMenu@10ca3ca1
+2019-10-05 16:12:04 TRACE root:30 - Getting initial input.
+2019-10-05 16:12:08 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: 1
+2019-10-05 16:12:08 TRACE root:30 - Getting 2nd menu.
+2019-10-05 16:12:08 TRACE root:30 - Returning next menu. Current Menu: com.revature.pojos.io.menu.InitialMenu@10ca3ca1 Next Menu: com.revature.pojos.io.menu.LoginMenu@382e632b
+2019-10-05 16:12:08 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.LoginMenu@382e632b
+2019-10-05 16:12:10 TRACE root:30 - Got user input, user input could be any value. User input: emp1 pass1
+2019-10-05 16:12:10 TRACE root:30 - Calling special menu getter. Menu: com.revature.pojos.io.menu.LoginMenu@382e632b
+2019-10-05 16:12:10 TRACE root:30 - Getting next menu after LoginMenu.
+2019-10-05 16:12:10 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@47ef968d
+2019-10-05 16:12:10 TRACE root:30 - Login succeeded. Account Status: Employee
+2019-10-05 16:12:10 TRACE root:30 - Login succeeded. Logging in as Employee. Input: emp1 pass1
+2019-10-05 16:12:12 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.EmployeeMenu@1eca7f80
+2019-10-05 16:12:17 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: 1
+2019-10-05 16:12:17 TRACE root:30 - Returning next menu. Current Menu: com.revature.pojos.io.menu.EmployeeMenu@1eca7f80 Next Menu: com.revature.pojos.io.menu.ManageCarsMenu@247c6f6
+2019-10-05 16:12:17 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.ManageCarsMenu@247c6f6
+2019-10-05 16:12:32 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: 1
+2019-10-05 16:12:32 TRACE root:30 - Returning next menu. Current Menu: com.revature.pojos.io.menu.ManageCarsMenu@247c6f6 Next Menu: com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:12:32 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:13:02 TRACE root:30 - Got user input, user input could be any value. User input: 1FDAF56R49EA43340 Revature
+2019-10-05 16:13:02 TRACE root:30 - Calling special menu getter. Menu: com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:13:02 TRACE root:30 - Getting next menu after AddCarMenu.
+2019-10-05 16:13:02 TRACE root:30 - Succeeded adding car. Input: 1FDAF56R49EA43340 Revature
+2019-10-05 16:13:03 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.ManageCarsMenu@e2d67394
+2019-10-05 16:14:49 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: 2
+2019-10-05 16:14:49 TRACE root:30 - Returning next menu. Current Menu: com.revature.pojos.io.menu.ManageCarsMenu@e2d67394 Next Menu: com.revature.pojos.io.menu.RemoveCarMenu@9677118
+2019-10-05 16:14:49 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.RemoveCarMenu@9677118
+2019-10-05 16:14:54 TRACE root:30 - Got user input, user input could be any value. User input: Revature
+2019-10-05 16:14:54 TRACE root:30 - Calling special menu getter. Menu: com.revature.pojos.io.menu.RemoveCarMenu@9677118
+2019-10-05 16:14:54 TRACE root:30 - Getting next menu after RemoveCarMenu.
+2019-10-05 16:14:54 TRACE root:30 - Successfully deleted car. Vin: Revature
+2019-10-05 16:14:55 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.ManageCarsMenu@247c6f6
+2019-10-05 16:15:09 TRACE root:30 - Performing initial setup for main method.
+2019-10-05 16:15:11 TRACE root:30 - Displaying initialMenu.
+2019-10-05 16:15:11 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.InitialMenu@10ca3ca1
+2019-10-05 16:15:11 TRACE root:30 - Getting initial input.
+2019-10-05 16:15:14 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: 1
+2019-10-05 16:15:14 TRACE root:30 - Getting 2nd menu.
+2019-10-05 16:15:14 TRACE root:30 - Returning next menu. Current Menu: com.revature.pojos.io.menu.InitialMenu@10ca3ca1 Next Menu: com.revature.pojos.io.menu.LoginMenu@382e632b
+2019-10-05 16:15:14 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.LoginMenu@382e632b
+2019-10-05 16:15:16 TRACE root:30 - Got user input, user input could be any value. User input: emp1 pass1
+2019-10-05 16:15:16 TRACE root:30 - Calling special menu getter. Menu: com.revature.pojos.io.menu.LoginMenu@382e632b
+2019-10-05 16:15:16 TRACE root:30 - Getting next menu after LoginMenu.
+2019-10-05 16:15:16 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@47ef968d
+2019-10-05 16:15:16 TRACE root:30 - Login succeeded. Account Status: Employee
+2019-10-05 16:15:16 TRACE root:30 - Login succeeded. Logging in as Employee. Input: emp1 pass1
+2019-10-05 16:15:17 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.EmployeeMenu@1eca7f80
+2019-10-05 16:15:19 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: 1
+2019-10-05 16:15:19 TRACE root:30 - Returning next menu. Current Menu: com.revature.pojos.io.menu.EmployeeMenu@1eca7f80 Next Menu: com.revature.pojos.io.menu.ManageCarsMenu@247c6f6
+2019-10-05 16:15:19 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.ManageCarsMenu@247c6f6
+2019-10-05 16:15:21 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: 1
+2019-10-05 16:15:21 TRACE root:30 - Returning next menu. Current Menu: com.revature.pojos.io.menu.ManageCarsMenu@247c6f6 Next Menu: com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:15:21 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:15:27 TRACE root:30 - Got user input, user input could be any value. User input: 1FDAF56R49EA43340 Revature
+2019-10-05 16:15:27 TRACE root:30 - Calling special menu getter. Menu: com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:15:27 TRACE root:30 - Getting next menu after AddCarMenu.
+2019-10-05 16:15:27 TRACE root:30 - Succeeded adding car. Input: 1FDAF56R49EA43340 Revature
+2019-10-05 16:15:28 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.ManageCarsMenu@e0c0d54
+2019-10-05 16:17:07 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: 1
+2019-10-05 16:17:07 TRACE root:30 - Returning next menu. Current Menu: com.revature.pojos.io.menu.ManageCarsMenu@e0c0d54 Next Menu: com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:17:07 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:17:23 TRACE root:30 - Got user input, user input could be any value. User input: JT4RN82P8L5055613 Revature
+2019-10-05 16:17:23 TRACE root:30 - Calling special menu getter. Menu: com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:17:23 TRACE root:30 - Getting next menu after AddCarMenu.
+2019-10-05 16:17:23 DEBUG root:22 - Failed to add car. Failed in the createCar function. Input: JT4RN82P8L5055613 Revature
+2019-10-05 16:17:23 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:22:09 TRACE root:30 - Got user input, user input could be any value. User input: Back
+2019-10-05 16:22:09 TRACE root:30 - Calling special menu getter. Menu: com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:22:09 TRACE root:30 - Getting next menu after AddCarMenu.
+2019-10-05 16:23:49 TRACE root:30 - Performing initial setup for main method.
+2019-10-05 16:23:52 TRACE root:30 - Displaying initialMenu.
+2019-10-05 16:23:52 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.InitialMenu@10ca3ca1
+2019-10-05 16:23:52 TRACE root:30 - Getting initial input.
+2019-10-05 16:24:12 TRACE root:30 - Performing initial setup for main method.
+2019-10-05 16:24:14 TRACE root:30 - Displaying initialMenu.
+2019-10-05 16:24:14 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.InitialMenu@10ca3ca1
+2019-10-05 16:24:14 TRACE root:30 - Getting initial input.
+2019-10-05 16:24:18 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: 1
+2019-10-05 16:24:18 TRACE root:30 - Getting 2nd menu.
+2019-10-05 16:24:18 TRACE root:30 - Returning next menu. Current Menu: com.revature.pojos.io.menu.InitialMenu@10ca3ca1 Next Menu: com.revature.pojos.io.menu.LoginMenu@382e632b
+2019-10-05 16:24:18 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.LoginMenu@382e632b
+2019-10-05 16:24:21 TRACE root:30 - Got user input, user input could be any value. User input: emp1 pass1
+2019-10-05 16:24:21 TRACE root:30 - Calling special menu getter. Menu: com.revature.pojos.io.menu.LoginMenu@382e632b
+2019-10-05 16:24:21 TRACE root:30 - Getting next menu after LoginMenu.
+2019-10-05 16:24:21 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@47ef968d
+2019-10-05 16:24:22 TRACE root:30 - Login succeeded. Account Status: Employee
+2019-10-05 16:24:22 TRACE root:30 - Login succeeded. Logging in as Employee. Input: emp1 pass1
+2019-10-05 16:24:23 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.EmployeeMenu@16607c9e
+2019-10-05 16:24:24 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: 1
+2019-10-05 16:24:24 TRACE root:30 - Returning next menu. Current Menu: com.revature.pojos.io.menu.EmployeeMenu@16607c9e Next Menu: com.revature.pojos.io.menu.ManageCarsMenu@e2d67394
+2019-10-05 16:24:24 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.ManageCarsMenu@e2d67394
+2019-10-05 16:24:27 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: 2
+2019-10-05 16:24:27 TRACE root:30 - Returning next menu. Current Menu: com.revature.pojos.io.menu.ManageCarsMenu@e2d67394 Next Menu: com.revature.pojos.io.menu.RemoveCarMenu@9677118
+2019-10-05 16:24:27 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.RemoveCarMenu@9677118
+2019-10-05 16:24:30 TRACE root:30 - Got user input, user input could be any value. User input: Revature
+2019-10-05 16:24:30 TRACE root:30 - Calling special menu getter. Menu: com.revature.pojos.io.menu.RemoveCarMenu@9677118
+2019-10-05 16:24:30 TRACE root:30 - Getting next menu after RemoveCarMenu.
+2019-10-05 16:24:30 TRACE root:30 - Successfully deleted car. Vin: Revature
+2019-10-05 16:24:31 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.ManageCarsMenu@247c6f6
+2019-10-05 16:24:32 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: 1
+2019-10-05 16:24:32 TRACE root:30 - Returning next menu. Current Menu: com.revature.pojos.io.menu.ManageCarsMenu@247c6f6 Next Menu: com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:24:32 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:24:47 TRACE root:30 - Got user input, user input could be any value. User input: JT4RN82P8L5055613 Revature
+2019-10-05 16:24:47 TRACE root:30 - Calling special menu getter. Menu: com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:24:47 TRACE root:30 - Getting next menu after AddCarMenu.
+2019-10-05 16:24:47 TRACE root:30 - Succeeded adding car. Input: JT4RN82P8L5055613 Revature
+2019-10-05 16:24:48 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.ManageCarsMenu@ec04874
+2019-10-05 16:24:50 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: 1
+2019-10-05 16:24:50 TRACE root:30 - Returning next menu. Current Menu: com.revature.pojos.io.menu.ManageCarsMenu@ec04874 Next Menu: com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:24:50 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:25:04 TRACE root:30 - Got user input, user input could be any value. User input: 1FACP54Y5LA118488 Revature
+2019-10-05 16:25:04 TRACE root:30 - Calling special menu getter. Menu: com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:25:04 TRACE root:30 - Getting next menu after AddCarMenu.
+2019-10-05 16:25:04 TRACE root:30 - Succeeded adding car. Input: 1FACP54Y5LA118488 Revature
+2019-10-05 16:25:05 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.ManageCarsMenu@df197d36
+2019-10-05 16:25:10 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: 1
+2019-10-05 16:25:10 TRACE root:30 - Returning next menu. Current Menu: com.revature.pojos.io.menu.ManageCarsMenu@df197d36 Next Menu: com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:25:10 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:25:19 TRACE root:30 - Got user input, user input could be any value. User input: 2019-10-05 16:24:12 TRACE root:30 - Performing initial setup for main method.
+2019-10-05 16:25:19 TRACE root:30 - Calling special menu getter. Menu: com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:25:19 TRACE root:30 - Getting next menu after AddCarMenu.
+2019-10-05 16:25:20 TRACE root:30 - Succeeded adding car. Input: 2019-10-05 16:24:12 TRACE root:30 - Performing initial setup for main method.
+2019-10-05 16:25:20 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.ManageCarsMenu@afe19614
+2019-10-05 16:25:20 DEBUG root:22 - Got user input, user input was invalid. User input: 2019-10-05 16:24:14 TRACE root:30 - Displaying initialMenu. Menu: com.revature.pojos.io.menu.ManageCarsMenu@afe19614
+2019-10-05 16:25:20 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.ManageCarsMenu@afe19614
+2019-10-05 16:25:20 DEBUG root:22 - Got user input, user input was invalid. User input: 2019-10-05 16:24:14 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.InitialMenu@10ca3ca1 Menu: com.revature.pojos.io.menu.ManageCarsMenu@afe19614
+2019-10-05 16:25:20 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.ManageCarsMenu@afe19614
+2019-10-05 16:25:20 DEBUG root:22 - Got user input, user input was invalid. User input:  Menu: com.revature.pojos.io.menu.ManageCarsMenu@afe19614
+2019-10-05 16:25:20 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.ManageCarsMenu@afe19614
+2019-10-05 16:25:20 DEBUG root:22 - Got user input, user input was invalid. User input: Welcome to the Revature car dealership! Menu: com.revature.pojos.io.menu.ManageCarsMenu@afe19614
+2019-10-05 16:25:20 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.ManageCarsMenu@afe19614
+2019-10-05 16:25:20 DEBUG root:22 - Got user input, user input was invalid. User input:  Menu: com.revature.pojos.io.menu.ManageCarsMenu@afe19614
+2019-10-05 16:25:20 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.ManageCarsMenu@afe19614
+2019-10-05 16:25:20 DEBUG root:22 - Got user input, user input was invalid. User input: Please enter a number to choose from the options below: Menu: com.revature.pojos.io.menu.ManageCarsMenu@afe19614
+2019-10-05 16:25:20 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.ManageCarsMenu@afe19614
+2019-10-05 16:25:20 DEBUG root:22 - Got user input, user input was invalid. User input: 1: Login Menu: com.revature.pojos.io.menu.ManageCarsMenu@afe19614
+2019-10-05 16:25:20 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.ManageCarsMenu@afe19614
+2019-10-05 16:25:20 DEBUG root:22 - Got user input, user input was invalid. User input: 2: Register Menu: com.revature.pojos.io.menu.ManageCarsMenu@afe19614
+2019-10-05 16:25:20 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.ManageCarsMenu@afe19614
+2019-10-05 16:25:20 DEBUG root:22 - Got user input, user input was invalid. User input: 3: Exit Menu: com.revature.pojos.io.menu.ManageCarsMenu@afe19614
+2019-10-05 16:25:20 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.ManageCarsMenu@afe19614
+2019-10-05 16:25:20 DEBUG root:22 - Got user input, user input was invalid. User input: 2019-10-05 16:24:14 TRACE root:30 - Getting initial input. Menu: com.revature.pojos.io.menu.ManageCarsMenu@afe19614
+2019-10-05 16:25:20 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.ManageCarsMenu@afe19614
+2019-10-05 16:25:20 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: 1
+2019-10-05 16:25:20 TRACE root:30 - Returning next menu. Current Menu: com.revature.pojos.io.menu.ManageCarsMenu@afe19614 Next Menu: com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:25:20 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:25:20 TRACE root:30 - Got user input, user input could be any value. User input: 2019-10-05 16:24:18 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: 1
+2019-10-05 16:25:20 TRACE root:30 - Calling special menu getter. Menu: com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:25:20 TRACE root:30 - Getting next menu after AddCarMenu.
+2019-10-05 16:25:21 DEBUG root:22 - Failed to add car. Failed in the createCar function. Input: 2019-10-05 16:24:18 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: 1
+2019-10-05 16:25:21 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:25:21 TRACE root:30 - Got user input, user input could be any value. User input: 2019-10-05 16:24:18 TRACE root:30 - Getting 2nd menu.
+2019-10-05 16:25:21 TRACE root:30 - Calling special menu getter. Menu: com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:25:21 TRACE root:30 - Getting next menu after AddCarMenu.
+2019-10-05 16:25:21 DEBUG root:22 - Failed to add car. Failed in the createCar function. Input: 2019-10-05 16:24:18 TRACE root:30 - Getting 2nd menu.
+2019-10-05 16:25:21 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:25:21 TRACE root:30 - Got user input, user input could be any value. User input: 2019-10-05 16:24:18 TRACE root:30 - Returning next menu. Current Menu: com.revature.pojos.io.menu.InitialMenu@10ca3ca1 Next Menu: com.revature.pojos.io.menu.LoginMenu@382e632b
+2019-10-05 16:25:21 TRACE root:30 - Calling special menu getter. Menu: com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:25:21 TRACE root:30 - Getting next menu after AddCarMenu.
+2019-10-05 16:25:21 DEBUG root:22 - Failed to add car. Failed in the createCar function. Input: 2019-10-05 16:24:18 TRACE root:30 - Returning next menu. Current Menu: com.revature.pojos.io.menu.InitialMenu@10ca3ca1 Next Menu: com.revature.pojos.io.menu.LoginMenu@382e632b
+2019-10-05 16:25:21 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:25:21 TRACE root:30 - Got user input, user input could be any value. User input: 2019-10-05 16:24:18 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.LoginMenu@382e632b
+2019-10-05 16:25:21 TRACE root:30 - Calling special menu getter. Menu: com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:25:21 TRACE root:30 - Getting next menu after AddCarMenu.
+2019-10-05 16:25:21 DEBUG root:22 - Failed to add car. Failed in the createCar function. Input: 2019-10-05 16:24:18 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.LoginMenu@382e632b
+2019-10-05 16:25:21 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:25:21 TRACE root:30 - Got user input, user input could be any value. User input: 
+2019-10-05 16:25:21 TRACE root:30 - Calling special menu getter. Menu: com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:25:21 TRACE root:30 - Getting next menu after AddCarMenu.
+2019-10-05 16:25:42 TRACE root:30 - Performing initial setup for main method.
+2019-10-05 16:25:45 TRACE root:30 - Displaying initialMenu.
+2019-10-05 16:25:45 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.InitialMenu@10ca3ca1
+2019-10-05 16:25:45 TRACE root:30 - Getting initial input.
+2019-10-05 16:25:49 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: 1
+2019-10-05 16:25:49 TRACE root:30 - Getting 2nd menu.
+2019-10-05 16:25:49 TRACE root:30 - Returning next menu. Current Menu: com.revature.pojos.io.menu.InitialMenu@10ca3ca1 Next Menu: com.revature.pojos.io.menu.LoginMenu@382e632b
+2019-10-05 16:25:49 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.LoginMenu@382e632b
+2019-10-05 16:25:54 TRACE root:30 - Got user input, user input could be any value. User input: emp1 pass1
+2019-10-05 16:25:54 TRACE root:30 - Calling special menu getter. Menu: com.revature.pojos.io.menu.LoginMenu@382e632b
+2019-10-05 16:25:54 TRACE root:30 - Getting next menu after LoginMenu.
+2019-10-05 16:25:54 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@47ef968d
+2019-10-05 16:25:54 TRACE root:30 - Login succeeded. Account Status: Employee
+2019-10-05 16:25:54 TRACE root:30 - Login succeeded. Logging in as Employee. Input: emp1 pass1
+2019-10-05 16:25:55 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.EmployeeMenu@cd2cff1e
+2019-10-05 16:25:58 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: 1
+2019-10-05 16:25:58 TRACE root:30 - Returning next menu. Current Menu: com.revature.pojos.io.menu.EmployeeMenu@cd2cff1e Next Menu: com.revature.pojos.io.menu.ManageCarsMenu@afe19614
+2019-10-05 16:25:58 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.ManageCarsMenu@afe19614
+2019-10-05 16:26:13 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: 2
+2019-10-05 16:26:13 TRACE root:30 - Returning next menu. Current Menu: com.revature.pojos.io.menu.ManageCarsMenu@afe19614 Next Menu: com.revature.pojos.io.menu.RemoveCarMenu@e413662a
+2019-10-05 16:26:13 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.RemoveCarMenu@e413662a
+2019-10-05 16:26:15 TRACE root:30 - Got user input, user input could be any value. User input: 2019-10-05
+2019-10-05 16:26:15 TRACE root:30 - Calling special menu getter. Menu: com.revature.pojos.io.menu.RemoveCarMenu@e413662a
+2019-10-05 16:26:15 TRACE root:30 - Getting next menu after RemoveCarMenu.
+2019-10-05 16:26:15 TRACE root:30 - Successfully deleted car. Vin: 2019-10-05
+2019-10-05 16:26:16 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.ManageCarsMenu@df197d36
+2019-10-05 16:26:20 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: 1
+2019-10-05 16:26:20 TRACE root:30 - Returning next menu. Current Menu: com.revature.pojos.io.menu.ManageCarsMenu@df197d36 Next Menu: com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:26:20 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:26:34 TRACE root:30 - Got user input, user input could be any value. User input: 1GTGC34J7TZ540293 Revature
+2019-10-05 16:26:34 TRACE root:30 - Calling special menu getter. Menu: com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:26:34 TRACE root:30 - Getting next menu after AddCarMenu.
+2019-10-05 16:26:34 TRACE root:30 - Succeeded adding car. Input: 1GTGC34J7TZ540293 Revature
+2019-10-05 16:26:35 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.ManageCarsMenu@87731034
+2019-10-05 16:26:55 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: 1
+2019-10-05 16:26:55 TRACE root:30 - Returning next menu. Current Menu: com.revature.pojos.io.menu.ManageCarsMenu@87731034 Next Menu: com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:26:55 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:27:00 TRACE root:30 - Got user input, user input could be any value. User input: YS3FH71U166048389 Revature
+2019-10-05 16:27:00 TRACE root:30 - Calling special menu getter. Menu: com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:27:00 TRACE root:30 - Getting next menu after AddCarMenu.
+2019-10-05 16:27:00 TRACE root:30 - Succeeded adding car. Input: YS3FH71U166048389 Revature
+2019-10-05 16:27:01 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.ManageCarsMenu@6585dff6
+2019-10-05 16:27:04 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: 1
+2019-10-05 16:27:04 TRACE root:30 - Returning next menu. Current Menu: com.revature.pojos.io.menu.ManageCarsMenu@6585dff6 Next Menu: com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:27:04 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:27:14 TRACE root:30 - Got user input, user input could be any value. User input: 1FDYS80E2WVA98088 Revature
+2019-10-05 16:27:14 TRACE root:30 - Calling special menu getter. Menu: com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:27:14 TRACE root:30 - Getting next menu after AddCarMenu.
+2019-10-05 16:27:14 TRACE root:30 - Succeeded adding car. Input: 1FDYS80E2WVA98088 Revature
+2019-10-05 16:27:15 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.ManageCarsMenu@c8266f4
+2019-10-05 16:27:27 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: 1
+2019-10-05 16:27:27 TRACE root:30 - Returning next menu. Current Menu: com.revature.pojos.io.menu.ManageCarsMenu@c8266f4 Next Menu: com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:27:27 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:27:37 TRACE root:30 - Got user input, user input could be any value. User input: 2HJYK16418H054245 Revature
+2019-10-05 16:27:37 TRACE root:30 - Calling special menu getter. Menu: com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:27:37 TRACE root:30 - Getting next menu after AddCarMenu.
+2019-10-05 16:27:37 TRACE root:30 - Succeeded adding car. Input: 2HJYK16418H054245 Revature
+2019-10-05 16:27:38 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.ManageCarsMenu@94bb83d6
+2019-10-05 16:27:49 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: 1
+2019-10-05 16:27:49 TRACE root:30 - Returning next menu. Current Menu: com.revature.pojos.io.menu.ManageCarsMenu@94bb83d6 Next Menu: com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:27:49 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:27:53 TRACE root:30 - Got user input, user input could be any value. User input: 1GCEC14F8EJ128070 Revature
+2019-10-05 16:27:53 TRACE root:30 - Calling special menu getter. Menu: com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:27:53 TRACE root:30 - Getting next menu after AddCarMenu.
+2019-10-05 16:27:53 TRACE root:30 - Succeeded adding car. Input: 1GCEC14F8EJ128070 Revature
+2019-10-05 16:27:54 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.ManageCarsMenu@b7debd4
+2019-10-05 16:27:56 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: 1
+2019-10-05 16:27:56 TRACE root:30 - Returning next menu. Current Menu: com.revature.pojos.io.menu.ManageCarsMenu@b7debd4 Next Menu: com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:27:56 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:28:06 TRACE root:30 - Got user input, user input could be any value. User input: 1XP5DB9XXMN237303 Revature
+2019-10-05 16:28:06 TRACE root:30 - Calling special menu getter. Menu: com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:28:06 TRACE root:30 - Getting next menu after AddCarMenu.
+2019-10-05 16:28:06 TRACE root:30 - Succeeded adding car. Input: 1XP5DB9XXMN237303 Revature
+2019-10-05 16:28:07 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.ManageCarsMenu@d9082876
+2019-10-05 16:28:10 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: 1
+2019-10-05 16:28:10 TRACE root:30 - Returning next menu. Current Menu: com.revature.pojos.io.menu.ManageCarsMenu@d9082876 Next Menu: com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:28:10 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:28:21 TRACE root:30 - Got user input, user input could be any value. User input: 1GTEK14H9CF707332 Revature
+2019-10-05 16:28:21 TRACE root:30 - Calling special menu getter. Menu: com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:28:21 TRACE root:30 - Getting next menu after AddCarMenu.
+2019-10-05 16:28:21 TRACE root:30 - Succeeded adding car. Input: 1GTEK14H9CF707332 Revature
+2019-10-05 16:28:22 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.ManageCarsMenu@e4a77c34
+2019-10-05 16:28:28 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: 1
+2019-10-05 16:28:28 TRACE root:30 - Returning next menu. Current Menu: com.revature.pojos.io.menu.ManageCarsMenu@e4a77c34 Next Menu: com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:28:28 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:28:41 TRACE root:30 - Got user input, user input could be any value. User input: 2G4GU5GVXD9269664 Revature
+2019-10-05 16:28:41 TRACE root:30 - Calling special menu getter. Menu: com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:28:41 TRACE root:30 - Getting next menu after AddCarMenu.
+2019-10-05 16:28:41 TRACE root:30 - Succeeded adding car. Input: 2G4GU5GVXD9269664 Revature
+2019-10-05 16:28:42 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.ManageCarsMenu@d80b7376
+2019-10-05 16:28:47 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: 1
+2019-10-05 16:28:47 TRACE root:30 - Returning next menu. Current Menu: com.revature.pojos.io.menu.ManageCarsMenu@d80b7376 Next Menu: com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:28:47 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:28:48 TRACE root:30 - Got user input, user input could be any value. User input: Back
+2019-10-05 16:28:48 TRACE root:30 - Calling special menu getter. Menu: com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:28:48 TRACE root:30 - Getting next menu after AddCarMenu.
+2019-10-05 16:28:49 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.ManageCarsMenu@d80b7376
+2019-10-05 16:29:04 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: 1
+2019-10-05 16:29:04 TRACE root:30 - Returning next menu. Current Menu: com.revature.pojos.io.menu.ManageCarsMenu@d80b7376 Next Menu: com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:29:04 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:29:06 TRACE root:30 - Got user input, user input could be any value. User input: test test
+2019-10-05 16:29:06 TRACE root:30 - Calling special menu getter. Menu: com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-05 16:29:06 TRACE root:30 - Getting next menu after AddCarMenu.
+2019-10-05 16:29:06 TRACE root:30 - Succeeded adding car. Input: test test
+2019-10-05 16:29:07 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.ManageCarsMenu@d81a70d4
+2019-10-05 16:29:16 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: 2
+2019-10-05 16:29:16 TRACE root:30 - Returning next menu. Current Menu: com.revature.pojos.io.menu.ManageCarsMenu@d81a70d4 Next Menu: com.revature.pojos.io.menu.RemoveCarMenu@3ccc11f8
+2019-10-05 16:29:16 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.RemoveCarMenu@3ccc11f8
+2019-10-05 16:29:18 TRACE root:30 - Got user input, user input could be any value. User input: test
+2019-10-05 16:29:18 TRACE root:30 - Calling special menu getter. Menu: com.revature.pojos.io.menu.RemoveCarMenu@3ccc11f8
+2019-10-05 16:29:18 TRACE root:30 - Getting next menu after RemoveCarMenu.
+2019-10-05 16:29:18 TRACE root:30 - Successfully deleted car. Vin: test
+2019-10-05 16:29:19 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.ManageCarsMenu@d80b7376
+2019-10-05 16:29:23 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: 3
+2019-10-05 16:29:23 TRACE root:30 - Returning next menu. Current Menu: com.revature.pojos.io.menu.ManageCarsMenu@d80b7376 Next Menu: com.revature.pojos.io.menu.ViewPaymentsMenu@72c0d63c
+2019-10-05 16:29:23 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.ViewPaymentsMenu@72c0d63c
+2019-10-05 16:29:52 TRACE root:30 - Got user input, user input could be any value. User input: JT4RN82P8L5055613
+2019-10-05 16:29:52 TRACE root:30 - Calling special menu getter. Menu: com.revature.pojos.io.menu.ViewPaymentsMenu@72c0d63c
+2019-10-05 16:29:52 TRACE root:30 - Getting next menu after ViewAllPaymentsMenu.
+2019-10-05 16:29:52 TRACE root:30 - Building menu on the fly.
+2019-10-05 16:29:52 TRACE root:30 - Successfully built menu on the fly.
+2019-10-05 16:29:52 TRACE root:30 - Displaying menu com.revature.pojos.io.Menu@712f5470
+2019-10-05 16:29:56 TRACE root:30 - Got user input, user input could be any value. User input: Back
+2019-10-05 16:29:56 TRACE root:30 - Calling special menu getter. Menu: com.revature.pojos.io.Menu@712f5470
+2019-10-05 16:29:56 WARN  root:18 - GetSpecialInstance failed. Current Menu: com.revature.pojos.io.Menu@712f5470 Input: Back
+2019-10-05 16:29:56 TRACE root:30 - Displaying menu null

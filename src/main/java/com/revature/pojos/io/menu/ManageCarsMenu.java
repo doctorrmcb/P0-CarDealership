@@ -2,7 +2,7 @@ package com.revature.pojos.io.menu;
 
 import java.util.ArrayList;
 
-import com.revature.dao.CarDAOSerialization;
+import com.revature.dao.CarDAOPostgres;
 import com.revature.pojos.io.Menu;
 
 public class ManageCarsMenu extends Menu {
@@ -17,7 +17,7 @@ public class ManageCarsMenu extends Menu {
 		outputLines.add("\nAvailable cars:\n");
 		outputLines.add("Vin\t\tOwner");
 		outputLines.add("======================================================================");
-		CarDAOSerialization carDAO = new CarDAOSerialization();
+		CarDAOPostgres carDAO = new CarDAOPostgres();
 		ArrayList<String> listCars = new ArrayList<>();
 		listCars = carDAO.getAllCars();
 		for (String s : listCars) {

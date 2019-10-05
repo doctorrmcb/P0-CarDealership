@@ -208,6 +208,9 @@ public class CarSystemImpl implements CarSystem {
 	}
 	
 	public Menu getNextMenuAddCar(String input) {
+		if ("Back".contentEquals(input)) {
+			return new ManageCarsMenu();
+		}
 		String[] inputArray = input.split(" ");
 		String vin = inputArray[0];
 		String owner = inputArray[1];
@@ -345,6 +348,7 @@ public class CarSystemImpl implements CarSystem {
 		} else {
 			Car car = carDAO.readCar(input);
 			if (car != null) {
+				// TODO: Make this a real menu.
 				trace("Building menu on the fly.");
 				Menu menu = new Menu();
 				menu.outputLines.add("\nViewing your remaining payments.\n");
@@ -410,6 +414,7 @@ public class CarSystemImpl implements CarSystem {
 			trace("Building menu on the fly.");
 			ArrayList<String> paymentArray = new ArrayList<>();
 			paymentArray = paymentDAO.getAllPayments();
+			// TODO: Make this a real menu.
 			Menu menu = new Menu();
 			menu.outputLines.add("\nViewing payments.\n");
 			menu.outputLines.add("If you would like to go back to the previous screen, type \"Back\"");
