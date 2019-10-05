@@ -272,12 +272,12 @@ public class CarSystemImpl implements CarSystem {
 				Offer outputOffer = offerDAO.readOffer(arrInput[0]);
 				if (arrInput[1].contentEquals("Accept")) {
 					outputOffer.setStatus("Accepted");
-					trace("Accepted offer successfully. Decision: " + arrInput[1]);
-					boolean result2 = rejectAllOtherOffers(outputOffer.vin);
+					trace("outputOffer set to \"Accepted\" successfully. Decision: " + arrInput[1]);
+					boolean result2 = rejectAllOtherOffers(outputOffer.vin, outputOffer.username);
 					if (result2) {
 						System.out.println("Rejected all other offers.");
 						trace("Rejected offers successfully. Vin: " + outputOffer.vin + " Result2: " + result2);
-						boolean result = offerDAO.createOffer(outputOffer);
+						boolean result = offerDAO.updateOffer(outputOffer.offerId, outputOffer);
 						if (result) {
 							System.out.println("Offer update succeeded.");
 							Car car = carDAO.readCar(outputOffer.vin);
@@ -463,20 +463,13 @@ public class CarSystemImpl implements CarSystem {
 		}
 	}
 	
-	public boolean rejectAllOtherOffers(String vin) {
+	public boolean rejectAllOtherOffers(String vin, String username) {
 		try {
-			ArrayList<String> listOffer = offerDAO.getAllOffers();
-			for (String s : listOffer) {
-				if (s.contains(vin)) {
-					String fileDeleteName = ".//src//main//resources//offers//" + s + ".dat";
-					File fileDelete = new File(fileDeleteName);
-					fileDelete.delete();
-				}
-			}
-			trace("Succeeded in deleting other offers. Vin: " + vin);
-			return true;
+			boolean result = offerDAO.rejectOffers(vin, username);
+			trace("Succeeded in deleting other offers. Vin: " + vin + " Username: " + username);
+			return result;
 		} catch (Exception e) {
-			debug("Failed to delete other offers. Failed in getAllOffers. Vin: " + vin);
+			debug("Failed to delete other offers. Failed in getAllOffers. Vin: " + vin + " Username: " + username);
 			return false;
 		}
 	}

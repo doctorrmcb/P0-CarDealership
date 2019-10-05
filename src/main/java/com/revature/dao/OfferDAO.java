@@ -10,4 +10,5 @@ public interface OfferDAO {
 	public boolean updateOffer(String offerToUpdate, Offer Offer);
 	public boolean deleteOffer(String offerID);
 	public ArrayList<String> getAllOffers();
+	public boolean rejectOffers(String vin, String username);
 }

@@ -45,7 +45,7 @@ public class CarDAOPostgres implements CarDAO {
 			stmt.setString(1, vin);
 			ResultSet rs = stmt.executeQuery();
 			rs.next();
-			Car car = new Car(rs.getString(1), rs.getString(2));
+			Car car = new Car(rs.getString("vin"), rs.getString("ownerusername"));
 			return car;
 		} catch (SQLException e) {
 			//TODO Implement logging.

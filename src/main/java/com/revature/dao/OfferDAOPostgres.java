@@ -129,4 +129,22 @@ public class OfferDAOPostgres implements OfferDAO {
 		}
 		
 	}
+	
+	@Override
+	public boolean rejectOffers(String vin, String username) {
+		String sql = "update test.offers set offerstatus = 'Rejected' where vin = ? and offerusername != ?;";
+		PreparedStatement stmt;
+		
+		try {
+			stmt = connection.prepareStatement(sql);
+			stmt.setString(1, vin);
+			stmt.setString(2, username);
+			stmt.executeUpdate();
+			return true;
+		} catch (SQLException e) {
+			//TODO Implement logging.
+			e.printStackTrace();
+			return false;
+		}
+	}
 }
