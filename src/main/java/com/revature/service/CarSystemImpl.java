@@ -4,10 +4,10 @@ import java.io.File;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Scanner;
-import com.revature.dao.AccountDAOSerialization;
-import com.revature.dao.CarDAOSerialization;
-import com.revature.dao.OfferDAOSerialization;
-import com.revature.dao.PaymentDAOSerialization;
+import com.revature.dao.AccountDAOPostgres;
+import com.revature.dao.CarDAOPostgres;
+import com.revature.dao.OfferDAOPostgres;
+import com.revature.dao.PaymentDAOPostgres;
 import com.revature.pojos.Car;
 import com.revature.pojos.authentication.Account;
 import com.revature.pojos.authentication.LoginAttempt;
@@ -32,24 +32,24 @@ import static com.revature.util.LoggerUtil.*;
 
 public class CarSystemImpl implements CarSystem {
 	
-	private AccountDAOSerialization accountDAO = new AccountDAOSerialization();
-	private CarDAOSerialization carDAO = new CarDAOSerialization();
-	private OfferDAOSerialization offerDAO = new OfferDAOSerialization();
-	private PaymentDAOSerialization paymentDAO = new PaymentDAOSerialization();
+	private AccountDAOPostgres accountDAO = new AccountDAOPostgres();
+	private CarDAOPostgres carDAO = new CarDAOPostgres();
+	private OfferDAOPostgres offerDAO = new OfferDAOPostgres();
+	private PaymentDAOPostgres paymentDAO = new PaymentDAOPostgres();
 	
-	public void setOfferDAO(OfferDAOSerialization offerDAO) {
+	public void setOfferDAO(OfferDAOPostgres offerDAO) {
 		this.offerDAO = offerDAO;
 	}
 
-	public void setPaymentDAO(PaymentDAOSerialization paymentDAO) {
+	public void setPaymentDAO(PaymentDAOPostgres paymentDAO) {
 		this.paymentDAO = paymentDAO;
 	}
 
-	public void setCarDAO(CarDAOSerialization carDAO) {
+	public void setCarDAO(CarDAOPostgres carDAO) {
 		this.carDAO = carDAO;
 	}
 
-	public void setAccountDAO(AccountDAOSerialization accountDAO) {
+	public void setAccountDAO(AccountDAOPostgres accountDAO) {
 		this.accountDAO = accountDAO;
 	}
 	
@@ -110,7 +110,6 @@ public class CarSystemImpl implements CarSystem {
 	}
 	
 	public boolean tryRegister(Account account) {
-		//AccountDAOSerialization accountDAO = new AccountDAOSerialization();
 		trace("Trying to register user. Account: " + account);
 		boolean result = accountDAO.createAccount(account);
 		return result;
@@ -213,7 +212,6 @@ public class CarSystemImpl implements CarSystem {
 		String vin = inputArray[0];
 		String owner = inputArray[1];
 		Car car = new Car(vin, owner);
-		//CarDAOSerialization carDAO = new CarDAOSerialization();
 		boolean daoBool = carDAO.createCar(car);
 		if (daoBool == true) {
 			System.out.println("\nSuccessfully added car.");
@@ -243,7 +241,6 @@ public class CarSystemImpl implements CarSystem {
 			String duration = arrInput[1];
 			int intDuration = Integer.parseInt(duration);
 			Offer offer = new Offer(username, dblPrice, vin, intDuration);
-			OfferDAOSerialization offerDAO = new OfferDAOSerialization();
 			boolean result = offerDAO.createOffer(offer);
 			if (result) {
 				System.out.println("Succeeded in making offer.");
@@ -269,7 +266,6 @@ public class CarSystemImpl implements CarSystem {
 		} else {
 			try {
 				String[] arrInput = input.split(" ");
-				OfferDAOSerialization offerDAO = new OfferDAOSerialization();
 				Offer outputOffer = offerDAO.readOffer(arrInput[0]);
 				if (arrInput[1].contentEquals("Accept")) {
 					outputOffer.setStatus("Accepted");
@@ -347,7 +343,6 @@ public class CarSystemImpl implements CarSystem {
 			trace("Going back to CustomerMenu. Input: " + input) ;
 			return new CustomerMenu();
 		} else {
-			CarDAOSerialization carDAO = new CarDAOSerialization();
 			Car car = carDAO.readCar(input);
 			if (car != null) {
 				trace("Building menu on the fly.");
@@ -391,7 +386,6 @@ public class CarSystemImpl implements CarSystem {
 			trace("Going back to CustomerMenu. Input: " + input);
 			return new CustomerMenu();
 		} else {
-			CarDAOSerialization carDAO = new CarDAOSerialization();
 			Car car = carDAO.readCar(input);
 			if (car != null) {
 				Menu.prevInput = input;
@@ -463,7 +457,7 @@ public class CarSystemImpl implements CarSystem {
 		}
 	}
 	
-	public boolean rejectAllOtherOffers(String vin, OfferDAOSerialization offerDAO) {
+	public boolean rejectAllOtherOffers(String vin, OfferDAOPostgres offerDAO) {
 		try {
 			ArrayList<String> listOffer = offerDAO.getAllOffers();
 			for (String s : listOffer) {

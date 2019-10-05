@@ -18,16 +18,17 @@ public class AccountDAOPostgres implements AccountDAO {
 	public boolean createAccount(Account account) {
 		//String sql = "insert into cookie (flavor, delciousness) values('" + cookie.getFlavor() + "', " + cookie.getDeliciousness() + ")";
 		
-		String sql = "insert into accounts (username, password) values ('" + account.getUsername() + "', " + account.getPassword() + ")";
+		// To change which accounts table this statement is put into, change test.accounts into *.accounts where * is the location.
+		String sql = "insert into test.accounts (accountsusername, password, accountstatus) values ('" + account.getUsername() + "', '" + account.getPassword() + "', '" + account.getAccountStatus() + "')";
 		
 		try {
 			connection.createStatement().executeUpdate(sql);
+			return true;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			return false;
 		}
-		
-		return false;
 	}
 	
 	@Override

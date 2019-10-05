@@ -12,10 +12,10 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
-import com.revature.dao.AccountDAOSerialization;
-import com.revature.dao.CarDAOSerialization;
-import com.revature.dao.OfferDAOSerialization;
-import com.revature.dao.PaymentDAOSerialization;
+import com.revature.dao.AccountDAOPostgres;
+import com.revature.dao.CarDAOPostgres;
+import com.revature.dao.OfferDAOPostgres;
+import com.revature.dao.PaymentDAOPostgres;
 import com.revature.pojos.Car;
 import com.revature.pojos.authentication.Account;
 import com.revature.pojos.io.Menu;
@@ -31,16 +31,16 @@ public class CarSystemImplTest {
 	CarSystemImpl impl = new CarSystemImpl();
 	
 	@Mock
-	CarDAOSerialization carDAO;
+	CarDAOPostgres carDAO;
 	
 	@Mock
-	AccountDAOSerialization accountDAO;
+	AccountDAOPostgres accountDAO;
 	
 	@Mock
-	OfferDAOSerialization offerDAO;
+	OfferDAOPostgres offerDAO;
 	
 	@Mock
-	PaymentDAOSerialization paymentDAO;
+	PaymentDAOPostgres paymentDAO;
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {

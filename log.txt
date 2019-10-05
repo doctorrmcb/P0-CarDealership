@@ -114,3 +114,21 @@
 2019-10-04 21:53:46 TRACE root:30 - Calling special menu getter. Menu: com.revature.pojos.io.Menu@25247a1f
 2019-10-04 21:53:46 WARN  root:18 - GetSpecialInstance failed. Current Menu: com.revature.pojos.io.Menu@25247a1f Input: Back
 2019-10-04 21:53:46 TRACE root:30 - Displaying menu null
+2019-10-05 12:56:52 TRACE root:30 - Performing initial setup for main method.
+2019-10-05 12:56:52 TRACE root:30 - Displaying initialMenu.
+2019-10-05 12:56:52 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.InitialMenu@10ca3ca1
+2019-10-05 12:56:52 TRACE root:30 - Getting initial input.
+2019-10-05 13:01:00 DEBUG root:22 - Got user input, user input was invalid. User input:  Menu: com.revature.pojos.io.menu.InitialMenu@10ca3ca1
+2019-10-05 13:01:00 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.InitialMenu@10ca3ca1
+2019-10-05 13:04:08 TRACE root:30 - Performing initial setup for main method.
+2019-10-05 13:04:08 TRACE root:30 - Displaying initialMenu.
+2019-10-05 13:04:08 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.InitialMenu@10ca3ca1
+2019-10-05 13:04:08 TRACE root:30 - Getting initial input.
+2019-10-05 13:05:06 TRACE root:30 - Performing initial setup for main method.
+2019-10-05 13:05:06 TRACE root:30 - Displaying initialMenu.
+2019-10-05 13:05:06 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.InitialMenu@10ca3ca1
+2019-10-05 13:05:06 TRACE root:30 - Getting initial input.
+2019-10-05 13:05:24 TRACE root:30 - Performing initial setup for main method.
+2019-10-05 13:05:24 TRACE root:30 - Displaying initialMenu.
+2019-10-05 13:05:24 TRACE root:30 - Displaying menu com.revature.pojos.io.menu.InitialMenu@10ca3ca1
+2019-10-05 13:05:24 TRACE root:30 - Getting initial input.
