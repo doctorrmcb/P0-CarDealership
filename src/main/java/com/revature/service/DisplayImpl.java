@@ -49,11 +49,11 @@ public class DisplayImpl implements Display {
 
 	@Override
 	public void displayMenu(Menu menu) {
-		// TODO Auto-generated method stub
+		trace("Displaying menu " + menu);
 		for (String s:menu.outputLines) {
 			System.out.println(s);
 		}
-		trace("Displaying menu " + menu);
+		
 	}
 
 	
