@@ -20,7 +20,7 @@ public class PaymentDAOPostgres implements PaymentDAO {
 	
 	@Override
 	public boolean createPayment(Payment payment) {
-		String sql = "insert into test.offers (paymentusername, vin, paymenttime, amount) values (?, ?, ?, ?);";
+		String sql = "insert into test.payments (paymentusername, vin, paymenttime, amount) values (?, ?, ?, ?);";
 		PreparedStatement stmt;
 		
 		try {
@@ -40,17 +40,29 @@ public class PaymentDAOPostgres implements PaymentDAO {
 	
 	@Override
 	public Payment readPayment(String paymentId) {
-		return null;
-	}
-	
-	@Override
-	public boolean updatePayment(String paymentIdToUpdate, Payment outputPayment) {
-		return false;
-	}
-	
-	@Override
-	public boolean deletePayment(String paymentId) {
-		return false;
+		//vin_paymentDate
+		String[] arrInput = paymentId.split("_");
+		String sql = "select * from test.payments where vin = ? and paymenttime = ?;";
+		PreparedStatement stmt;
+		
+		try {
+			stmt = connection.prepareStatement(sql);
+			stmt.setString(1, arrInput[0]);
+			stmt.setString(2, arrInput[1]);
+			ResultSet rs = stmt.executeQuery();
+			rs.next();
+			Payment result = new Payment();
+			result.setAmount(rs.getDouble("amount"));
+			result.setOwner(rs.getString("paymentusername"));
+			result.setPaymentDate(rs.getTimestamp("paymenttime").toLocalDateTime());
+			result.setVin(rs.getString("vin"));
+			result.setPaymentId(rs.getString("vin") + "_" + rs.getTimestamp("paymenttime").toLocalDateTime());
+			return result;
+		} catch (SQLException e) {
+			// TODO Put logging here.
+			e.printStackTrace();
+			return null;			
+		}
 	}
 	
 	@Override

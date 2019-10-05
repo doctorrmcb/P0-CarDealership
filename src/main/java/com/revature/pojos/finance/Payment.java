@@ -16,7 +16,7 @@ public class Payment implements Serializable {
 		this.owner = owner;
 		this.paymentDate = LocalDateTime.now();
 		this.vin = vin;
-		this.paymentId = vin + paymentDate.toString();
+		this.paymentId = vin + "_" + paymentDate.toString();
 	}
 	
 	public Payment() {

@@ -273,7 +273,7 @@ public class CarSystemImpl implements CarSystem {
 				if (arrInput[1].contentEquals("Accept")) {
 					outputOffer.setStatus("Accepted");
 					trace("Accepted offer successfully. Decision: " + arrInput[1]);
-					boolean result2 = rejectAllOtherOffers(outputOffer.vin, offerDAO);
+					boolean result2 = rejectAllOtherOffers(outputOffer.vin);
 					if (result2) {
 						System.out.println("Rejected all other offers.");
 						trace("Rejected offers successfully. Vin: " + outputOffer.vin + " Result2: " + result2);
@@ -359,6 +359,7 @@ public class CarSystemImpl implements CarSystem {
 				menu.outputLines.add(sb.toString());
 				sb.delete(0, sb.length());
 				sb.append(Menu.userName);
+				sb.append("_");
 				sb.append(input);
 				String offerId = sb.toString();
 				menu.outputLines.add("\nRemaining payments:");
@@ -462,7 +463,7 @@ public class CarSystemImpl implements CarSystem {
 		}
 	}
 	
-	public boolean rejectAllOtherOffers(String vin, OfferDAOPostgres offerDAO) {
+	public boolean rejectAllOtherOffers(String vin) {
 		try {
 			ArrayList<String> listOffer = offerDAO.getAllOffers();
 			for (String s : listOffer) {

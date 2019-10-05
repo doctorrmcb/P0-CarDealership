@@ -18,7 +18,7 @@ public class ManageOffersMenu extends Menu {
 		ArrayList<String> listCars = new ArrayList<>();
 		listCars = offerDAO.getAllOffers();
 		for (String s : listCars) {
-			outputLines.add(s + "\t" + offerDAO.readOffer(s).status);
+			outputLines.add(s);
 		}
 	}
 	
