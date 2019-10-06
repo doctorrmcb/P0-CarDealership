@@ -13,7 +13,6 @@ public class Driver {
 	//TODO: 3. A custom stored procedure is called to perform some portion of the functionality.
 	//TODO: 7. 100% test coverage using JUnit Java testing framework.
 
-	//TODO: * As a customer, I can view my remaining payments for a car.
 	
 	public static void main (String[] args) {
 		// Declaring system objects.

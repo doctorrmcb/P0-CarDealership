@@ -69,5 +69,53 @@ public class Payment implements Serializable {
 		return "Payment [amount=" + amount + ", owner=" + owner + ", paymentDate=" + paymentDate + ", vin=" + vin
 				+ ", paymentId=" + paymentId + "]";
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		long temp;
+		temp = Double.doubleToLongBits(amount);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result + ((owner == null) ? 0 : owner.hashCode());
+		result = prime * result + ((paymentDate == null) ? 0 : paymentDate.hashCode());
+		result = prime * result + ((paymentId == null) ? 0 : paymentId.hashCode());
+		result = prime * result + ((vin == null) ? 0 : vin.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Payment other = (Payment) obj;
+		if (Double.doubleToLongBits(amount) != Double.doubleToLongBits(other.amount))
+			return false;
+		if (owner == null) {
+			if (other.owner != null)
+				return false;
+		} else if (!owner.equals(other.owner))
+			return false;
+		if (paymentDate == null) {
+			if (other.paymentDate != null)
+				return false;
+		} else if (!paymentDate.equals(other.paymentDate))
+			return false;
+		if (paymentId == null) {
+			if (other.paymentId != null)
+				return false;
+		} else if (!paymentId.equals(other.paymentId))
+			return false;
+		if (vin == null) {
+			if (other.vin != null)
+				return false;
+		} else if (!vin.equals(other.vin))
+			return false;
+		return true;
+	}
 	
 }

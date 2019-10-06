@@ -85,4 +85,23 @@ public class PaymentDAOPostgres implements PaymentDAO {
 			return null;
 		}
 	}
+	
+	@Override
+	public double getTotalPaid(String vin) {
+		String sql = "select sum(amount) from test.payments where vin = ?";
+		PreparedStatement stmt;
+		
+		try {
+			stmt = connection.prepareStatement(sql);
+			stmt.setString(1, vin);
+			ResultSet rs = stmt.executeQuery();
+			rs.next();
+			double amount = rs.getDouble(1);
+			return amount;
+		} catch (SQLException e) {
+			//TODO Implement logging.
+			e.printStackTrace();
+			return 0.0;
+		}
+	}
 }

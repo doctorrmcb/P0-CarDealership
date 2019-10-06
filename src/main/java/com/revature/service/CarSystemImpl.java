@@ -373,6 +373,12 @@ public class CarSystemImpl implements CarSystem {
 				menu.outputLines.add("Original Number of Payments:\t\t" + Integer.toString(offer.durationMonths));
 				menu.outputLines.add("Monthly Payment:\t\t\t" + formattedOffer);
 				// TODO Put total remaining;
+				double totalPaid = paymentDAO.getTotalPaid(offer.getVin());
+				menu.outputLines.add("Amount paid: " + totalPaid);
+				double remainder = offer.price - totalPaid;
+				menu.outputLines.add("Remaining Amount to pay: " + remainder);
+				int monthsLeft = (int) (remainder / monthlyPayment) + 1;
+				menu.outputLines.add("Remaining Monthly Payments: " + monthsLeft);
 				// Total remaining is offer.amount - (sum of get all payments on vin)
 				// Total payments left is total remaining / monthly payment
 				trace("Successfully built menu on the fly after reading the car. Menu: " + menu);

@@ -8,4 +8,5 @@ public interface PaymentDAO {
 	public boolean createPayment(Payment payment); 
 	public Payment readPayment(String paymentId); 
 	public ArrayList<String> getAllPayments();
+	public double getTotalPaid(String vin);
 }
