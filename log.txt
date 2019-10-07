@@ -2234,3 +2234,936 @@
 2019-10-06 23:12:55 TRACE root:30 - Getting next menu after NewCarsMenu.
 2019-10-06 23:12:57 TRACE root:30 - Going back to ViewNewCarsMenu. Input: Back
 2019-10-06 23:13:00 TRACE root:30 - Going back to CustomerMenu. Input: Back
+2019-10-07 11:50:12 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: 1
+2019-10-07 11:50:17 TRACE root:30 - Trying to register user. Account: Account [username=TestUser, password=TestPass, accountStatus=Employee]
+2019-10-07 11:50:17 TRACE root:30 - Registration succeeded. Employee added. Input: TestUser TestPass Employee
+2019-10-07 11:50:27 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@615ef8d1
+2019-10-07 11:50:27 DEBUG root:22 - Login failed. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@615ef8d1
+2019-10-07 11:50:27 DEBUG root:22 - Login failed during getNextMenuLogin. Input: userNotExist passwordNotExist
+2019-10-07 11:50:33 TRACE root:30 - Going back to ManageCarsMenu. Input: Back
+2019-10-07 11:50:38 TRACE root:30 - Returning next menu. Current Menu: com.revature.pojos.io.Menu@67efc554 Next Menu: com.revature.pojos.io.Menu@7840
+2019-10-07 11:50:41 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@974eebd1
+2019-10-07 11:50:41 DEBUG root:22 - Login failed. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@974eebd1
+2019-10-07 11:50:41 TRACE root:30 - Login succeeded. Logging in as Customer. Input: userExists passwordExists
+2019-10-07 11:50:47 TRACE root:30 - Getting next menu after MyCarMenu.
+2019-10-07 11:50:47 DEBUG root:22 - Failed to readCar. Car: null
+2019-10-07 11:50:53 TRACE root:30 - Got user input, user input could be any value. User input: Anything goes.
+2019-10-07 11:50:57 TRACE root:30 - Calling special menu getter. Menu: com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-07 11:50:57 TRACE root:30 - Getting next menu after AddCarMenu.
+2019-10-07 11:50:57 DEBUG root:22 - Failed to add car. Failed in the createCar function. Input: Anything goes.
+2019-10-07 11:51:01 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 11:51:01 TRACE root:30 - outputOffer set to "Accepted" successfully. Decision: Accept
+2019-10-07 11:51:01 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 11:51:01 TRACE root:30 - Rejected offers successfully. Vin: testVin Result2: true
+2019-10-07 11:51:01 DEBUG root:22 - Failed to update offer. Failed in try/catch. Input: Test Accept
+2019-10-07 11:51:13 TRACE root:30 - Going back to ManageCarsMenu. Input: Back
+2019-10-07 11:51:21 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@76447fdb
+2019-10-07 11:51:21 TRACE root:30 - Login succeeded. Account Status: Employee
+2019-10-07 11:51:25 DEBUG root:22 - Failed to make payment. Failed during createPayment. Input: 20.00 testVin
+2019-10-07 11:51:29 TRACE root:30 - Getting next menu after RemoveCarMenu.
+2019-10-07 11:51:29 TRACE root:30 - Successfully deleted car. Vin: testvin
+2019-10-07 11:51:34 DEBUG root:22 - Failed to make offer. Failed in the createOffer function. Input: 20.00 20
+2019-10-07 12:37:53 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: 1
+2019-10-07 12:37:54 TRACE root:30 - Trying to register user. Account: Account [username=TestUser, password=TestPass, accountStatus=Employee]
+2019-10-07 12:37:54 TRACE root:30 - Registration succeeded. Employee added. Input: TestUser TestPass Employee
+2019-10-07 12:37:54 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@615ef8d1
+2019-10-07 12:37:54 DEBUG root:22 - Login failed. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@615ef8d1
+2019-10-07 12:37:54 DEBUG root:22 - Login failed during getNextMenuLogin. Input: userNotExist passwordNotExist
+2019-10-07 12:37:55 TRACE root:30 - Going back to ManageCarsMenu. Input: Back
+2019-10-07 12:37:55 TRACE root:30 - Returning next menu. Current Menu: com.revature.pojos.io.Menu@67efc554 Next Menu: com.revature.pojos.io.Menu@7840
+2019-10-07 12:37:56 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@974eebd1
+2019-10-07 12:37:56 DEBUG root:22 - Login failed. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@974eebd1
+2019-10-07 12:37:56 TRACE root:30 - Login succeeded. Logging in as Customer. Input: userExists passwordExists
+2019-10-07 12:37:56 TRACE root:30 - Getting next menu after MyCarMenu.
+2019-10-07 12:37:56 DEBUG root:22 - Failed to readCar. Car: null
+2019-10-07 12:37:57 TRACE root:30 - Got user input, user input could be any value. User input: Anything goes.
+2019-10-07 12:37:57 TRACE root:30 - Calling special menu getter. Menu: com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-07 12:37:57 TRACE root:30 - Getting next menu after AddCarMenu.
+2019-10-07 12:39:38 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: 1
+2019-10-07 12:39:42 TRACE root:30 - Trying to register user. Account: Account [username=TestUser, password=TestPass, accountStatus=Employee]
+2019-10-07 12:39:42 TRACE root:30 - Registration succeeded. Employee added. Input: TestUser TestPass Employee
+2019-10-07 12:39:47 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@615ef8d1
+2019-10-07 12:39:47 DEBUG root:22 - Login failed. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@615ef8d1
+2019-10-07 12:39:47 DEBUG root:22 - Login failed during getNextMenuLogin. Input: userNotExist passwordNotExist
+2019-10-07 12:39:52 TRACE root:30 - Going back to ManageCarsMenu. Input: Back
+2019-10-07 12:39:56 TRACE root:30 - Returning next menu. Current Menu: com.revature.pojos.io.Menu@67efc554 Next Menu: com.revature.pojos.io.Menu@7840
+2019-10-07 12:40:00 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@974eebd1
+2019-10-07 12:40:01 DEBUG root:22 - Login failed. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@974eebd1
+2019-10-07 12:40:01 TRACE root:30 - Login succeeded. Logging in as Customer. Input: userExists passwordExists
+2019-10-07 12:40:06 TRACE root:30 - Getting next menu after MyCarMenu.
+2019-10-07 12:40:06 DEBUG root:22 - Failed to readCar. Car: null
+2019-10-07 12:40:10 TRACE root:30 - Got user input, user input could be any value. User input: Anything goes.
+2019-10-07 12:40:14 TRACE root:30 - Calling special menu getter. Menu: com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-07 12:40:14 TRACE root:30 - Getting next menu after AddCarMenu.
+2019-10-07 12:40:14 DEBUG root:22 - Failed to add car. Failed in the createCar function. Input: Anything goes.
+2019-10-07 12:40:18 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 12:40:18 TRACE root:30 - outputOffer set to "Accepted" successfully. Decision: Accept
+2019-10-07 12:40:18 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 12:40:18 TRACE root:30 - Rejected offers successfully. Vin: testVin Result2: true
+2019-10-07 12:40:18 DEBUG root:22 - Failed to update offer. Failed in try/catch. Input: Test Accept
+2019-10-07 12:40:33 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@76447fdb
+2019-10-07 12:40:33 TRACE root:30 - Login succeeded. Account Status: Employee
+2019-10-07 12:40:39 DEBUG root:22 - Failed to make payment. Failed during createPayment. Input: 20.00 testVin
+2019-10-07 12:40:45 TRACE root:30 - Getting next menu after RemoveCarMenu.
+2019-10-07 12:40:45 TRACE root:30 - Successfully deleted car. Vin: testvin
+2019-10-07 12:40:55 DEBUG root:22 - Failed to make offer. Failed in the createOffer function. Input: 20.00 20
+2019-10-07 12:41:12 TRACE root:30 - Getting next menu after RegisterMenu.
+2019-10-07 12:41:12 TRACE root:30 - Trying to register user. Account: Account [username=testUser, password=testPass, accountStatus=Employee]
+2019-10-07 12:41:12 DEBUG root:22 - The registration failed. Input: testUser testPass Employee
+2019-10-07 12:48:06 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@76447fdb
+2019-10-07 12:48:06 TRACE root:30 - Login succeeded. Account Status: Employee
+2019-10-07 13:13:22 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: 1
+2019-10-07 13:13:24 TRACE root:30 - Trying to register user. Account: Account [username=TestUser, password=TestPass, accountStatus=Employee]
+2019-10-07 13:13:24 TRACE root:30 - Registration succeeded. Employee added. Input: TestUser TestPass Employee
+2019-10-07 13:13:28 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@615ef8d1
+2019-10-07 13:13:28 DEBUG root:22 - Login failed. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@615ef8d1
+2019-10-07 13:13:28 DEBUG root:22 - Login failed during getNextMenuLogin. Input: userNotExist passwordNotExist
+2019-10-07 13:13:31 TRACE root:30 - Going back to ManageCarsMenu. Input: Back
+2019-10-07 13:13:34 TRACE root:30 - Returning next menu. Current Menu: com.revature.pojos.io.Menu@67efc554 Next Menu: com.revature.pojos.io.Menu@7840
+2019-10-07 13:13:37 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@974eebd1
+2019-10-07 13:13:37 DEBUG root:22 - Login failed. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@974eebd1
+2019-10-07 13:13:37 TRACE root:30 - Login succeeded. Logging in as Customer. Input: userExists passwordExists
+2019-10-07 13:13:41 TRACE root:30 - Getting next menu after MyCarMenu.
+2019-10-07 13:13:41 DEBUG root:22 - Failed to readCar. Car: null
+2019-10-07 13:13:44 TRACE root:30 - Got user input, user input could be any value. User input: Anything goes.
+2019-10-07 13:13:47 TRACE root:30 - Calling special menu getter. Menu: com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-07 13:13:47 TRACE root:30 - Getting next menu after AddCarMenu.
+2019-10-07 13:13:47 DEBUG root:22 - Failed to add car. Failed in the createCar function. Input: Anything goes.
+2019-10-07 13:13:49 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 13:13:50 TRACE root:30 - outputOffer set to "Accepted" successfully. Decision: Accept
+2019-10-07 13:13:50 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 13:13:50 TRACE root:30 - Rejected offers successfully. Vin: testVin Result2: true
+2019-10-07 13:13:50 DEBUG root:22 - Failed to update offer. Failed in try/catch. Input: Test Accept
+2019-10-07 13:13:52 TRACE root:30 - Trying to register user. Account: Account [username=TestCust, password=TestPass, accountStatus=Customer]
+2019-10-07 13:13:52 TRACE root:30 - Registration succeeded. Customer added. Input: TestCust TestPass Customer
+2019-10-07 13:13:56 TRACE root:30 - Getting next menu after LoginMenu.
+2019-10-07 13:13:56 DEBUG root:22 - Login failed during getNextMenuLogin. Input: 
+2019-10-07 13:13:59 TRACE root:30 - Returning to CustomerMenu. Input: Back
+2019-10-07 13:14:03 TRACE root:30 - Succeeded adding car. Input: TestVIN TestOwner
+2019-10-07 13:14:14 TRACE root:30 - Getting next menu after RemoveCarMenu.
+2019-10-07 13:14:14 DEBUG root:22 - Failed to delete the car. Failed in deleteCar. Vin: testvin
+2019-10-07 13:14:17 DEBUG root:22 - Failed to make offer. Failed in the createOffer function. Input: 20.00 20
+2019-10-07 13:14:24 TRACE root:30 - Getting next menu after RegisterMenu.
+2019-10-07 13:14:24 TRACE root:30 - Trying to register user. Account: Account [username=testUser, password=testPass, accountStatus=Employee]
+2019-10-07 13:14:24 DEBUG root:22 - The registration failed. Input: testUser testPass Employee
+2019-10-07 13:14:26 TRACE root:30 - Moving on to making an offer. Input: test
+2019-10-07 13:14:29 TRACE root:30 - Getting next menu after NewCarsMenu.
+2019-10-07 13:14:29 DEBUG root:22 - Fauled to readCar. Input: testvin
+2019-10-07 13:14:32 TRACE root:30 - Going back to ViewNewCarsMenu. Input: Back
+2019-10-07 13:14:35 TRACE root:30 - Going back to CustomerMenu. Input: Back
+2019-10-07 13:26:28 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: 1
+2019-10-07 13:26:32 TRACE root:30 - Trying to register user. Account: Account [username=TestUser, password=TestPass, accountStatus=Employee]
+2019-10-07 13:26:32 TRACE root:30 - Registration succeeded. Employee added. Input: TestUser TestPass Employee
+2019-10-07 13:26:37 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@615ef8d1
+2019-10-07 13:26:37 DEBUG root:22 - Login failed. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@615ef8d1
+2019-10-07 13:26:37 DEBUG root:22 - Login failed during getNextMenuLogin. Input: userNotExist passwordNotExist
+2019-10-07 13:26:42 TRACE root:30 - Going back to ManageCarsMenu. Input: Back
+2019-10-07 13:26:46 TRACE root:30 - Returning next menu. Current Menu: com.revature.pojos.io.Menu@67efc554 Next Menu: com.revature.pojos.io.Menu@7840
+2019-10-07 13:26:50 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@974eebd1
+2019-10-07 13:26:50 DEBUG root:22 - Login failed. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@974eebd1
+2019-10-07 13:26:50 TRACE root:30 - Login succeeded. Logging in as Customer. Input: userExists passwordExists
+2019-10-07 13:26:55 TRACE root:30 - Getting next menu after MyCarMenu.
+2019-10-07 13:26:56 DEBUG root:22 - Failed to readCar. Car: null
+2019-10-07 13:27:00 TRACE root:30 - Got user input, user input could be any value. User input: Anything goes.
+2019-10-07 13:27:04 TRACE root:30 - Calling special menu getter. Menu: com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-07 13:27:04 TRACE root:30 - Getting next menu after AddCarMenu.
+2019-10-07 13:27:04 DEBUG root:22 - Failed to add car. Failed in the createCar function. Input: Anything goes.
+2019-10-07 13:27:15 DEBUG root:22 - Got user input, user input was invalid. User input: Bad Menu: com.revature.pojos.io.Menu@e6785092
+2019-10-07 13:27:15 TRACE root:30 - Displaying menu com.revature.pojos.io.Menu@e6785092
+2019-10-07 13:27:15 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: Good
+2019-10-07 13:27:19 TRACE root:30 - Going back to ManageCarsMenu. Input: Back
+2019-10-07 13:27:27 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@76447fdb
+2019-10-07 13:27:27 TRACE root:30 - Login succeeded. Account Status: Employee
+2019-10-07 13:27:31 DEBUG root:22 - Failed to make payment. Failed during createPayment. Input: 20.00 testVin
+2019-10-07 13:27:37 TRACE root:30 - Getting next menu after RemoveCarMenu.
+2019-10-07 13:27:37 TRACE root:30 - Successfully deleted car. Vin: testvin
+2019-10-07 13:27:42 DEBUG root:22 - Failed to make offer. Failed in the createOffer function. Input: 20.00 20
+2019-10-07 13:34:18 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: 1
+2019-10-07 13:34:29 TRACE root:30 - Trying to register user. Account: Account [username=TestUser, password=TestPass, accountStatus=Employee]
+2019-10-07 13:34:41 TRACE root:30 - Registration succeeded. Employee added. Input: TestUser TestPass Employee
+2019-10-07 13:35:00 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@615ef8d1
+2019-10-07 13:40:24 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: 1
+2019-10-07 13:40:24 TRACE root:30 - Trying to register user. Account: Account [username=TestUser, password=TestPass, accountStatus=Employee]
+2019-10-07 13:40:24 TRACE root:30 - Registration succeeded. Employee added. Input: TestUser TestPass Employee
+2019-10-07 13:40:25 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@615ef8d1
+2019-10-07 13:40:25 DEBUG root:22 - Login failed. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@615ef8d1
+2019-10-07 13:40:25 DEBUG root:22 - Login failed during getNextMenuLogin. Input: userNotExist passwordNotExist
+2019-10-07 13:40:25 TRACE root:30 - Going back to ManageCarsMenu. Input: Back
+2019-10-07 13:40:26 TRACE root:30 - Returning next menu. Current Menu: com.revature.pojos.io.Menu@67efc554 Next Menu: com.revature.pojos.io.Menu@7840
+2019-10-07 13:40:26 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@974eebd1
+2019-10-07 13:40:26 DEBUG root:22 - Login failed. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@974eebd1
+2019-10-07 13:40:26 TRACE root:30 - Login succeeded. Logging in as Customer. Input: userExists passwordExists
+2019-10-07 13:40:26 TRACE root:30 - Getting next menu after MyCarMenu.
+2019-10-07 13:40:26 DEBUG root:22 - Failed to readCar. Car: null
+2019-10-07 13:40:27 TRACE root:30 - Got user input, user input could be any value. User input: Anything goes.
+2019-10-07 13:40:27 TRACE root:30 - Calling special menu getter. Menu: com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-07 13:40:27 TRACE root:30 - Getting next menu after AddCarMenu.
+2019-10-07 13:40:27 DEBUG root:22 - Failed to add car. Failed in the createCar function. Input: Anything goes.
+2019-10-07 13:40:27 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 13:40:27 TRACE root:30 - outputOffer set to "Accepted" successfully. Decision: Accept
+2019-10-07 13:40:27 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 13:40:27 TRACE root:30 - Rejected offers successfully. Vin: testVin Result2: true
+2019-10-07 13:40:27 DEBUG root:22 - Failed to update offer. Failed in try/catch. Input: Test Accept
+2019-10-07 13:40:28 TRACE root:30 - Trying to register user. Account: Account [username=TestCust, password=TestPass, accountStatus=Customer]
+2019-10-07 13:40:28 TRACE root:30 - Registration succeeded. Customer added. Input: TestCust TestPass Customer
+2019-10-07 13:40:28 TRACE root:30 - Getting next menu after LoginMenu.
+2019-10-07 13:40:28 DEBUG root:22 - Login failed during getNextMenuLogin. Input: 
+2019-10-07 13:40:28 TRACE root:30 - Returning to CustomerMenu. Input: Back
+2019-10-07 13:40:29 TRACE root:30 - Succeeded adding car. Input: TestVIN TestOwner
+2019-10-07 13:40:29 TRACE root:30 - Getting next menu after MakePaymentMenu.
+2019-10-07 13:40:29 DEBUG root:22 - Failed to make payment. Failed in try/catch. Input: testvin
+2019-10-07 13:40:29 DEBUG root:22 - Failed to delete the car. Failed in deleteCar. Vin: Fail
+2019-10-07 13:40:30 TRACE root:30 - Going back to CustomerMenu. Input: Back
+2019-10-07 13:40:30 TRACE root:30 - Building menu on the fly.
+2019-10-07 13:40:30 TRACE root:30 - Successfully built menu on the fly after reading the car. Menu: com.revature.pojos.io.Menu@634beef5
+2019-10-07 13:40:30 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@65821d0
+2019-10-07 13:40:30 DEBUG root:22 - Login failed. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@65821d0
+2019-10-07 13:40:31 DEBUG root:22 - Possible inputs was empty. Menu: com.revature.pojos.io.Menu@7840
+2019-10-07 13:40:31 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@974eebd1
+2019-10-07 13:40:31 DEBUG root:22 - Login failed. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@974eebd1
+2019-10-07 13:40:31 TRACE root:30 - Login succeeded. Logging in as Employee. Input: userExists passwordExists
+2019-10-07 13:40:31 TRACE root:30 - Getting next menu after MakeOfferMenu.
+2019-10-07 13:40:31 DEBUG root:22 - Failed to make offer. Failed in the getNextMenuMakeOffer function. Input: testvin testowner
+2019-10-07 13:40:32 DEBUG root:22 - Program should never have reached this point. Current Menu: com.revature.pojos.io.Menu@67efc554 Input: bad
+2019-10-07 13:40:32 TRACE root:30 - Getting next menu after ViewAllPaymentsMenu.
+2019-10-07 13:40:32 TRACE root:30 - Building menu on the fly.
+2019-10-07 13:40:32 TRACE root:30 - Successfully built menu on the fly.
+2019-10-07 13:40:32 TRACE root:30 - Getting next menu after AddCarMenu.
+2019-10-07 13:40:32 TRACE root:30 - Succeeded adding car. Input: testvin testowner
+2019-10-07 13:40:33 DEBUG root:22 - Failed to make offer. Failed in the createOffer function. Input: 20.00 20
+2019-10-07 13:40:33 DEBUG root:22 - Failed to add car. Failed in the createCar function. Input: TestVIN TestOwner
+2019-10-07 13:40:33 TRACE root:30 - Trying to register user. Account: Account [username=TestUser, password=TestPass, accountStatus=Employee]
+2019-10-07 13:40:33 DEBUG root:22 - The registration failed. Input: TestUser TestPass Employee
+2019-10-07 13:40:33 TRACE root:30 - Getting next menu after ManageOfferMenu.
+2019-10-07 13:40:33 DEBUG root:22 - Failed to update offer. Failed in try/catch. Input: testvin testowner
+2019-10-07 13:40:34 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 13:40:34 TRACE root:30 - outputOffer set to "Accepted" successfully. Decision: Accept
+2019-10-07 13:40:34 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 13:40:34 TRACE root:30 - Rejected offers successfully. Vin: testVin Result2: true
+2019-10-07 13:40:34 TRACE root:30 - Offer updated successfully. Offer: com.revature.pojos.finance.Offer@4c2630c7
+2019-10-07 13:40:34 TRACE root:30 - Car updated successfully. Vin: testVin Car: com.revature.pojos.Car@e8295f62
+2019-10-07 13:40:34 WARN  root:18 - GetSpecialInstance failed. Current Menu: null Input: testvin
+2019-10-07 13:40:34 DEBUG root:22 - Got user input, user input was invalid. User input: Bad Menu: com.revature.pojos.io.Menu@e6785092
+2019-10-07 13:40:34 TRACE root:30 - Displaying menu com.revature.pojos.io.Menu@e6785092
+2019-10-07 13:40:34 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: Good
+2019-10-07 13:40:35 TRACE root:30 - Going back to ManageCarsMenu. Input: Back
+2019-10-07 13:40:35 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@76447fdb
+2019-10-07 13:40:35 TRACE root:30 - Login succeeded. Account Status: Employee
+2019-10-07 13:40:36 DEBUG root:22 - Failed to make payment. Failed during createPayment. Input: 20.00 testVin
+2019-10-07 13:40:36 TRACE root:30 - Getting next menu after RemoveCarMenu.
+2019-10-07 13:40:36 TRACE root:30 - Successfully deleted car. Vin: testvin
+2019-10-07 13:40:36 DEBUG root:22 - Failed to make offer. Failed in the createOffer function. Input: 20.00 20
+2019-10-07 13:40:37 TRACE root:30 - Getting next menu after RegisterMenu.
+2019-10-07 13:40:37 TRACE root:30 - Trying to register user. Account: Account [username=testUser, password=testPass, accountStatus=Employee]
+2019-10-07 13:40:37 DEBUG root:22 - The registration failed. Input: testUser testPass Employee
+2019-10-07 13:40:37 TRACE root:30 - Moving on to making an offer. Input: test
+2019-10-07 13:40:38 TRACE root:30 - Getting next menu after NewCarsMenu.
+2019-10-07 13:40:38 DEBUG root:22 - Fauled to readCar. Input: testvin
+2019-10-07 13:40:38 TRACE root:30 - Going back to ViewNewCarsMenu. Input: Back
+2019-10-07 13:40:38 TRACE root:30 - Going back to CustomerMenu. Input: Back
+2019-10-07 13:45:09 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: 1
+2019-10-07 13:45:09 TRACE root:30 - Trying to register user. Account: Account [username=TestUser, password=TestPass, accountStatus=Employee]
+2019-10-07 13:45:09 TRACE root:30 - Registration succeeded. Employee added. Input: TestUser TestPass Employee
+2019-10-07 13:45:10 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@615ef8d1
+2019-10-07 13:45:10 DEBUG root:22 - Login failed. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@615ef8d1
+2019-10-07 13:45:10 DEBUG root:22 - Login failed during getNextMenuLogin. Input: userNotExist passwordNotExist
+2019-10-07 13:45:10 TRACE root:30 - Going back to ManageCarsMenu. Input: Back
+2019-10-07 13:45:10 TRACE root:30 - Returning next menu. Current Menu: com.revature.pojos.io.Menu@67efc554 Next Menu: com.revature.pojos.io.Menu@7840
+2019-10-07 13:45:11 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@974eebd1
+2019-10-07 13:45:11 DEBUG root:22 - Login failed. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@974eebd1
+2019-10-07 13:45:11 TRACE root:30 - Login succeeded. Logging in as Customer. Input: userExists passwordExists
+2019-10-07 13:45:11 TRACE root:30 - Getting next menu after MyCarMenu.
+2019-10-07 13:45:11 DEBUG root:22 - Failed to readCar. Car: null
+2019-10-07 13:45:11 TRACE root:30 - Got user input, user input could be any value. User input: Anything goes.
+2019-10-07 13:45:12 TRACE root:30 - Calling special menu getter. Menu: com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-07 13:45:12 TRACE root:30 - Getting next menu after AddCarMenu.
+2019-10-07 13:45:12 DEBUG root:22 - Failed to add car. Failed in the createCar function. Input: Anything goes.
+2019-10-07 13:45:12 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 13:45:12 TRACE root:30 - outputOffer set to "Accepted" successfully. Decision: Accept
+2019-10-07 13:45:12 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 13:45:12 TRACE root:30 - Rejected offers successfully. Vin: testVin Result2: true
+2019-10-07 13:45:12 DEBUG root:22 - Failed to update offer. Failed in try/catch. Input: Test Accept
+2019-10-07 13:45:12 TRACE root:30 - Trying to register user. Account: Account [username=TestCust, password=TestPass, accountStatus=Customer]
+2019-10-07 13:45:12 TRACE root:30 - Registration succeeded. Customer added. Input: TestCust TestPass Customer
+2019-10-07 13:45:13 TRACE root:30 - Getting next menu after LoginMenu.
+2019-10-07 13:45:13 DEBUG root:22 - Login failed during getNextMenuLogin. Input: 
+2019-10-07 13:45:13 TRACE root:30 - Returning to CustomerMenu. Input: Back
+2019-10-07 13:45:13 TRACE root:30 - Succeeded adding car. Input: TestVIN TestOwner
+2019-10-07 13:45:14 TRACE root:30 - Getting next menu after MakePaymentMenu.
+2019-10-07 13:45:14 DEBUG root:22 - Failed to make payment. Failed in try/catch. Input: testvin
+2019-10-07 13:45:14 DEBUG root:22 - Failed to delete the car. Failed in deleteCar. Vin: Fail
+2019-10-07 13:45:14 TRACE root:30 - Going back to CustomerMenu. Input: Back
+2019-10-07 13:45:15 TRACE root:30 - Building menu on the fly.
+2019-10-07 13:45:15 TRACE root:30 - Successfully built menu on the fly after reading the car. Menu: com.revature.pojos.io.Menu@634beef5
+2019-10-07 13:45:15 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@65821d0
+2019-10-07 13:45:15 DEBUG root:22 - Login failed. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@65821d0
+2019-10-07 13:45:15 DEBUG root:22 - Possible inputs was empty. Menu: com.revature.pojos.io.Menu@7840
+2019-10-07 13:45:16 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@974eebd1
+2019-10-07 13:45:16 DEBUG root:22 - Login failed. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@974eebd1
+2019-10-07 13:45:16 TRACE root:30 - Login succeeded. Logging in as Employee. Input: userExists passwordExists
+2019-10-07 13:45:16 TRACE root:30 - Getting next menu after MakeOfferMenu.
+2019-10-07 13:45:16 DEBUG root:22 - Failed to make offer. Failed in the getNextMenuMakeOffer function. Input: testvin testowner
+2019-10-07 13:45:16 DEBUG root:22 - Program should never have reached this point. Current Menu: com.revature.pojos.io.Menu@67efc554 Input: bad
+2019-10-07 13:45:17 TRACE root:30 - Getting next menu after ViewAllPaymentsMenu.
+2019-10-07 13:45:17 TRACE root:30 - Building menu on the fly.
+2019-10-07 13:45:17 TRACE root:30 - Successfully built menu on the fly.
+2019-10-07 13:45:17 TRACE root:30 - Getting next menu after AddCarMenu.
+2019-10-07 13:45:17 TRACE root:30 - Succeeded adding car. Input: testvin testowner
+2019-10-07 13:45:17 DEBUG root:22 - Failed to make offer. Failed in the createOffer function. Input: 20.00 20
+2019-10-07 13:45:17 DEBUG root:22 - Failed to add car. Failed in the createCar function. Input: TestVIN TestOwner
+2019-10-07 13:45:18 TRACE root:30 - Trying to register user. Account: Account [username=TestUser, password=TestPass, accountStatus=Employee]
+2019-10-07 13:45:18 DEBUG root:22 - The registration failed. Input: TestUser TestPass Employee
+2019-10-07 13:45:18 TRACE root:30 - Getting next menu after ManageOfferMenu.
+2019-10-07 13:45:18 DEBUG root:22 - Failed to update offer. Failed in try/catch. Input: testvin testowner
+2019-10-07 13:45:18 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 13:45:18 TRACE root:30 - outputOffer set to "Accepted" successfully. Decision: Accept
+2019-10-07 13:45:18 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 13:45:18 TRACE root:30 - Rejected offers successfully. Vin: testVin Result2: true
+2019-10-07 13:45:18 TRACE root:30 - Offer updated successfully. Offer: com.revature.pojos.finance.Offer@4c2630c7
+2019-10-07 13:45:18 TRACE root:30 - Car updated successfully. Vin: testVin Car: com.revature.pojos.Car@e8295f62
+2019-10-07 13:45:19 WARN  root:18 - GetSpecialInstance failed. Current Menu: null Input: testvin
+2019-10-07 13:45:19 DEBUG root:22 - Got user input, user input was invalid. User input: Bad Menu: com.revature.pojos.io.Menu@e6785092
+2019-10-07 13:45:19 TRACE root:30 - Displaying menu com.revature.pojos.io.Menu@e6785092
+2019-10-07 13:45:19 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: Good
+2019-10-07 13:45:19 TRACE root:30 - Going back to ManageCarsMenu. Input: Back
+2019-10-07 13:45:20 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@76447fdb
+2019-10-07 13:45:20 TRACE root:30 - Login succeeded. Account Status: Employee
+2019-10-07 13:45:20 DEBUG root:22 - Failed to make payment. Failed during createPayment. Input: 20.00 testVin
+2019-10-07 13:45:20 TRACE root:30 - Getting next menu after RemoveCarMenu.
+2019-10-07 13:45:21 TRACE root:30 - Successfully deleted car. Vin: testvin
+2019-10-07 13:45:21 TRACE root:30 - Succeeded in making an offer. Input: 20.00 20
+2019-10-07 13:45:22 TRACE root:30 - Getting next menu after RegisterMenu.
+2019-10-07 13:45:22 TRACE root:30 - Trying to register user. Account: Account [username=testUser, password=testPass, accountStatus=Employee]
+2019-10-07 13:45:22 DEBUG root:22 - The registration failed. Input: testUser testPass Employee
+2019-10-07 13:45:22 TRACE root:30 - Moving on to making an offer. Input: test
+2019-10-07 13:45:22 TRACE root:30 - Getting next menu after NewCarsMenu.
+2019-10-07 13:45:22 DEBUG root:22 - Fauled to readCar. Input: testvin
+2019-10-07 13:45:23 TRACE root:30 - Going back to ViewNewCarsMenu. Input: Back
+2019-10-07 13:45:23 TRACE root:30 - Going back to CustomerMenu. Input: Back
+2019-10-07 13:47:07 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: 1
+2019-10-07 13:47:08 TRACE root:30 - Trying to register user. Account: Account [username=TestUser, password=TestPass, accountStatus=Employee]
+2019-10-07 13:47:08 TRACE root:30 - Registration succeeded. Employee added. Input: TestUser TestPass Employee
+2019-10-07 13:47:08 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@615ef8d1
+2019-10-07 13:47:08 DEBUG root:22 - Login failed. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@615ef8d1
+2019-10-07 13:47:08 DEBUG root:22 - Login failed during getNextMenuLogin. Input: userNotExist passwordNotExist
+2019-10-07 13:47:09 TRACE root:30 - Going back to ManageCarsMenu. Input: Back
+2019-10-07 13:47:09 TRACE root:30 - Returning next menu. Current Menu: com.revature.pojos.io.Menu@67efc554 Next Menu: com.revature.pojos.io.Menu@7840
+2019-10-07 13:47:09 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@974eebd1
+2019-10-07 13:47:09 DEBUG root:22 - Login failed. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@974eebd1
+2019-10-07 13:47:09 TRACE root:30 - Login succeeded. Logging in as Customer. Input: userExists passwordExists
+2019-10-07 13:47:10 TRACE root:30 - Getting next menu after MyCarMenu.
+2019-10-07 13:47:10 DEBUG root:22 - Failed to readCar. Car: null
+2019-10-07 13:47:10 TRACE root:30 - Got user input, user input could be any value. User input: Anything goes.
+2019-10-07 13:47:10 TRACE root:30 - Calling special menu getter. Menu: com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-07 13:47:10 TRACE root:30 - Getting next menu after AddCarMenu.
+2019-10-07 13:47:11 DEBUG root:22 - Failed to add car. Failed in the createCar function. Input: Anything goes.
+2019-10-07 13:47:11 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 13:47:11 TRACE root:30 - outputOffer set to "Accepted" successfully. Decision: Accept
+2019-10-07 13:47:11 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 13:47:11 TRACE root:30 - Rejected offers successfully. Vin: testVin Result2: true
+2019-10-07 13:47:11 DEBUG root:22 - Failed to update offer. Failed in try/catch. Input: Test Accept
+2019-10-07 13:47:11 TRACE root:30 - Trying to register user. Account: Account [username=TestCust, password=TestPass, accountStatus=Customer]
+2019-10-07 13:47:11 TRACE root:30 - Registration succeeded. Customer added. Input: TestCust TestPass Customer
+2019-10-07 13:47:12 TRACE root:30 - Getting next menu after LoginMenu.
+2019-10-07 13:47:12 DEBUG root:22 - Login failed during getNextMenuLogin. Input: 
+2019-10-07 13:47:12 TRACE root:30 - Returning to CustomerMenu. Input: Back
+2019-10-07 13:47:12 TRACE root:30 - Succeeded adding car. Input: TestVIN TestOwner
+2019-10-07 13:47:13 TRACE root:30 - Getting next menu after MakePaymentMenu.
+2019-10-07 13:47:13 DEBUG root:22 - Failed to make payment. Failed in try/catch. Input: testvin
+2019-10-07 13:47:13 DEBUG root:22 - Failed to delete the car. Failed in deleteCar. Vin: Fail
+2019-10-07 13:47:13 TRACE root:30 - Going back to CustomerMenu. Input: Back
+2019-10-07 13:47:14 TRACE root:30 - Building menu on the fly.
+2019-10-07 13:47:14 TRACE root:30 - Successfully built menu on the fly after reading the car. Menu: com.revature.pojos.io.Menu@634beef5
+2019-10-07 13:47:14 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@65821d0
+2019-10-07 13:47:14 DEBUG root:22 - Login failed. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@65821d0
+2019-10-07 13:47:14 DEBUG root:22 - Possible inputs was empty. Menu: com.revature.pojos.io.Menu@7840
+2019-10-07 13:47:14 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@974eebd1
+2019-10-07 13:47:15 DEBUG root:22 - Login failed. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@974eebd1
+2019-10-07 13:47:15 TRACE root:30 - Login succeeded. Logging in as Employee. Input: userExists passwordExists
+2019-10-07 13:47:15 TRACE root:30 - Getting next menu after MakeOfferMenu.
+2019-10-07 13:47:15 DEBUG root:22 - Failed to make offer. Failed in the getNextMenuMakeOffer function. Input: testvin testowner
+2019-10-07 13:47:15 DEBUG root:22 - Program should never have reached this point. Current Menu: com.revature.pojos.io.Menu@67efc554 Input: bad
+2019-10-07 13:47:15 TRACE root:30 - Getting next menu after ViewAllPaymentsMenu.
+2019-10-07 13:47:15 TRACE root:30 - Building menu on the fly.
+2019-10-07 13:47:15 TRACE root:30 - Successfully built menu on the fly.
+2019-10-07 13:47:16 TRACE root:30 - Getting next menu after AddCarMenu.
+2019-10-07 13:47:16 TRACE root:30 - Succeeded adding car. Input: testvin testowner
+2019-10-07 13:47:16 DEBUG root:22 - Failed to make offer. Failed in the createOffer function. Input: 20.00 20
+2019-10-07 13:47:16 DEBUG root:22 - Failed to add car. Failed in the createCar function. Input: TestVIN TestOwner
+2019-10-07 13:47:17 TRACE root:30 - Trying to register user. Account: Account [username=TestUser, password=TestPass, accountStatus=Employee]
+2019-10-07 13:47:17 DEBUG root:22 - The registration failed. Input: TestUser TestPass Employee
+2019-10-07 13:47:17 TRACE root:30 - Getting next menu after ManageOfferMenu.
+2019-10-07 13:47:17 DEBUG root:22 - Failed to update offer. Failed in try/catch. Input: testvin testowner
+2019-10-07 13:47:17 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 13:47:17 TRACE root:30 - outputOffer set to "Accepted" successfully. Decision: Accept
+2019-10-07 13:47:17 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 13:47:17 TRACE root:30 - Rejected offers successfully. Vin: testVin Result2: true
+2019-10-07 13:47:17 TRACE root:30 - Offer updated successfully. Offer: com.revature.pojos.finance.Offer@4c2630c7
+2019-10-07 13:47:17 TRACE root:30 - Car updated successfully. Vin: testVin Car: com.revature.pojos.Car@e8295f62
+2019-10-07 13:47:18 WARN  root:18 - GetSpecialInstance failed. Current Menu: null Input: testvin
+2019-10-07 13:47:18 DEBUG root:22 - Got user input, user input was invalid. User input: Bad Menu: com.revature.pojos.io.Menu@e6785092
+2019-10-07 13:47:18 TRACE root:30 - Displaying menu com.revature.pojos.io.Menu@e6785092
+2019-10-07 13:47:18 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: Good
+2019-10-07 13:47:18 TRACE root:30 - Going back to ManageCarsMenu. Input: Back
+2019-10-07 13:47:19 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@76447fdb
+2019-10-07 13:47:19 TRACE root:30 - Login succeeded. Account Status: Employee
+2019-10-07 13:47:19 DEBUG root:22 - Failed to make payment. Failed during createPayment. Input: 20.00 testVin
+2019-10-07 13:47:19 TRACE root:30 - Getting next menu after RemoveCarMenu.
+2019-10-07 13:47:19 TRACE root:30 - Successfully deleted car. Vin: testvin
+2019-10-07 13:47:20 TRACE root:30 - Succeeded in making an offer. Input: 20.00 20
+2019-10-07 13:47:21 TRACE root:30 - Getting next menu after RegisterMenu.
+2019-10-07 13:47:21 TRACE root:30 - Trying to register user. Account: Account [username=testUser, password=testPass, accountStatus=Employee]
+2019-10-07 13:47:21 DEBUG root:22 - The registration failed. Input: testUser testPass Employee
+2019-10-07 13:47:21 TRACE root:30 - Moving on to making an offer. Input: test
+2019-10-07 13:47:21 TRACE root:30 - Getting next menu after NewCarsMenu.
+2019-10-07 13:47:21 DEBUG root:22 - Fauled to readCar. Input: testvin
+2019-10-07 13:47:22 TRACE root:30 - Going back to ViewNewCarsMenu. Input: Back
+2019-10-07 13:47:22 TRACE root:30 - Going back to CustomerMenu. Input: Back
+2019-10-07 13:47:28 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: 1
+2019-10-07 13:47:28 TRACE root:30 - Trying to register user. Account: Account [username=TestUser, password=TestPass, accountStatus=Employee]
+2019-10-07 13:47:28 TRACE root:30 - Registration succeeded. Employee added. Input: TestUser TestPass Employee
+2019-10-07 13:47:29 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@615ef8d1
+2019-10-07 13:47:29 DEBUG root:22 - Login failed. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@615ef8d1
+2019-10-07 13:47:29 DEBUG root:22 - Login failed during getNextMenuLogin. Input: userNotExist passwordNotExist
+2019-10-07 13:47:29 TRACE root:30 - Going back to ManageCarsMenu. Input: Back
+2019-10-07 13:47:29 TRACE root:30 - Returning next menu. Current Menu: com.revature.pojos.io.Menu@67efc554 Next Menu: com.revature.pojos.io.Menu@7840
+2019-10-07 13:47:30 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@974eebd1
+2019-10-07 13:47:30 DEBUG root:22 - Login failed. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@974eebd1
+2019-10-07 13:47:30 TRACE root:30 - Login succeeded. Logging in as Customer. Input: userExists passwordExists
+2019-10-07 13:47:30 TRACE root:30 - Getting next menu after MyCarMenu.
+2019-10-07 13:47:30 DEBUG root:22 - Failed to readCar. Car: null
+2019-10-07 13:47:31 TRACE root:30 - Got user input, user input could be any value. User input: Anything goes.
+2019-10-07 13:47:31 TRACE root:30 - Calling special menu getter. Menu: com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-07 13:47:31 TRACE root:30 - Getting next menu after AddCarMenu.
+2019-10-07 13:47:31 DEBUG root:22 - Failed to add car. Failed in the createCar function. Input: Anything goes.
+2019-10-07 13:47:31 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 13:47:31 TRACE root:30 - outputOffer set to "Accepted" successfully. Decision: Accept
+2019-10-07 13:47:31 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 13:47:31 TRACE root:30 - Rejected offers successfully. Vin: testVin Result2: true
+2019-10-07 13:47:31 DEBUG root:22 - Failed to update offer. Failed in try/catch. Input: Test Accept
+2019-10-07 13:47:31 TRACE root:30 - Trying to register user. Account: Account [username=TestCust, password=TestPass, accountStatus=Customer]
+2019-10-07 13:47:32 TRACE root:30 - Registration succeeded. Customer added. Input: TestCust TestPass Customer
+2019-10-07 13:47:32 TRACE root:30 - Getting next menu after LoginMenu.
+2019-10-07 13:47:32 DEBUG root:22 - Login failed during getNextMenuLogin. Input: 
+2019-10-07 13:47:32 TRACE root:30 - Returning to CustomerMenu. Input: Back
+2019-10-07 13:47:33 TRACE root:30 - Succeeded adding car. Input: TestVIN TestOwner
+2019-10-07 13:47:33 TRACE root:30 - Getting next menu after MakePaymentMenu.
+2019-10-07 13:47:33 DEBUG root:22 - Failed to make payment. Failed in try/catch. Input: testvin
+2019-10-07 13:47:33 DEBUG root:22 - Failed to delete the car. Failed in deleteCar. Vin: Fail
+2019-10-07 13:47:34 TRACE root:30 - Going back to CustomerMenu. Input: Back
+2019-10-07 13:47:34 TRACE root:30 - Building menu on the fly.
+2019-10-07 13:47:34 TRACE root:30 - Successfully built menu on the fly after reading the car. Menu: com.revature.pojos.io.Menu@634beef5
+2019-10-07 13:47:34 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@65821d0
+2019-10-07 13:47:34 DEBUG root:22 - Login failed. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@65821d0
+2019-10-07 13:47:35 DEBUG root:22 - Possible inputs was empty. Menu: com.revature.pojos.io.Menu@7840
+2019-10-07 13:47:35 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@974eebd1
+2019-10-07 13:47:35 DEBUG root:22 - Login failed. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@974eebd1
+2019-10-07 13:47:35 TRACE root:30 - Login succeeded. Logging in as Employee. Input: userExists passwordExists
+2019-10-07 13:47:35 TRACE root:30 - Getting next menu after MakeOfferMenu.
+2019-10-07 13:47:35 DEBUG root:22 - Failed to make offer. Failed in the getNextMenuMakeOffer function. Input: testvin testowner
+2019-10-07 13:47:36 DEBUG root:22 - Program should never have reached this point. Current Menu: com.revature.pojos.io.Menu@67efc554 Input: bad
+2019-10-07 13:47:36 TRACE root:30 - Getting next menu after ViewAllPaymentsMenu.
+2019-10-07 13:47:36 TRACE root:30 - Building menu on the fly.
+2019-10-07 13:47:36 TRACE root:30 - Successfully built menu on the fly.
+2019-10-07 13:47:36 TRACE root:30 - Getting next menu after AddCarMenu.
+2019-10-07 13:47:36 TRACE root:30 - Succeeded adding car. Input: testvin testowner
+2019-10-07 13:47:37 DEBUG root:22 - Failed to make offer. Failed in the createOffer function. Input: 20.00 20
+2019-10-07 13:47:37 DEBUG root:22 - Failed to add car. Failed in the createCar function. Input: TestVIN TestOwner
+2019-10-07 13:47:37 TRACE root:30 - Trying to register user. Account: Account [username=TestUser, password=TestPass, accountStatus=Employee]
+2019-10-07 13:47:37 DEBUG root:22 - The registration failed. Input: TestUser TestPass Employee
+2019-10-07 13:47:37 TRACE root:30 - Getting next menu after ManageOfferMenu.
+2019-10-07 13:47:37 DEBUG root:22 - Failed to update offer. Failed in try/catch. Input: testvin testowner
+2019-10-07 13:47:38 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 13:47:38 TRACE root:30 - outputOffer set to "Accepted" successfully. Decision: Accept
+2019-10-07 13:47:38 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 13:47:38 TRACE root:30 - Rejected offers successfully. Vin: testVin Result2: true
+2019-10-07 13:47:38 TRACE root:30 - Offer updated successfully. Offer: com.revature.pojos.finance.Offer@4c2630c7
+2019-10-07 13:47:38 TRACE root:30 - Car updated successfully. Vin: testVin Car: com.revature.pojos.Car@e8295f62
+2019-10-07 13:47:38 WARN  root:18 - GetSpecialInstance failed. Current Menu: null Input: testvin
+2019-10-07 13:47:39 DEBUG root:22 - Got user input, user input was invalid. User input: Bad Menu: com.revature.pojos.io.Menu@e6785092
+2019-10-07 13:47:39 TRACE root:30 - Displaying menu com.revature.pojos.io.Menu@e6785092
+2019-10-07 13:47:39 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: Good
+2019-10-07 13:47:39 TRACE root:30 - Going back to ManageCarsMenu. Input: Back
+2019-10-07 13:47:40 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@76447fdb
+2019-10-07 13:47:40 TRACE root:30 - Login succeeded. Account Status: Employee
+2019-10-07 13:57:27 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 13:57:27 DEBUG root:22 - Failed to reject offer. Failed in input. Input: Test Fail
+2019-10-07 13:59:07 TRACE root:30 - Offer rejected successfully. Input[1]: Reject
+2019-10-07 14:00:16 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:00:16 DEBUG root:22 - Failed to reject offer. Failed in input. Input: Test Fail
+2019-10-07 14:01:21 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:01:21 DEBUG root:22 - Failed to reject offer. Failed in input. Input: Test Fail
+2019-10-07 14:03:29 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:03:29 TRACE root:30 - outputOffer set to "Accepted" successfully. Decision: Accept
+2019-10-07 14:03:29 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:03:29 TRACE root:30 - Rejected offers successfully. Vin: testVin Result2: true
+2019-10-07 14:03:29 DEBUG root:22 - Failed to update offer. Failed in createOffer. Result: false
+2019-10-07 14:03:43 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:03:43 TRACE root:30 - outputOffer set to "Accepted" successfully. Decision: Accept
+2019-10-07 14:03:43 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:03:43 DEBUG root:22 - Failed to update offer. Failed in rejectAllOtherOffers. Result2: false
+2019-10-07 14:03:57 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:03:57 TRACE root:30 - outputOffer set to "Accepted" successfully. Decision: Accept
+2019-10-07 14:03:57 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:03:57 TRACE root:30 - Rejected offers successfully. Vin: testVin Result2: true
+2019-10-07 14:03:57 DEBUG root:22 - Failed to update offer. Failed in createOffer. Result: false
+2019-10-07 14:04:44 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:04:44 TRACE root:30 - outputOffer set to "Accepted" successfully. Decision: Accept
+2019-10-07 14:04:44 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:04:44 TRACE root:30 - Rejected offers successfully. Vin: testVin Result2: true
+2019-10-07 14:04:44 DEBUG root:22 - Failed to update offer. Failed in try/catch. Input: Test Accept
+2019-10-07 14:05:25 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: 1
+2019-10-07 14:05:25 TRACE root:30 - Trying to register user. Account: Account [username=TestUser, password=TestPass, accountStatus=Employee]
+2019-10-07 14:05:26 TRACE root:30 - Registration succeeded. Employee added. Input: TestUser TestPass Employee
+2019-10-07 14:05:26 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@615ef8d1
+2019-10-07 14:05:26 DEBUG root:22 - Login failed. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@615ef8d1
+2019-10-07 14:05:26 DEBUG root:22 - Login failed during getNextMenuLogin. Input: userNotExist passwordNotExist
+2019-10-07 14:05:26 TRACE root:30 - Going back to ManageCarsMenu. Input: Back
+2019-10-07 14:05:27 TRACE root:30 - Returning next menu. Current Menu: com.revature.pojos.io.Menu@67efc554 Next Menu: com.revature.pojos.io.Menu@7840
+2019-10-07 14:05:27 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:05:27 TRACE root:30 - outputOffer set to "Accepted" successfully. Decision: Accept
+2019-10-07 14:05:27 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:05:27 DEBUG root:22 - Failed to update offer. Failed in rejectAllOtherOffers. Result2: false
+2019-10-07 14:05:27 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@974eebd1
+2019-10-07 14:05:27 DEBUG root:22 - Login failed. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@974eebd1
+2019-10-07 14:05:27 TRACE root:30 - Login succeeded. Logging in as Customer. Input: userExists passwordExists
+2019-10-07 14:05:28 TRACE root:30 - Getting next menu after MyCarMenu.
+2019-10-07 14:05:28 TRACE root:30 - Building menu on the fly.
+2019-10-07 14:05:28 TRACE root:30 - Got user input, user input could be any value. User input: Anything goes.
+2019-10-07 14:05:28 TRACE root:30 - Calling special menu getter. Menu: com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-07 14:05:28 TRACE root:30 - Getting next menu after AddCarMenu.
+2019-10-07 14:05:29 DEBUG root:22 - Failed to add car. Failed in the createCar function. Input: Anything goes.
+2019-10-07 14:05:29 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:05:29 TRACE root:30 - outputOffer set to "Accepted" successfully. Decision: Accept
+2019-10-07 14:05:29 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:05:29 TRACE root:30 - Rejected offers successfully. Vin: testVin Result2: true
+2019-10-07 14:05:29 DEBUG root:22 - Failed to update offer. Failed in try/catch. Input: Test Accept
+2019-10-07 14:05:29 TRACE root:30 - Trying to register user. Account: Account [username=TestCust, password=TestPass, accountStatus=Customer]
+2019-10-07 14:05:30 TRACE root:30 - Registration succeeded. Customer added. Input: TestCust TestPass Customer
+2019-10-07 14:05:30 TRACE root:30 - Getting next menu after LoginMenu.
+2019-10-07 14:05:30 DEBUG root:22 - Login failed during getNextMenuLogin. Input: 
+2019-10-07 14:05:30 TRACE root:30 - Returning to CustomerMenu. Input: Back
+2019-10-07 14:05:31 TRACE root:30 - Succeeded adding car. Input: TestVIN TestOwner
+2019-10-07 14:05:31 TRACE root:30 - Getting next menu after MakePaymentMenu.
+2019-10-07 14:05:31 DEBUG root:22 - Failed to make payment. Failed in try/catch. Input: testvin
+2019-10-07 14:05:32 DEBUG root:22 - Failed to delete the car. Failed in deleteCar. Vin: Fail
+2019-10-07 14:05:32 TRACE root:30 - Going back to CustomerMenu. Input: Back
+2019-10-07 14:05:32 TRACE root:30 - Building menu on the fly.
+2019-10-07 14:05:32 TRACE root:30 - Successfully built menu on the fly after reading the car. Menu: com.revature.pojos.io.Menu@634beef5
+2019-10-07 14:05:33 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@65821d0
+2019-10-07 14:05:33 DEBUG root:22 - Login failed. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@65821d0
+2019-10-07 14:05:33 DEBUG root:22 - Possible inputs was empty. Menu: com.revature.pojos.io.Menu@7840
+2019-10-07 14:05:33 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@974eebd1
+2019-10-07 14:05:33 DEBUG root:22 - Login failed. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@974eebd1
+2019-10-07 14:05:33 TRACE root:30 - Login succeeded. Logging in as Employee. Input: userExists passwordExists
+2019-10-07 14:05:34 TRACE root:30 - Offer rejected successfully. Input[1]: Reject
+2019-10-07 14:05:34 TRACE root:30 - Getting next menu after MakeOfferMenu.
+2019-10-07 14:05:34 DEBUG root:22 - Failed to make offer. Failed in the getNextMenuMakeOffer function. Input: testvin testowner
+2019-10-07 14:05:34 DEBUG root:22 - Program should never have reached this point. Current Menu: com.revature.pojos.io.Menu@67efc554 Input: bad
+2019-10-07 14:05:35 TRACE root:30 - Getting next menu after ViewAllPaymentsMenu.
+2019-10-07 14:05:35 TRACE root:30 - Building menu on the fly.
+2019-10-07 14:05:35 TRACE root:30 - Successfully built menu on the fly.
+2019-10-07 14:05:35 TRACE root:30 - Getting next menu after AddCarMenu.
+2019-10-07 14:05:35 DEBUG root:22 - Failed to add car. Failed in the createCar function. Input: testvin testowner
+2019-10-07 14:05:35 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:05:35 TRACE root:30 - outputOffer set to "Accepted" successfully. Decision: Accept
+2019-10-07 14:05:35 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:05:35 TRACE root:30 - Rejected offers successfully. Vin: testVin Result2: true
+2019-10-07 14:05:35 DEBUG root:22 - Failed to update offer. Failed in try/catch. Input: Test Accept
+2019-10-07 14:05:36 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:05:36 TRACE root:30 - outputOffer set to "Accepted" successfully. Decision: Accept
+2019-10-07 14:05:36 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:05:36 TRACE root:30 - Rejected offers successfully. Vin: testVin Result2: true
+2019-10-07 14:05:36 DEBUG root:22 - Failed to update offer. Failed in createOffer. Result: false
+2019-10-07 14:05:36 DEBUG root:22 - Failed to make offer. Failed in the createOffer function. Input: 20.00 20
+2019-10-07 14:05:37 DEBUG root:22 - Failed to add car. Failed in the createCar function. Input: TestVIN TestOwner
+2019-10-07 14:05:37 TRACE root:30 - Trying to register user. Account: Account [username=TestUser, password=TestPass, accountStatus=Employee]
+2019-10-07 14:05:37 DEBUG root:22 - The registration failed. Input: TestUser TestPass Employee
+2019-10-07 14:05:37 TRACE root:30 - Getting next menu after ManageOfferMenu.
+2019-10-07 14:05:37 DEBUG root:22 - Failed to update offer. Failed in try/catch. Input: testvin testowner
+2019-10-07 14:05:37 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:05:37 TRACE root:30 - outputOffer set to "Accepted" successfully. Decision: Accept
+2019-10-07 14:05:37 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:05:37 TRACE root:30 - Rejected offers successfully. Vin: testVin Result2: true
+2019-10-07 14:05:37 TRACE root:30 - Offer updated successfully. Offer: com.revature.pojos.finance.Offer@4c2630c7
+2019-10-07 14:05:37 TRACE root:30 - Car updated successfully. Vin: testVin Car: com.revature.pojos.Car@e8295f62
+2019-10-07 14:05:38 WARN  root:18 - GetSpecialInstance failed. Current Menu: null Input: testvin
+2019-10-07 14:05:38 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:05:38 DEBUG root:22 - Failed to reject offer. Failed in input. Input: Test Fail
+2019-10-07 14:05:38 DEBUG root:22 - Got user input, user input was invalid. User input: Bad Menu: com.revature.pojos.io.Menu@e6785092
+2019-10-07 14:05:38 TRACE root:30 - Displaying menu com.revature.pojos.io.Menu@e6785092
+2019-10-07 14:05:38 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: Good
+2019-10-07 14:05:39 TRACE root:30 - Going back to ManageCarsMenu. Input: Back
+2019-10-07 14:05:40 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@76447fdb
+2019-10-07 14:05:40 TRACE root:30 - Login succeeded. Account Status: Employee
+2019-10-07 14:05:40 DEBUG root:22 - Failed to make payment. Failed during createPayment. Input: 20.00 testVin
+2019-10-07 14:05:40 TRACE root:30 - Getting next menu after RemoveCarMenu.
+2019-10-07 14:05:41 TRACE root:30 - Successfully deleted car. Vin: testvin
+2019-10-07 14:05:42 TRACE root:30 - Succeeded in making an offer. Input: 20.00 20
+2019-10-07 14:05:42 TRACE root:30 - Getting next menu after RegisterMenu.
+2019-10-07 14:05:42 TRACE root:30 - Trying to register user. Account: Account [username=testUser, password=testPass, accountStatus=Employee]
+2019-10-07 14:05:43 DEBUG root:22 - The registration failed. Input: testUser testPass Employee
+2019-10-07 14:05:43 TRACE root:30 - Moving on to making an offer. Input: test
+2019-10-07 14:05:43 TRACE root:30 - Getting next menu after NewCarsMenu.
+2019-10-07 14:05:43 DEBUG root:22 - Fauled to readCar. Input: testvin
+2019-10-07 14:05:44 TRACE root:30 - Going back to ViewNewCarsMenu. Input: Back
+2019-10-07 14:05:44 TRACE root:30 - Going back to CustomerMenu. Input: Back
+2019-10-07 14:06:30 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:06:30 TRACE root:30 - outputOffer set to "Accepted" successfully. Decision: Accept
+2019-10-07 14:06:30 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:06:30 TRACE root:30 - Rejected offers successfully. Vin: testVin Result2: true
+2019-10-07 14:06:30 DEBUG root:22 - Failed to update offer. Failed in try/catch. Input: Test Accept
+2019-10-07 14:07:38 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:07:38 TRACE root:30 - outputOffer set to "Accepted" successfully. Decision: Accept
+2019-10-07 14:07:38 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:07:38 TRACE root:30 - Rejected offers successfully. Vin: testVin Result2: true
+2019-10-07 14:07:38 DEBUG root:22 - Failed to update offer. Failed in try/catch. Input: Test Accept
+2019-10-07 14:08:37 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:09:01 TRACE root:30 - outputOffer set to "Accepted" successfully. Decision: Accept
+2019-10-07 14:09:01 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:09:01 TRACE root:30 - Rejected offers successfully. Vin: testVin Result2: true
+2019-10-07 14:09:01 DEBUG root:22 - Failed to update offer. Failed in try/catch. Input: Test Accept
+2019-10-07 14:09:27 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: 1
+2019-10-07 14:09:27 TRACE root:30 - Trying to register user. Account: Account [username=TestUser, password=TestPass, accountStatus=Employee]
+2019-10-07 14:09:28 TRACE root:30 - Registration succeeded. Employee added. Input: TestUser TestPass Employee
+2019-10-07 14:09:28 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@615ef8d1
+2019-10-07 14:09:28 DEBUG root:22 - Login failed. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@615ef8d1
+2019-10-07 14:09:28 DEBUG root:22 - Login failed during getNextMenuLogin. Input: userNotExist passwordNotExist
+2019-10-07 14:09:28 TRACE root:30 - Going back to ManageCarsMenu. Input: Back
+2019-10-07 14:09:29 TRACE root:30 - Returning next menu. Current Menu: com.revature.pojos.io.Menu@67efc554 Next Menu: com.revature.pojos.io.Menu@7840
+2019-10-07 14:09:29 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:09:29 TRACE root:30 - outputOffer set to "Accepted" successfully. Decision: Accept
+2019-10-07 14:09:29 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:09:29 DEBUG root:22 - Failed to update offer. Failed in rejectAllOtherOffers. Result2: false
+2019-10-07 14:09:29 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@974eebd1
+2019-10-07 14:09:29 DEBUG root:22 - Login failed. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@974eebd1
+2019-10-07 14:09:29 TRACE root:30 - Login succeeded. Logging in as Customer. Input: userExists passwordExists
+2019-10-07 14:09:30 TRACE root:30 - Getting next menu after MyCarMenu.
+2019-10-07 14:09:30 DEBUG root:22 - Failed to readCar. Car: null
+2019-10-07 14:09:30 TRACE root:30 - Got user input, user input could be any value. User input: Anything goes.
+2019-10-07 14:09:30 TRACE root:30 - Calling special menu getter. Menu: com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-07 14:09:30 TRACE root:30 - Getting next menu after AddCarMenu.
+2019-10-07 14:09:30 DEBUG root:22 - Failed to add car. Failed in the createCar function. Input: Anything goes.
+2019-10-07 14:09:31 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:09:31 TRACE root:30 - outputOffer set to "Accepted" successfully. Decision: Accept
+2019-10-07 14:09:31 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:09:31 TRACE root:30 - Rejected offers successfully. Vin: testVin Result2: true
+2019-10-07 14:09:45 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:09:50 TRACE root:30 - outputOffer set to "Accepted" successfully. Decision: Accept
+2019-10-07 14:09:50 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:09:50 TRACE root:30 - Rejected offers successfully. Vin: testVin Result2: true
+2019-10-07 14:10:31 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:10:43 TRACE root:30 - outputOffer set to "Accepted" successfully. Decision: Accept
+2019-10-07 14:10:43 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:10:43 TRACE root:30 - Rejected offers successfully. Vin: testVin Result2: true
+2019-10-07 14:12:04 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:12:04 TRACE root:30 - outputOffer set to "Accepted" successfully. Decision: Accept
+2019-10-07 14:12:04 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:12:04 TRACE root:30 - Rejected offers successfully. Vin: testVin Result2: true
+2019-10-07 14:12:04 TRACE root:30 - Offer updated successfully. Offer: com.revature.pojos.finance.Offer@4c2630c7
+2019-10-07 14:12:04 DEBUG root:22 - Failed to update offer. Failed in updateCar. Result3: false
+2019-10-07 14:12:14 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: 1
+2019-10-07 14:12:14 TRACE root:30 - Trying to register user. Account: Account [username=TestUser, password=TestPass, accountStatus=Employee]
+2019-10-07 14:12:14 TRACE root:30 - Registration succeeded. Employee added. Input: TestUser TestPass Employee
+2019-10-07 14:12:15 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@615ef8d1
+2019-10-07 14:12:15 DEBUG root:22 - Login failed. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@615ef8d1
+2019-10-07 14:12:15 DEBUG root:22 - Login failed during getNextMenuLogin. Input: userNotExist passwordNotExist
+2019-10-07 14:12:15 TRACE root:30 - Going back to ManageCarsMenu. Input: Back
+2019-10-07 14:12:15 TRACE root:30 - Returning next menu. Current Menu: com.revature.pojos.io.Menu@67efc554 Next Menu: com.revature.pojos.io.Menu@7840
+2019-10-07 14:12:16 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:12:16 TRACE root:30 - outputOffer set to "Accepted" successfully. Decision: Accept
+2019-10-07 14:12:16 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:12:16 DEBUG root:22 - Failed to update offer. Failed in rejectAllOtherOffers. Result2: false
+2019-10-07 14:12:16 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@974eebd1
+2019-10-07 14:12:16 DEBUG root:22 - Login failed. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@974eebd1
+2019-10-07 14:12:16 TRACE root:30 - Login succeeded. Logging in as Customer. Input: userExists passwordExists
+2019-10-07 14:12:17 TRACE root:30 - Getting next menu after MyCarMenu.
+2019-10-07 14:12:17 DEBUG root:22 - Failed to readCar. Car: null
+2019-10-07 14:12:17 TRACE root:30 - Got user input, user input could be any value. User input: Anything goes.
+2019-10-07 14:12:17 TRACE root:30 - Calling special menu getter. Menu: com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-07 14:12:17 TRACE root:30 - Getting next menu after AddCarMenu.
+2019-10-07 14:12:17 DEBUG root:22 - Failed to add car. Failed in the createCar function. Input: Anything goes.
+2019-10-07 14:12:17 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:12:18 TRACE root:30 - outputOffer set to "Accepted" successfully. Decision: Accept
+2019-10-07 14:12:18 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:12:18 TRACE root:30 - Rejected offers successfully. Vin: testVin Result2: true
+2019-10-07 14:12:18 DEBUG root:22 - Failed to update offer. Failed in try/catch. Input: Test Accept
+2019-10-07 14:12:18 TRACE root:30 - Trying to register user. Account: Account [username=TestCust, password=TestPass, accountStatus=Customer]
+2019-10-07 14:12:18 TRACE root:30 - Registration succeeded. Customer added. Input: TestCust TestPass Customer
+2019-10-07 14:12:18 TRACE root:30 - Getting next menu after LoginMenu.
+2019-10-07 14:12:18 DEBUG root:22 - Login failed during getNextMenuLogin. Input: 
+2019-10-07 14:12:19 TRACE root:30 - Returning to CustomerMenu. Input: Back
+2019-10-07 14:12:19 TRACE root:30 - Succeeded adding car. Input: TestVIN TestOwner
+2019-10-07 14:12:19 TRACE root:30 - Getting next menu after MakePaymentMenu.
+2019-10-07 14:12:19 DEBUG root:22 - Failed to make payment. Failed in try/catch. Input: testvin
+2019-10-07 14:12:20 DEBUG root:22 - Failed to delete the car. Failed in deleteCar. Vin: Fail
+2019-10-07 14:12:20 TRACE root:30 - Going back to CustomerMenu. Input: Back
+2019-10-07 14:12:20 TRACE root:30 - Building menu on the fly.
+2019-10-07 14:12:20 TRACE root:30 - Successfully built menu on the fly after reading the car. Menu: com.revature.pojos.io.Menu@634beef5
+2019-10-07 14:12:21 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@65821d0
+2019-10-07 14:12:21 DEBUG root:22 - Login failed. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@65821d0
+2019-10-07 14:12:21 DEBUG root:22 - Possible inputs was empty. Menu: com.revature.pojos.io.Menu@7840
+2019-10-07 14:12:21 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@974eebd1
+2019-10-07 14:12:21 DEBUG root:22 - Login failed. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@974eebd1
+2019-10-07 14:12:21 TRACE root:30 - Login succeeded. Logging in as Employee. Input: userExists passwordExists
+2019-10-07 14:12:22 TRACE root:30 - Offer rejected successfully. Input[1]: Reject
+2019-10-07 14:12:22 TRACE root:30 - Getting next menu after MakeOfferMenu.
+2019-10-07 14:12:22 DEBUG root:22 - Failed to make offer. Failed in the getNextMenuMakeOffer function. Input: testvin testowner
+2019-10-07 14:12:22 DEBUG root:22 - Program should never have reached this point. Current Menu: com.revature.pojos.io.Menu@67efc554 Input: bad
+2019-10-07 14:12:23 TRACE root:30 - Getting next menu after ViewAllPaymentsMenu.
+2019-10-07 14:12:23 TRACE root:30 - Building menu on the fly.
+2019-10-07 14:12:23 TRACE root:30 - Successfully built menu on the fly.
+2019-10-07 14:12:23 TRACE root:30 - Getting next menu after AddCarMenu.
+2019-10-07 14:12:23 TRACE root:30 - Succeeded adding car. Input: testvin testowner
+2019-10-07 14:12:23 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:12:24 TRACE root:30 - outputOffer set to "Accepted" successfully. Decision: Accept
+2019-10-07 14:12:24 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:12:24 TRACE root:30 - Rejected offers successfully. Vin: testVin Result2: true
+2019-10-07 14:12:24 TRACE root:30 - Offer updated successfully. Offer: com.revature.pojos.finance.Offer@4c2630c7
+2019-10-07 14:12:24 DEBUG root:22 - Failed to update offer. Failed in updateCar. Result3: false
+2019-10-07 14:12:24 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:12:24 TRACE root:30 - outputOffer set to "Accepted" successfully. Decision: Accept
+2019-10-07 14:12:24 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:12:24 TRACE root:30 - Rejected offers successfully. Vin: testVin Result2: true
+2019-10-07 14:12:24 DEBUG root:22 - Failed to update offer. Failed in createOffer. Result: false
+2019-10-07 14:12:24 DEBUG root:22 - Failed to make offer. Failed in the createOffer function. Input: 20.00 20
+2019-10-07 14:12:25 DEBUG root:22 - Failed to add car. Failed in the createCar function. Input: TestVIN TestOwner
+2019-10-07 14:12:25 TRACE root:30 - Trying to register user. Account: Account [username=TestUser, password=TestPass, accountStatus=Employee]
+2019-10-07 14:12:25 DEBUG root:22 - The registration failed. Input: TestUser TestPass Employee
+2019-10-07 14:12:25 TRACE root:30 - Getting next menu after ManageOfferMenu.
+2019-10-07 14:12:25 DEBUG root:22 - Failed to update offer. Failed in try/catch. Input: testvin testowner
+2019-10-07 14:12:26 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:12:26 TRACE root:30 - outputOffer set to "Accepted" successfully. Decision: Accept
+2019-10-07 14:12:26 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:12:26 TRACE root:30 - Rejected offers successfully. Vin: testVin Result2: true
+2019-10-07 14:12:26 TRACE root:30 - Offer updated successfully. Offer: com.revature.pojos.finance.Offer@4c2630c7
+2019-10-07 14:12:26 TRACE root:30 - Car updated successfully. Vin: testVin Car: com.revature.pojos.Car@e8295f62
+2019-10-07 14:12:26 WARN  root:18 - GetSpecialInstance failed. Current Menu: null Input: testvin
+2019-10-07 14:12:26 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:12:26 DEBUG root:22 - Failed to reject offer. Failed in input. Input: Test Fail
+2019-10-07 14:12:27 DEBUG root:22 - Got user input, user input was invalid. User input: Bad Menu: com.revature.pojos.io.Menu@e6785092
+2019-10-07 14:12:27 TRACE root:30 - Displaying menu com.revature.pojos.io.Menu@e6785092
+2019-10-07 14:12:27 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: Good
+2019-10-07 14:12:27 TRACE root:30 - Going back to ManageCarsMenu. Input: Back
+2019-10-07 14:12:28 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@76447fdb
+2019-10-07 14:12:28 TRACE root:30 - Login succeeded. Account Status: Employee
+2019-10-07 14:12:28 DEBUG root:22 - Failed to make payment. Failed during createPayment. Input: 20.00 testVin
+2019-10-07 14:12:28 TRACE root:30 - Getting next menu after RemoveCarMenu.
+2019-10-07 14:12:28 TRACE root:30 - Successfully deleted car. Vin: testvin
+2019-10-07 14:12:29 TRACE root:30 - Succeeded in making an offer. Input: 20.00 20
+2019-10-07 14:12:29 TRACE root:30 - Getting next menu after RegisterMenu.
+2019-10-07 14:12:29 TRACE root:30 - Trying to register user. Account: Account [username=testUser, password=testPass, accountStatus=Employee]
+2019-10-07 14:12:29 DEBUG root:22 - The registration failed. Input: testUser testPass Employee
+2019-10-07 14:12:30 TRACE root:30 - Moving on to making an offer. Input: test
+2019-10-07 14:12:30 TRACE root:30 - Getting next menu after NewCarsMenu.
+2019-10-07 14:12:30 DEBUG root:22 - Fauled to readCar. Input: testvin
+2019-10-07 14:12:30 TRACE root:30 - Going back to ViewNewCarsMenu. Input: Back
+2019-10-07 14:12:31 TRACE root:30 - Going back to CustomerMenu. Input: Back
+2019-10-07 14:25:54 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@615ef8d1
+2019-10-07 14:25:54 DEBUG root:22 - Login failed. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@615ef8d1
+2019-10-07 14:25:54 DEBUG root:22 - Login failed during tryLogin. Input: userNotExist passwordNotExist
+2019-10-07 14:26:04 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: 1
+2019-10-07 14:26:04 TRACE root:30 - Trying to register user. Account: Account [username=TestUser, password=TestPass, accountStatus=Employee]
+2019-10-07 14:26:04 TRACE root:30 - Registration succeeded. Employee added. Input: TestUser TestPass Employee
+2019-10-07 14:26:05 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@615ef8d1
+2019-10-07 14:26:05 DEBUG root:22 - Login failed. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@615ef8d1
+2019-10-07 14:26:05 DEBUG root:22 - Login failed during tryLogin. Input: userNotExist passwordNotExist
+2019-10-07 14:26:05 TRACE root:30 - Going back to ManageCarsMenu. Input: Back
+2019-10-07 14:26:06 TRACE root:30 - Returning next menu. Current Menu: com.revature.pojos.io.Menu@67efc554 Next Menu: com.revature.pojos.io.Menu@7840
+2019-10-07 14:26:06 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:26:06 TRACE root:30 - outputOffer set to "Accepted" successfully. Decision: Accept
+2019-10-07 14:26:06 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:26:06 DEBUG root:22 - Failed to update offer. Failed in rejectAllOtherOffers. Result2: false
+2019-10-07 14:26:06 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@974eebd1
+2019-10-07 14:26:06 DEBUG root:22 - Login failed. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@974eebd1
+2019-10-07 14:26:06 TRACE root:30 - Login succeeded. Logging in as Customer. Input: userExists passwordExists
+2019-10-07 14:26:07 TRACE root:30 - Getting next menu after MyCarMenu.
+2019-10-07 14:26:07 DEBUG root:22 - Failed to readCar. Car: null
+2019-10-07 14:26:07 TRACE root:30 - Got user input, user input could be any value. User input: Anything goes.
+2019-10-07 14:26:07 TRACE root:30 - Calling special menu getter. Menu: com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-07 14:26:07 TRACE root:30 - Getting next menu after AddCarMenu.
+2019-10-07 14:26:07 DEBUG root:22 - Failed to add car. Failed in the createCar function. Input: Anything goes.
+2019-10-07 14:26:08 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:26:08 TRACE root:30 - outputOffer set to "Accepted" successfully. Decision: Accept
+2019-10-07 14:26:08 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:26:08 TRACE root:30 - Rejected offers successfully. Vin: testVin Result2: true
+2019-10-07 14:26:08 DEBUG root:22 - Failed to update offer. Failed in try/catch. Input: Test Accept
+2019-10-07 14:26:08 TRACE root:30 - Trying to register user. Account: Account [username=TestCust, password=TestPass, accountStatus=Customer]
+2019-10-07 14:26:08 TRACE root:30 - Registration succeeded. Customer added. Input: TestCust TestPass Customer
+2019-10-07 14:26:09 TRACE root:30 - Getting next menu after LoginMenu.
+2019-10-07 14:26:09 DEBUG root:22 - Login failed during getNextMenuLogin. Input: 
+2019-10-07 14:26:09 TRACE root:30 - Returning to CustomerMenu. Input: Back
+2019-10-07 14:26:09 TRACE root:30 - Succeeded adding car. Input: TestVIN TestOwner
+2019-10-07 14:26:10 TRACE root:30 - Getting next menu after MakePaymentMenu.
+2019-10-07 14:26:10 DEBUG root:22 - Failed to make payment. Failed in try/catch. Input: testvin
+2019-10-07 14:26:10 DEBUG root:22 - Failed to delete the car. Failed in deleteCar. Vin: Fail
+2019-10-07 14:26:10 TRACE root:30 - Going back to CustomerMenu. Input: Back
+2019-10-07 14:26:11 TRACE root:30 - Building menu on the fly.
+2019-10-07 14:26:11 TRACE root:30 - Successfully built menu on the fly after reading the car. Menu: com.revature.pojos.io.Menu@634beef5
+2019-10-07 14:26:11 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@65821d0
+2019-10-07 14:26:11 DEBUG root:22 - Login failed. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@65821d0
+2019-10-07 14:26:11 DEBUG root:22 - Possible inputs was empty. Menu: com.revature.pojos.io.Menu@7840
+2019-10-07 14:26:12 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@974eebd1
+2019-10-07 14:26:12 DEBUG root:22 - Login failed. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@974eebd1
+2019-10-07 14:26:12 TRACE root:30 - Login succeeded. Logging in as Employee. Input: userExists passwordExists
+2019-10-07 14:26:12 TRACE root:30 - Offer rejected successfully. Input[1]: Reject
+2019-10-07 14:26:13 TRACE root:30 - Getting next menu after MakeOfferMenu.
+2019-10-07 14:26:13 DEBUG root:22 - Failed to make offer. Failed in the getNextMenuMakeOffer function. Input: testvin testowner
+2019-10-07 14:26:13 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@615ef8d1
+2019-10-07 14:26:13 DEBUG root:22 - Login failed. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@615ef8d1
+2019-10-07 14:26:13 DEBUG root:22 - Login failed during getNextMenuLogin. Input: userNotExist passwordNotExist
+2019-10-07 14:26:13 DEBUG root:22 - Program should never have reached this point. Current Menu: com.revature.pojos.io.Menu@67efc554 Input: bad
+2019-10-07 14:26:13 TRACE root:30 - Getting next menu after ViewAllPaymentsMenu.
+2019-10-07 14:26:13 TRACE root:30 - Building menu on the fly.
+2019-10-07 14:26:13 TRACE root:30 - Successfully built menu on the fly.
+2019-10-07 14:26:14 TRACE root:30 - Getting next menu after AddCarMenu.
+2019-10-07 14:26:14 TRACE root:30 - Succeeded adding car. Input: testvin testowner
+2019-10-07 14:26:14 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:26:14 TRACE root:30 - outputOffer set to "Accepted" successfully. Decision: Accept
+2019-10-07 14:26:14 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:26:14 TRACE root:30 - Rejected offers successfully. Vin: testVin Result2: true
+2019-10-07 14:26:14 TRACE root:30 - Offer updated successfully. Offer: com.revature.pojos.finance.Offer@4c2630c7
+2019-10-07 14:26:14 DEBUG root:22 - Failed to update offer. Failed in updateCar. Result3: false
+2019-10-07 14:26:14 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:26:15 TRACE root:30 - outputOffer set to "Accepted" successfully. Decision: Accept
+2019-10-07 14:26:15 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:26:15 TRACE root:30 - Rejected offers successfully. Vin: testVin Result2: true
+2019-10-07 14:26:15 DEBUG root:22 - Failed to update offer. Failed in createOffer. Result: false
+2019-10-07 14:26:15 DEBUG root:22 - Failed to make offer. Failed in the createOffer function. Input: 20.00 20
+2019-10-07 14:26:15 DEBUG root:22 - Failed to add car. Failed in the createCar function. Input: TestVIN TestOwner
+2019-10-07 14:26:15 TRACE root:30 - Trying to register user. Account: Account [username=TestUser, password=TestPass, accountStatus=Employee]
+2019-10-07 14:26:15 DEBUG root:22 - The registration failed. Input: TestUser TestPass Employee
+2019-10-07 14:26:16 TRACE root:30 - Getting next menu after ManageOfferMenu.
+2019-10-07 14:26:16 DEBUG root:22 - Failed to update offer. Failed in try/catch. Input: testvin testowner
+2019-10-07 14:26:16 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:26:16 TRACE root:30 - outputOffer set to "Accepted" successfully. Decision: Accept
+2019-10-07 14:26:16 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:26:16 TRACE root:30 - Rejected offers successfully. Vin: testVin Result2: true
+2019-10-07 14:26:16 TRACE root:30 - Offer updated successfully. Offer: com.revature.pojos.finance.Offer@4c2630c7
+2019-10-07 14:26:16 TRACE root:30 - Car updated successfully. Vin: testVin Car: com.revature.pojos.Car@e8295f62
+2019-10-07 14:26:16 WARN  root:18 - GetSpecialInstance failed. Current Menu: null Input: testvin
+2019-10-07 14:26:17 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:26:17 DEBUG root:22 - Failed to reject offer. Failed in input. Input: Test Fail
+2019-10-07 14:26:17 DEBUG root:22 - Got user input, user input was invalid. User input: Bad Menu: com.revature.pojos.io.Menu@e6785092
+2019-10-07 14:26:17 TRACE root:30 - Displaying menu com.revature.pojos.io.Menu@e6785092
+2019-10-07 14:26:17 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: Good
+2019-10-07 14:26:17 TRACE root:30 - Going back to ManageCarsMenu. Input: Back
+2019-10-07 14:26:18 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@76447fdb
+2019-10-07 14:26:18 TRACE root:30 - Login succeeded. Account Status: Employee
+2019-10-07 14:26:18 DEBUG root:22 - Failed to make payment. Failed during createPayment. Input: 20.00 testVin
+2019-10-07 14:26:19 TRACE root:30 - Getting next menu after RemoveCarMenu.
+2019-10-07 14:26:19 TRACE root:30 - Successfully deleted car. Vin: testvin
+2019-10-07 14:26:19 TRACE root:30 - Succeeded in making an offer. Input: 20.00 20
+2019-10-07 14:26:20 TRACE root:30 - Getting next menu after RegisterMenu.
+2019-10-07 14:26:20 TRACE root:30 - Trying to register user. Account: Account [username=testUser, password=testPass, accountStatus=Employee]
+2019-10-07 14:26:20 DEBUG root:22 - The registration failed. Input: testUser testPass Employee
+2019-10-07 14:26:20 TRACE root:30 - Moving on to making an offer. Input: test
+2019-10-07 14:26:20 TRACE root:30 - Getting next menu after NewCarsMenu.
+2019-10-07 14:26:21 DEBUG root:22 - Fauled to readCar. Input: testvin
+2019-10-07 14:26:21 TRACE root:30 - Going back to ViewNewCarsMenu. Input: Back
+2019-10-07 14:26:21 TRACE root:30 - Going back to CustomerMenu. Input: Back
+2019-10-07 14:30:36 TRACE root:30 - Going back to EmployeeMenu. Input: Back
+2019-10-07 14:35:13 TRACE root:30 - Succeeded in deleting other offers. Vin: null Username: null
+2019-10-07 14:41:00 DEBUG root:22 - Failed to delete other offers. Failed in getAllOffers. Vin: null Username: null
+2019-10-07 14:41:07 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: 1
+2019-10-07 14:41:08 TRACE root:30 - Trying to register user. Account: Account [username=TestUser, password=TestPass, accountStatus=Employee]
+2019-10-07 14:41:08 TRACE root:30 - Registration succeeded. Employee added. Input: TestUser TestPass Employee
+2019-10-07 14:41:08 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@615ef8d1
+2019-10-07 14:41:08 DEBUG root:22 - Login failed. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@615ef8d1
+2019-10-07 14:41:08 DEBUG root:22 - Login failed during tryLogin. Input: userNotExist passwordNotExist
+2019-10-07 14:41:09 TRACE root:30 - Going back to ManageCarsMenu. Input: Back
+2019-10-07 14:41:09 TRACE root:30 - Returning next menu. Current Menu: com.revature.pojos.io.Menu@67efc554 Next Menu: com.revature.pojos.io.Menu@7840
+2019-10-07 14:41:09 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:41:09 TRACE root:30 - outputOffer set to "Accepted" successfully. Decision: Accept
+2019-10-07 14:41:09 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:41:09 DEBUG root:22 - Failed to update offer. Failed in rejectAllOtherOffers. Result2: false
+2019-10-07 14:41:10 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@974eebd1
+2019-10-07 14:41:10 DEBUG root:22 - Login failed. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@974eebd1
+2019-10-07 14:41:10 TRACE root:30 - Login succeeded. Logging in as Customer. Input: userExists passwordExists
+2019-10-07 14:41:10 TRACE root:30 - Getting next menu after MyCarMenu.
+2019-10-07 14:41:10 DEBUG root:22 - Failed to readCar. Car: null
+2019-10-07 14:41:10 TRACE root:30 - Got user input, user input could be any value. User input: Anything goes.
+2019-10-07 14:41:11 TRACE root:30 - Calling special menu getter. Menu: com.revature.pojos.io.menu.AddCarMenu@8b2ccb13
+2019-10-07 14:41:11 TRACE root:30 - Getting next menu after AddCarMenu.
+2019-10-07 14:41:11 DEBUG root:22 - Failed to add car. Failed in the createCar function. Input: Anything goes.
+2019-10-07 14:41:11 DEBUG root:22 - Failed to delete other offers. Failed in getAllOffers. Vin: null Username: null
+2019-10-07 14:41:11 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:41:11 TRACE root:30 - outputOffer set to "Accepted" successfully. Decision: Accept
+2019-10-07 14:41:11 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:41:11 TRACE root:30 - Rejected offers successfully. Vin: testVin Result2: true
+2019-10-07 14:41:11 DEBUG root:22 - Failed to update offer. Failed in try/catch. Input: Test Accept
+2019-10-07 14:41:12 TRACE root:30 - Trying to register user. Account: Account [username=TestCust, password=TestPass, accountStatus=Customer]
+2019-10-07 14:41:12 TRACE root:30 - Registration succeeded. Customer added. Input: TestCust TestPass Customer
+2019-10-07 14:41:12 TRACE root:30 - Getting next menu after LoginMenu.
+2019-10-07 14:41:12 DEBUG root:22 - Login failed during getNextMenuLogin. Input: 
+2019-10-07 14:41:12 TRACE root:30 - Returning to CustomerMenu. Input: Back
+2019-10-07 14:41:13 TRACE root:30 - Succeeded adding car. Input: TestVIN TestOwner
+2019-10-07 14:41:13 TRACE root:30 - Getting next menu after MakePaymentMenu.
+2019-10-07 14:41:13 DEBUG root:22 - Failed to make payment. Failed in try/catch. Input: testvin
+2019-10-07 14:41:14 DEBUG root:22 - Failed to delete the car. Failed in deleteCar. Vin: Fail
+2019-10-07 14:41:14 TRACE root:30 - Going back to CustomerMenu. Input: Back
+2019-10-07 14:41:14 TRACE root:30 - Building menu on the fly.
+2019-10-07 14:41:14 TRACE root:30 - Successfully built menu on the fly after reading the car. Menu: com.revature.pojos.io.Menu@634beef5
+2019-10-07 14:41:15 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@65821d0
+2019-10-07 14:41:15 DEBUG root:22 - Login failed. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@65821d0
+2019-10-07 14:41:15 DEBUG root:22 - Possible inputs was empty. Menu: com.revature.pojos.io.Menu@7840
+2019-10-07 14:41:15 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@974eebd1
+2019-10-07 14:41:15 DEBUG root:22 - Login failed. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@974eebd1
+2019-10-07 14:41:15 TRACE root:30 - Login succeeded. Logging in as Employee. Input: userExists passwordExists
+2019-10-07 14:41:16 TRACE root:30 - Offer rejected successfully. Input[1]: Reject
+2019-10-07 14:41:16 TRACE root:30 - Getting next menu after MakeOfferMenu.
+2019-10-07 14:41:16 DEBUG root:22 - Failed to make offer. Failed in the getNextMenuMakeOffer function. Input: testvin testowner
+2019-10-07 14:41:17 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@615ef8d1
+2019-10-07 14:41:17 DEBUG root:22 - Login failed. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@615ef8d1
+2019-10-07 14:41:17 DEBUG root:22 - Login failed during getNextMenuLogin. Input: userNotExist passwordNotExist
+2019-10-07 14:41:17 TRACE root:30 - Going back to EmployeeMenu. Input: Back
+2019-10-07 14:41:17 DEBUG root:22 - Program should never have reached this point. Current Menu: com.revature.pojos.io.Menu@67efc554 Input: bad
+2019-10-07 14:41:18 TRACE root:30 - Getting next menu after ViewAllPaymentsMenu.
+2019-10-07 14:41:18 TRACE root:30 - Building menu on the fly.
+2019-10-07 14:41:18 TRACE root:30 - Successfully built menu on the fly.
+2019-10-07 14:41:18 TRACE root:30 - Getting next menu after AddCarMenu.
+2019-10-07 14:41:18 TRACE root:30 - Succeeded adding car. Input: testvin testowner
+2019-10-07 14:41:18 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:41:18 TRACE root:30 - outputOffer set to "Accepted" successfully. Decision: Accept
+2019-10-07 14:41:18 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:41:18 TRACE root:30 - Rejected offers successfully. Vin: testVin Result2: true
+2019-10-07 14:41:18 TRACE root:30 - Offer updated successfully. Offer: com.revature.pojos.finance.Offer@4c2630c7
+2019-10-07 14:41:18 DEBUG root:22 - Failed to update offer. Failed in updateCar. Result3: false
+2019-10-07 14:41:19 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:41:19 TRACE root:30 - outputOffer set to "Accepted" successfully. Decision: Accept
+2019-10-07 14:41:19 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:41:19 TRACE root:30 - Rejected offers successfully. Vin: testVin Result2: true
+2019-10-07 14:41:19 DEBUG root:22 - Failed to update offer. Failed in createOffer. Result: false
+2019-10-07 14:41:19 DEBUG root:22 - Failed to make offer. Failed in the createOffer function. Input: 20.00 20
+2019-10-07 14:41:19 DEBUG root:22 - Failed to add car. Failed in the createCar function. Input: TestVIN TestOwner
+2019-10-07 14:41:20 TRACE root:30 - Trying to register user. Account: Account [username=TestUser, password=TestPass, accountStatus=Employee]
+2019-10-07 14:41:20 DEBUG root:22 - The registration failed. Input: TestUser TestPass Employee
+2019-10-07 14:41:20 TRACE root:30 - Getting next menu after ManageOfferMenu.
+2019-10-07 14:41:20 DEBUG root:22 - Failed to update offer. Failed in try/catch. Input: testvin testowner
+2019-10-07 14:41:20 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:41:20 TRACE root:30 - outputOffer set to "Accepted" successfully. Decision: Accept
+2019-10-07 14:41:20 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:41:20 TRACE root:30 - Rejected offers successfully. Vin: testVin Result2: true
+2019-10-07 14:41:20 TRACE root:30 - Offer updated successfully. Offer: com.revature.pojos.finance.Offer@4c2630c7
+2019-10-07 14:41:20 TRACE root:30 - Car updated successfully. Vin: testVin Car: com.revature.pojos.Car@e8295f62
+2019-10-07 14:41:21 WARN  root:18 - GetSpecialInstance failed. Current Menu: null Input: testvin
+2019-10-07 14:41:21 TRACE root:30 - Succeeded in deleting other offers. Vin: testVin Username: testUsername
+2019-10-07 14:41:21 DEBUG root:22 - Failed to reject offer. Failed in input. Input: Test Fail
+2019-10-07 14:41:21 DEBUG root:22 - Got user input, user input was invalid. User input: Bad Menu: com.revature.pojos.io.Menu@e6785092
+2019-10-07 14:41:21 TRACE root:30 - Displaying menu com.revature.pojos.io.Menu@e6785092
+2019-10-07 14:41:21 TRACE root:30 - Got user input, user input was contained within possible inputs. User input: Good
+2019-10-07 14:41:22 TRACE root:30 - Going back to ManageCarsMenu. Input: Back
+2019-10-07 14:41:22 TRACE root:30 - Reading the account using loginAttempt. LoginAttempt: com.revature.pojos.authentication.LoginAttempt@76447fdb
+2019-10-07 14:41:22 TRACE root:30 - Login succeeded. Account Status: Employee
+2019-10-07 14:41:23 DEBUG root:22 - Failed to make payment. Failed during createPayment. Input: 20.00 testVin
+2019-10-07 14:41:23 TRACE root:30 - Getting next menu after RemoveCarMenu.
+2019-10-07 14:41:23 TRACE root:30 - Successfully deleted car. Vin: testvin
+2019-10-07 14:41:23 TRACE root:30 - Succeeded in making an offer. Input: 20.00 20
+2019-10-07 14:41:24 TRACE root:30 - Getting next menu after RegisterMenu.
+2019-10-07 14:41:24 TRACE root:30 - Trying to register user. Account: Account [username=testUser, password=testPass, accountStatus=Employee]
+2019-10-07 14:41:24 DEBUG root:22 - The registration failed. Input: testUser testPass Employee
+2019-10-07 14:41:24 TRACE root:30 - Moving on to making an offer. Input: test
+2019-10-07 14:41:25 TRACE root:30 - Getting next menu after NewCarsMenu.
+2019-10-07 14:41:25 DEBUG root:22 - Fauled to readCar. Input: testvin
+2019-10-07 14:41:25 TRACE root:30 - Going back to ViewNewCarsMenu. Input: Back
+2019-10-07 14:41:25 TRACE root:30 - Going back to CustomerMenu. Input: Back

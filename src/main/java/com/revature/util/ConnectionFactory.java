@@ -20,14 +20,19 @@ public class ConnectionFactory {
 	
 	private static ConnectionFactory connectionFactory;
 	
+	private static Connection connection;
+	
 	public static Connection getConnection() {
 		
 		if (connectionFactory == null) {
 			connectionFactory = new ConnectionFactory();
 		}
 		
-		return connectionFactory.createConnection();
+		if (connection == null) {
+			connection = connectionFactory.createConnection();
+		}
 		
+		return connection;
 	}
 	
 	
@@ -57,6 +62,7 @@ public class ConnectionFactory {
 		
 		try {
 			connection = DriverManager.getConnection(url, user, password);
+			
 		} catch (SQLException e) {
 			System.out.println("Failed to create connection");
 			e.printStackTrace();

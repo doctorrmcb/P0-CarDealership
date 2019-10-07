@@ -48,6 +48,9 @@ import com.revature.service.DisplayImpl;
 @RunWith(MockitoJUnitRunner.class)
 public class CarSystemImplTest {
 
+	EmployeeMenu employeeMenu = new EmployeeMenu();
+	CustomerMenu customerMenu = new CustomerMenu();
+	
 	@Spy
 	CarSystemImpl impl = new CarSystemImpl();
 	
@@ -74,10 +77,12 @@ public class CarSystemImplTest {
 
 	@Before
 	public void setUp() throws Exception {
+		
 	}
 
 	@After
 	public void tearDown() throws Exception {
+		
 	}
 
 	// Testing testing.
@@ -323,7 +328,7 @@ public class CarSystemImplTest {
 	public void tryRegisterGoodEmployeeAccount() {
 		String input = "TestUser TestPass Employee";
 		Account account = new Account("TestUser", "TestPass", "Employee");
-		EmployeeMenu testMenu = new EmployeeMenu();
+		EmployeeMenu testMenu = employeeMenu;
 		when(impl.tryRegister(account)).thenReturn(true);
 		assertEquals(testMenu, impl.getNextMenuRegister(input));
 		//TODO: Write accountDAO.deleteAccount then run it with the created account to return database back to original state.
@@ -333,14 +338,14 @@ public class CarSystemImplTest {
 	public void tryRegisterGoodCustomerAccount() {
 		String input = "TestCust TestPass Customer";
 		Account account = new Account("TestCust", "TestPass", "Customer");
-		CustomerMenu testMenu = new CustomerMenu();
+		CustomerMenu testMenu = customerMenu;
 		when(impl.tryRegister(account)).thenReturn(true);
 		assertEquals(testMenu, impl.getNextMenuRegister(input));
 		//TODO: Write accountDAO.deleteAccount then run it with the created account to return database back to original state.
 	}
 	
 	@Test
-	public void getNextMenuLoginFailTest() {
+	public void getNextMenuLoginErrorTest() {
 		String input = "userNotExist passwordNotExist";
 		LoginAttempt login = new LoginAttempt("userNotExist", "passwordNotExist");
 		LoginMenu testMenu = new LoginMenu();
@@ -349,10 +354,20 @@ public class CarSystemImplTest {
 	}
 	
 	@Test
+	public void getNextMenuLoginFailTest() {
+		String input = "userNotExist passwordNotExist";
+		LoginAttempt login = new LoginAttempt("userNotExist", "passwordNotExist");
+		LoginMenu testMenu = new LoginMenu();
+		String[] arrReturn = {"blah", "blah"};
+		when(impl.tryLogin(login)).thenReturn(arrReturn);
+		assertEquals(testMenu, impl.getNextMenuLogin(input));
+	}
+	
+	@Test
 	public void getNextMenuLoginSuccessEmployeeTest() {
 		String input = "userExists passwordExists";
 		LoginAttempt login = new LoginAttempt("userExists", "passwordExists");
-		EmployeeMenu testMenu = new EmployeeMenu();
+		EmployeeMenu testMenu = employeeMenu;
 		String[] arrReturn = {"true", "Employee"};
 		when(impl.tryLogin(login)).thenReturn(arrReturn);
 		assertEquals(testMenu, impl.getNextMenuLogin(input));
@@ -362,7 +377,7 @@ public class CarSystemImplTest {
 	public void getNextMenuLoginSuccessCustomerTest() {
 		String input = "userExists passwordExists";
 		LoginAttempt login = new LoginAttempt("userExists", "passwordExists");
-		CustomerMenu testMenu = new CustomerMenu();
+		CustomerMenu testMenu = customerMenu;
 		String[] arrReturn = {"true", "Customer"};
 		when(impl.tryLogin(login)).thenReturn(arrReturn);
 		assertEquals(testMenu, impl.getNextMenuLogin(input));
@@ -379,6 +394,7 @@ public class CarSystemImplTest {
 	public void getNextMenuMakeOfferSuccessTest() {
 		String input = "20.00 20";
 		impl.setOfferDAO(offerDAO);
+		Menu.userName = "";
 		ViewNewCarsMenu testMenu = new ViewNewCarsMenu();
 		Offer offer = new Offer("", 20.00, "", 20);
 		when(offerDAO.createOffer(offer)).thenReturn(true);
@@ -419,7 +435,7 @@ public class CarSystemImplTest {
 	@Test
 	public void getNextMenuMyCarsBackTest() {
 		String input = "Back";
-		CustomerMenu testMenu = new CustomerMenu();
+		CustomerMenu testMenu = customerMenu;
 		assertEquals(testMenu, impl.getNextMenuMyCars(input));
 	}
 	
@@ -457,7 +473,7 @@ public class CarSystemImplTest {
 	@Test
 	public void getNextMenuNewCarsBackTest() {
 		String input = "Back";
-		CustomerMenu testMenu = new CustomerMenu();
+		CustomerMenu testMenu = customerMenu;
 		assertEquals(testMenu, impl.getNextMenuNewCars(input));
 	}
 	
@@ -481,17 +497,18 @@ public class CarSystemImplTest {
 	@Test
 	public void getNextMenuMakePaymentBackTest() {
 		String input = "Back";
-		CustomerMenu testMenu = new CustomerMenu();
+		CustomerMenu testMenu = customerMenu;
 		assertEquals(testMenu, impl.getNextMenuMakePayment(input));
 	}
 	
 	@Test
 	public void getNextMenuMakePaymentSuccessTest() {
 		String input = "20.00 testVin";
+		Menu.userName = "";
 		Payment payment = new Payment(20.00, "", "testVin");
 		impl.setPaymentDAO(paymentDAO);
 		when(paymentDAO.createPayment(payment)).thenReturn(true);
-		CustomerMenu testMenu = new CustomerMenu();
+		CustomerMenu testMenu = customerMenu;
 		assertEquals(testMenu, impl.getNextMenuMakePayment(input));
 	}
 	
@@ -509,7 +526,7 @@ public class CarSystemImplTest {
 		when(offerDAO.updateOffer(offer.offerId, offer)).thenReturn(true);
 		when(carDAO.readCar(vin)).thenReturn(car);
 		when(carDAO.updateCar(vin, car)).thenReturn(true);
-		EmployeeMenu testMenu = new EmployeeMenu();
+		EmployeeMenu testMenu = employeeMenu;
 		assertEquals(testMenu, impl.getNextMenuManageOffers(input));
 	}
 	
@@ -528,5 +545,107 @@ public class CarSystemImplTest {
 		when(carDAO.updateCar(vin, car)).thenReturn(true);
 		ManageOffersMenu testMenu = new ManageOffersMenu();
 		assertEquals(testMenu, impl.getNextMenuManageOffers(input));
+	}
+	
+	@Test
+	public void getNextMenuManageOffersFailInputTest() {
+		String input = "Test Fail";
+		impl.setOfferDAO(offerDAO);
+		impl.setCarDAO(carDAO);
+		String vin = "testVin";
+		String username = "testUsername";
+		Offer offer = new Offer(username, 20.00, vin, 20);
+		Car car = new Car(vin, username);
+		when(offerDAO.readOffer("Test")).thenReturn(offer);
+		when(impl.rejectAllOtherOffers(vin, username)).thenReturn(true);
+		when(offerDAO.updateOffer(offer.offerId, offer)).thenReturn(true);
+		when(carDAO.updateCar(vin, car)).thenReturn(true);
+		ManageOffersMenu testMenu = new ManageOffersMenu();
+		assertEquals(testMenu, impl.getNextMenuManageOffers(input));
+	}
+	
+	@Test
+	public void getNextMenuManageOffersRejectInputTest() {
+		String input = "Test Reject";
+		impl.setOfferDAO(offerDAO);
+		impl.setCarDAO(carDAO);
+		String vin = "testVin";
+		String username = "testUsername";
+		Offer offer = new Offer(username, 20.00, vin, 20);
+		Car car = new Car(vin, username);
+		when(offerDAO.readOffer("Test")).thenReturn(offer);
+		//when(impl.rejectAllOtherOffers(vin, username)).thenReturn(true);
+		//when(offerDAO.updateOffer(offer.offerId, offer)).thenReturn(true);
+		//when(carDAO.updateCar(vin, car)).thenReturn(true);
+		EmployeeMenu testMenu = new EmployeeMenu();
+		assertEquals(testMenu, impl.getNextMenuManageOffers(input));
+	}
+	
+	@Test
+	public void getNextMenuManageOffersFailRejectOtherTest() {
+		String input = "Test Accept";
+		impl.setOfferDAO(offerDAO);
+		impl.setCarDAO(carDAO);
+		String vin = "testVin";
+		String username = "testUsername";
+		Offer offer = new Offer(username, 20.00, vin, 20);
+		Car car = new Car(vin, username);
+		when(offerDAO.readOffer("Test")).thenReturn(offer);
+		when(impl.rejectAllOtherOffers(vin, username)).thenReturn(false);
+		when(offerDAO.updateOffer(offer.offerId, offer)).thenReturn(true);
+		when(carDAO.updateCar(vin, car)).thenReturn(true);
+		ManageOffersMenu testMenu = new ManageOffersMenu();
+		assertEquals(testMenu, impl.getNextMenuManageOffers(input));
+	}
+	
+	@Test
+	public void getNextMenuManageOffersFailUpdateOfferTest() {
+		String input = "Test Accept";
+		impl.setOfferDAO(offerDAO);
+		impl.setCarDAO(carDAO);
+		String vin = "testVin";
+		String username = "testUsername";
+		Offer offer = new Offer(username, 20.00, vin, 20);
+		Car car = new Car(vin, username);
+		when(offerDAO.readOffer("Test")).thenReturn(offer);
+		when(impl.rejectAllOtherOffers(vin, username)).thenReturn(true);
+		when(offerDAO.updateOffer(offer.offerId, offer)).thenReturn(false);
+		when(carDAO.updateCar(vin, car)).thenReturn(true);
+		ManageOffersMenu testMenu = new ManageOffersMenu();
+		assertEquals(testMenu, impl.getNextMenuManageOffers(input));
+	}
+	
+	@Test
+	public void getNextMenuManageOffersFailUpdateCarTest() {
+		String input = "Test Accept";
+		impl.setOfferDAO(offerDAO);
+		impl.setCarDAO(carDAO);
+		String vin = "testVin";
+		String username = "testUsername";
+		Offer offer = new Offer(username, 20.00, vin, 20);
+		Car car = new Car(vin, username);
+		when(offerDAO.readOffer("Test")).thenReturn(offer);
+		when(impl.rejectAllOtherOffers(vin, username)).thenReturn(true);
+		when(offerDAO.updateOffer(offer.offerId, offer)).thenReturn(true);
+		when(carDAO.readCar(vin)).thenReturn(car);
+		when(carDAO.updateCar(vin, car)).thenReturn(false);
+		ManageOffersMenu testMenu = new ManageOffersMenu();
+		assertEquals(testMenu, impl.getNextMenuManageOffers(input));
+	}
+	
+	@Test
+	public void getNextMenuManageOffersBackTest() {
+		String input = "Back";
+		EmployeeMenu testMenu = employeeMenu;
+		assertEquals(testMenu, impl.getNextMenuManageOffers(input));
+	}
+	
+	@Test
+	public void rejectAllOtherOffersExceptionTest() {
+		String vin = null;
+		String username = null;
+		impl.setOfferDAO(offerDAO);
+		when(offerDAO.rejectOffers(vin, username)).thenThrow(Exception.class);
+		assertEquals(false, impl.rejectAllOtherOffers(vin, username));
 	}
 }

@@ -317,6 +317,7 @@ public class CarSystemImpl implements CarSystem {
 			} catch (Exception e) {
 				System.out.println("Failed to update offer, please try again");
 				debug("Failed to update offer. Failed in try/catch. Input: " + input);
+				e.printStackTrace();
 				return new ManageOffersMenu();
 			}
 		}
