@@ -5,6 +5,7 @@ import static org.mockito.Mockito.when;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
+import java.text.NumberFormat;
 import java.util.Scanner;
 
 import org.junit.After;
@@ -197,6 +198,14 @@ public class CarSystemImplTest {
 		//impl.setAccountDAO(accountDAO);
 		//when(impl.getSpecialMenu(input, currentMenu)).thenReturn(currentMenu);
 		//assertEquals(currentMenu, currentMenu);
+	}
+	
+	@Test
+	public void getSpecialMenuRegisterTest() {
+		String input = "testUser testPass Employee";
+		RegisterMenu currentMenu = new RegisterMenu();
+		impl.getSpecialMenu(input, currentMenu);
+		Mockito.verify(impl).getNextMenuRegister(input);
 	}
 	
 	@Test
@@ -415,6 +424,37 @@ public class CarSystemImplTest {
 	}
 	
 	@Test
+	public void getNextMenuMyCarsSuccessTest() {
+		String input = "";
+		impl.setCarDAO(carDAO);
+		Car car = new Car("testVin", "testOwner");
+		when(carDAO.readCar(input)).thenReturn(car);
+		Menu.userName = "testOwner";
+		impl.setOfferDAO(offerDAO);
+		Offer offer = new Offer("testOwner", 20.00, "testVin", 20);
+		when(offerDAO.readOffer("testOwner_")).thenReturn(offer);
+		impl.setPaymentDAO(paymentDAO);
+		when(paymentDAO.getTotalPaid("testVin")).thenReturn(10.00);
+		Menu testMenu = new Menu();
+		testMenu.outputLines.add("\nViewing your remaining payments.\n");
+		testMenu.outputLines.add("If you would like to go back to the previous screen, type \"Back\"");
+		testMenu.outputLines.add("\nYour car:");
+		testMenu.outputLines.add("testVin testOwner");
+		testMenu.outputLines.add("\nRemaining payments:");
+		testMenu.outputLines.add("======================================================================");
+		NumberFormat formatter = NumberFormat.getCurrencyInstance();
+		String formattedOffer = formatter.format(20.00);
+		testMenu.outputLines.add("Original Price:\t\t\t\t" + formattedOffer);
+		testMenu.outputLines.add("Original Number of Payments:\t\t" + Integer.toString(offer.durationMonths));
+		formattedOffer = formatter.format(1);
+		testMenu.outputLines.add("Monthly Payment:\t\t\t" + formattedOffer);
+		testMenu.outputLines.add("Amount paid: " + 10.00);
+		testMenu.outputLines.add("Remaining Amount to pay: " + 10.00);
+		testMenu.outputLines.add("Remaining Monthly Payments: " + 11);
+		assertEquals(testMenu, impl.getNextMenuMyCars(input));
+	}
+	
+	@Test
 	public void getNextMenuNewCarsBackTest() {
 		String input = "Back";
 		CustomerMenu testMenu = new CustomerMenu();
@@ -453,5 +493,40 @@ public class CarSystemImplTest {
 		when(paymentDAO.createPayment(payment)).thenReturn(true);
 		CustomerMenu testMenu = new CustomerMenu();
 		assertEquals(testMenu, impl.getNextMenuMakePayment(input));
+	}
+	
+	@Test
+	public void getNextMenuManageOffersDeepestSuccessTest() {
+		String input = "Test Accept";
+		impl.setOfferDAO(offerDAO);
+		impl.setCarDAO(carDAO);
+		String vin = "testVin";
+		String username = "testUsername";
+		Offer offer = new Offer(username, 20.00, vin, 20);
+		Car car = new Car(vin, username);
+		when(offerDAO.readOffer("Test")).thenReturn(offer);
+		when(impl.rejectAllOtherOffers(vin, username)).thenReturn(true);
+		when(offerDAO.updateOffer(offer.offerId, offer)).thenReturn(true);
+		when(carDAO.readCar(vin)).thenReturn(car);
+		when(carDAO.updateCar(vin, car)).thenReturn(true);
+		EmployeeMenu testMenu = new EmployeeMenu();
+		assertEquals(testMenu, impl.getNextMenuManageOffers(input));
+	}
+	
+	@Test
+	public void getNextMenuManageOffersFailTest() {
+		String input = "Test Accept";
+		impl.setOfferDAO(offerDAO);
+		impl.setCarDAO(carDAO);
+		String vin = "testVin";
+		String username = "testUsername";
+		Offer offer = new Offer(username, 20.00, vin, 20);
+		Car car = new Car(vin, username);
+		when(offerDAO.readOffer("Test")).thenReturn(offer);
+		when(impl.rejectAllOtherOffers(vin, username)).thenReturn(true);
+		when(offerDAO.updateOffer(offer.offerId, offer)).thenReturn(true);
+		when(carDAO.updateCar(vin, car)).thenReturn(true);
+		ManageOffersMenu testMenu = new ManageOffersMenu();
+		assertEquals(testMenu, impl.getNextMenuManageOffers(input));
 	}
 }
