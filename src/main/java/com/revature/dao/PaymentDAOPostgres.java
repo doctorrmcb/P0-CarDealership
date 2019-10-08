@@ -1,5 +1,6 @@
 package com.revature.dao;
 
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -9,6 +10,7 @@ import java.util.ArrayList;
 
 import com.revature.pojos.finance.Payment;
 import com.revature.util.ConnectionFactory;
+
 
 public class PaymentDAOPostgres implements PaymentDAO {
 	
