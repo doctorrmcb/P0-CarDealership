@@ -32,6 +32,7 @@ public class JDBCVersionTest {
 
 	@Test
 	public void testVersion() throws Exception {
+	// This test exists solely to help me figure out which version I'm on 
 	  try (Connection connection = ConnectionFactory.getConnection()) {
 	    DatabaseMetaData metaData = connection.getMetaData();
 	    System.out.println(metaData.getJDBCMajorVersion());

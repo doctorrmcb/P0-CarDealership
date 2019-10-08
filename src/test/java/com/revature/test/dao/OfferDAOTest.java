@@ -60,7 +60,7 @@ public class OfferDAOTest {
 	public void createOfferTest() {
 		String sql = "insert into test.offers (offerusername, vin, price, durationmonths, offerstatus) values (?, ?, ?, ?, ?);";
 		Offer offer = new Offer("testUser", 20.00, "testVin", 20);
-		boolean result = true;
+		boolean result = false;
 		try {
 			when(connection.prepareStatement(sql)).thenReturn(stmtCreate);
 			offerDAO.setConn(connection);

@@ -64,3 +64,38 @@ create table dev.payments (
 
 -- Drop statements for helping debug table creation.
 --drop table test.accounts;
+
+--ALTER TABLE Album ADD CONSTRAINT FK_AlbumArtistId
+--    FOREIGN KEY (ArtistId) REFERENCES Artist (ArtistId) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+
+ALTER TABLE test.cars ADD CONSTRAINT FK_AccountUsername
+    FOREIGN KEY (ownerusername) REFERENCES test.accounts (accountusername) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+alter table test.payments add constraint FK_CarVin
+	foreign key (vin) references test.cars (vin) on delete no action on update no action;
+	
+alter table test.payments add constraint FK_AccountUsername
+	foreign key (paymentusername) references test.accounts (accountusername) on delete no action on update no action;
+
+alter table test.offers add constraint FK_CarVin
+	foreign key (vin) references test.cars (vin) on delete no action on update no action;
+
+alter table test.offers add constraint FK_AccountUsername
+	foreign key (offerusername) references test.accounts (accountusername) on delete no action on update no action;
+
+
+ALTER TABLE dev.cars ADD CONSTRAINT FK_AccountUsername
+    FOREIGN KEY (ownerusername) REFERENCES dev.accounts (accountusername) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+alter table dev.payments add constraint FK_CarVin
+	foreign key (vin) references dev.cars (vin) on delete no action on update no action;
+
+alter table dev.payments add constraint FK_AccountUsername
+	foreign key (paymentusername) references dev.accounts (accountusername) on delete no action on update no action;
+
+alter table dev.offers add constraint FK_CarVin
+	foreign key (vin) references dev.cars (vin) on delete no action on update no action;
+	
+alter table dev.offers add constraint FK_AccountUsername
+	foreign key (offerusername) references dev.accounts (accountusername) on delete no action on update no action;

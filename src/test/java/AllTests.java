@@ -11,7 +11,7 @@ import com.revature.test.service.DisplayImplTest;
 import com.revature.test.version.JDBCVersionTest;
 
 @RunWith(Suite.class)
-@SuiteClasses({CarSystemImplTest.class, JDBCVersionTest.class, AccountDAOTest.class, CarDAOTest.class, OfferDAOTest.class, PaymentDAOTest.class, DisplayImplTest.class})
+@SuiteClasses({CarSystemImplTest.class, AccountDAOTest.class, CarDAOTest.class, OfferDAOTest.class, PaymentDAOTest.class, DisplayImplTest.class})
 public class AllTests {
-
+	//JDBCVersionTest.class,
 }
