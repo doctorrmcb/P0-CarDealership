@@ -60,7 +60,7 @@ public class OfferDAOTest {
 	public void createOfferTest() {
 		String sql = "insert into test.offers (offerusername, vin, price, durationmonths, offerstatus) values (?, ?, ?, ?, ?);";
 		Offer offer = new Offer("testUser", 20.00, "testVin", 20);
-		boolean result = false;
+		boolean result = true;
 		try {
 			when(connection.prepareStatement(sql)).thenReturn(stmtCreate);
 			offerDAO.setConn(connection);
@@ -89,7 +89,21 @@ public class OfferDAOTest {
 		}
 	}
 
+	@Test
+	public void updateOfferTest() {
+		
+	}
 
+	@Test
+	public void deleteOfferTest() {
+		
+	}
+	
+	@Test
+	public void rejectOffersTest() {
+		
+	}
+	
 	public OfferDAOTest() throws SQLException {
 		
 	}

@@ -88,6 +88,11 @@ public class PaymentDAOTest {
 		}
 	}
 
+	@Test
+	public void getTotalPaidTest() {
+		
+	}
+	
 	public PaymentDAOTest() throws SQLException {
 		
 	}

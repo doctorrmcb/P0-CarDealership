@@ -60,7 +60,7 @@ public class CarDAOTest {
 	public void createCarTest() {
 		String sql = "insert into test.cars (ownerusername, vin) values (?, ?);";
 		Car car = new Car("testVin", "testUser");
-		boolean result = false;
+		boolean result = true;
 		try {
 			when(connection.prepareStatement(sql)).thenReturn(stmtCreate);
 			carDAO.setConn(connection);
@@ -91,6 +91,10 @@ public class CarDAOTest {
 		}
 	}
 
+	@Test
+	public void updateCarTest() {
+		
+	}
 
 	public CarDAOTest() throws SQLException {
 		
